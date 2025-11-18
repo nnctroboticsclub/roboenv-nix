@@ -23,15 +23,13 @@
   tqdm,
   typing-extensions,
 
-  # Mbed OS source
-  mbed-os-src,
-
   # Modules
   setuptools_69_5_1,
   prettytable_3_12_0,
   cryptography_36_0_1,
   click_8_0_4,
 }:
+mbed-os-src:
 buildPythonPackage {
   name = "mbed-tools";
   src = "${mbed-os-src}/tools/";

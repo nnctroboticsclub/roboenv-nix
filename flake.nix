@@ -1,7 +1,8 @@
 {
   inputs.nixpkgs.url = "github:nixos/nixpkgs/25.05";
 
-  inputs.libs-cmake.url = "github:nnctroboticsclub/libs-cmake";
+  # inputs.libs-cmake.url = "github:nnctroboticsclub/libs-cmake";
+  inputs.libs-cmake.url = "path:/mnt/data/ghq/github.com/syoch/libs-dev/libs/libs-cmake";
   inputs.libs-cmake.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs =
@@ -12,33 +13,22 @@
     }:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
-      cmake-libs = libs-cmake.packages.${system}.libs-cmake;
-      gcc-arm-toolchain = libs-cmake.packages.${system}.gcc-arm-toolchain;
+
       lib = pkgs.callPackage ./lib { };
-      collectCMakePackages = lib.collectCMakePackages;
-      buildCMakeProject = lib.buildCMakeProject;
-      mbed-os-f446re = spkgs.static-mbed-os-f446re;
-      mbed-os-f303k8 = spkgs.static-mbed-os-f303k8;
-      spkgs = pkgs.callPackage ./static-mbed-os {
-        inherit cmake-libs;
-        inherit gcc-arm-toolchain;
+
+      pkgs = import nixpkgs { inherit system; };
+      cpkgs = libs-cmake.packages.${system};
+      rpkgs = import ./pkgs/default.nix {
+        pkgs = pkgs // cpkgs;
       };
+
       tpkgs = pkgs.callPackage ./tests {
-        inherit (spkgs) static-mbed-os-f446re;
-        inherit buildCMakeProject;
+        inherit (rpkgs) static-mbed-os-f446re;
+        inherit (lib) buildCMakeProject;
       };
     in
-    rec {
-      packages.x86_64-linux.cmake-libs = cmake-libs;
-      packages.x86_64-linux.gcc-arm-toolchain = gcc-arm-toolchain;
-      packages.x86_64-linux.static-mbed-os-f446re = mbed-os-f446re;
-      packages.x86_64-linux.static-mbed-os-f303k8 = mbed-os-f303k8;
-      packages.x86_64-linux.test-smbed = tpkgs.test-smbed;
-      packages.x86_64-linux.qemu-arm-xpack = pkgs.callPackage ./pkgs/qemu-arm-xpack.nix { };
-
-      lib.collectCMakePackages = collectCMakePackages;
-      lib.buildCMakeProject = buildCMakeProject;
+    {
+      packages.x86_64-linux = rpkgs;
 
       devShells.x86_64-linux.default = pkgs.mkShell {
         buildInputs = with pkgs; [
@@ -65,12 +55,12 @@
           gcc-arm-embedded-14
           cmake
           go-task
-          packages.x86_64-linux.qemu-arm-xpack
+          rpkgs.qemu-arm-xpack
           # Libs
           # mbed-os-f446re
           # mbed-os-f303k8
         ];
-        RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
+        RUST_SRC_PATH = "${rpkgs.rustPlatform.rustLibSrc}";
       };
     };
 }

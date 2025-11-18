@@ -7,17 +7,14 @@
         ]
       },
       "locked": {
-        "lastModified": 1763269019,
-        "narHash": "sha256-SMF3GE1tfA/Y9nIzmrl5qLptoDFixtg7mX2qUO17FR0=",
-        "owner": "nnctroboticsclub",
-        "repo": "libs-cmake",
-        "rev": "4da11ea850ffa625a66366f870501f7388c4ae01",
-        "type": "github"
+        "lastModified": 1763455623,
+        "narHash": "sha256-sYPAccnwjV0TqSWC8vu5Q7dpVzGbIrvgDl2cuHbkq6o=",
+        "path": "/mnt/data/ghq/github.com/syoch/libs-dev/libs/libs-cmake",
+        "type": "path"
       },
       "original": {
-        "owner": "nnctroboticsclub",
-        "repo": "libs-cmake",
-        "type": "github"
+        "path": "/mnt/data/ghq/github.com/syoch/libs-dev/libs/libs-cmake",
+        "type": "path"
       }
     },
     "nixpkgs": {
@@ -39,31 +36,7 @@
     "root": {
       "inputs": {
         "libs-cmake": "libs-cmake",
-        "nixpkgs": "nixpkgs",
-        "static-mbed-os": "static-mbed-os"
-      }
-    },
-    "static-mbed-os": {
-      "inputs": {
-        "libs-cmake": [
-          "libs-cmake"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1763275423,
-        "narHash": "sha256-zBxxpj3Hu5o5Z2TB0NMXCq2gHdSrXm83hhz0OUWS8aI=",
-        "owner": "nnctroboticsclub",
-        "repo": "static-mbed-os",
-        "rev": "6c4590c67150066dfa360a1d0d94dffaafeebd55",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nnctroboticsclub",
-        "repo": "static-mbed-os",
-        "type": "github"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
