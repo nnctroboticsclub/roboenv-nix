@@ -17,6 +17,8 @@ basePkgs.lib.makeScope basePkgs.newScope (
     mbed-os = self.callPackage ./mbed-os { };
     mbed-os-src = self.callPackage ./mbed-os-src { };
     mbed-os-python = self.callPackage ./mbed-os-python { };
+    cmsis5-src = self.callPackage ./cmsis5-src { };
+    cmsis5 = self.callPackage ./cmsis5 { };
 
     static-mbed-os-core = self.callPackage ./static-mbed-os-core { };
     inherit (static-mbed-os-packages) static-mbed-os-f446re static-mbed-os-f303k8;

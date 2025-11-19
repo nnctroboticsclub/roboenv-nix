@@ -25,9 +25,17 @@ pkgs.mkShell {
     cmake
     go-task
     rpkgs.qemu-arm-xpack
-    # Libs
-    # mbed-os-f446re
-    # mbed-os-f303k8
   ];
-  RUST_SRC_PATH = "${rpkgs.rustPlatform.rustLibSrc}";
+  RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
+
+  CMAKE_MODULE_PATH =
+    let
+      roboPkgs = [
+        rpkgs.cmake-libs
+        rpkgs.gcc-arm-toolchain
+        rpkgs.static-mbed-os-f303k8
+        rpkgs.static-mbed-os-f446re
+      ];
+    in
+    pkgs.lib.concatStringsSep ";" (map (p: "${p}/lib/cmake") roboPkgs);
 }
