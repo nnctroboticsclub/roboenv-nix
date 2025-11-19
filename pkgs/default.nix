@@ -1,13 +1,24 @@
 { pkgs }:
-pkgs.lib.makeScope pkgs.newScope (self: {
-  mbed-os = self.callPackage ./mbed-os { };
-  mbed-os-src = self.callPackage ./mbed-os-src { };
-  mbed-os-python = self.callPackage ./mbed-os-python { };
+let
+  basePkgs = pkgs;
+  roboPythonPackages = import ./roboPythonPackages { pkgs = basePkgs; };
+in
+basePkgs.lib.makeScope basePkgs.newScope (
+  self:
+  let
+    static-mbed-os-packages = self.callPackage ./static-mbed-os { };
+  in
+  {
+    inherit (basePkgs) cmake-libs gcc-arm-toolchain;
+    inherit roboPythonPackages;
 
-  static-mbed-os-core = self.callPackage ./static-mbed-os-core { };
-  static-mbed-os = self.callPackage ./static-mbed-os { };
+    mbed-os = self.callPackage ./mbed-os { };
+    mbed-os-src = self.callPackage ./mbed-os-src { };
+    mbed-os-python = self.callPackage ./mbed-os-python { };
 
-  qemu-arm-xpack = self.callPackage ./qemu-arm-xpack { };
+    static-mbed-os-core = self.callPackage ./static-mbed-os-core { };
+    inherit (static-mbed-os-packages) static-mbed-os-f446re static-mbed-os-f303k8;
 
-  roboPythonPackages = import ./roboPythonPackages { pkgs = self; };
-})
+    qemu-arm-xpack = self.callPackage ./qemu-arm-xpack { };
+  }
+)

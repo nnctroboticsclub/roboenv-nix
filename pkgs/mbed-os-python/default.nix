@@ -5,6 +5,6 @@
 }:
 python311.withPackages (ps: [
   (roboPythonPackages.mbed_tools mbed-os-src)
-  roboPythonPackages.cysecuretools
+  roboPythonPackages.cysecuretools_6_0_0
   roboPythonPackages.cryptography_36_0_1
 ])

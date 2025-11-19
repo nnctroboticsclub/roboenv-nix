@@ -21,46 +21,19 @@
       rpkgs = import ./pkgs/default.nix {
         pkgs = pkgs // cpkgs;
       };
-
       tpkgs = pkgs.callPackage ./tests {
         inherit (rpkgs) static-mbed-os-f446re;
         inherit (lib) buildCMakeProject;
       };
+
+      all_pkgs = rpkgs // tpkgs // cpkgs;
+      packages = lib.scopeToAttrRecursive all_pkgs;
     in
     {
-      packages.x86_64-linux = rpkgs;
+      packages.x86_64-linux = lib.flatAttr packages;
 
-      devShells.x86_64-linux.default = pkgs.mkShell {
-        buildInputs = with pkgs; [
-          clang-tools
-
-          cargo
-          rust-analyzer
-          pkg-config
-          udev
-          rustfmt
-          rustc
-          clippy
-          ccache
-          dpkg
-          ninja
-          stlink-tool
-
-          git-conventional-commits
-
-          nix-output-monitor
-
-          #* Migrated from robotics container
-          # Tools
-          gcc-arm-embedded-14
-          cmake
-          go-task
-          rpkgs.qemu-arm-xpack
-          # Libs
-          # mbed-os-f446re
-          # mbed-os-f303k8
-        ];
-        RUST_SRC_PATH = "${rpkgs.rustPlatform.rustLibSrc}";
+      devShells.x86_64-linux.default = import ./shell.nix {
+        inherit pkgs rpkgs;
       };
     };
 }

@@ -7,7 +7,7 @@
   gcc-arm-toolchain,
 
   mbed-os,
-  mbed-ce-python,
+  mbed-os-python,
   static-mbed-os-core,
 }:
 let
@@ -49,7 +49,7 @@ let
         cmake
         cmake-libs
         mbed-os
-        mbed-ce-python
+        mbed-os-python
       ];
 
       buildInputs = [
@@ -69,8 +69,7 @@ let
       '';
     };
 in
-static-mbed-os
-// {
+{
   static-mbed-os-f446re = static-mbed-os {
     pname = "static-mbed-os-f446re";
     mbedTarget = "NUCLEO_F446RE";
