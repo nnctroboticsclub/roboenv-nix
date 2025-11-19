@@ -1,22 +1,5 @@
 {
   "nodes": {
-    "libs-cmake": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1763455623,
-        "narHash": "sha256-sYPAccnwjV0TqSWC8vu5Q7dpVzGbIrvgDl2cuHbkq6o=",
-        "path": "/mnt/data/ghq/github.com/syoch/libs-dev/libs/libs-cmake",
-        "type": "path"
-      },
-      "original": {
-        "path": "/mnt/data/ghq/github.com/syoch/libs-dev/libs/libs-cmake",
-        "type": "path"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1748026580,
@@ -35,7 +18,6 @@
     },
     "root": {
       "inputs": {
-        "libs-cmake": "libs-cmake",
         "nixpkgs": "nixpkgs"
       }
     }

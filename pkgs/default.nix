@@ -9,8 +9,10 @@ basePkgs.lib.makeScope basePkgs.newScope (
     static-mbed-os-packages = self.callPackage ./static-mbed-os { };
   in
   {
-    inherit (basePkgs) cmake-libs gcc-arm-toolchain;
     inherit roboPythonPackages;
+
+    cmake-libs = self.callPackage ./cmake-libs { };
+    gcc-arm-toolchain = self.callPackage ./gcc-arm-toolchain { };
 
     mbed-os = self.callPackage ./mbed-os { };
     mbed-os-src = self.callPackage ./mbed-os-src { };
