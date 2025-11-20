@@ -11,6 +11,7 @@ basePkgs.lib.makeScope basePkgs.newScope (
   {
     inherit roboPythonPackages;
 
+    club-legacy-libs = self.callPackage ./club-legacy-libs { };
     cmake-libs = self.callPackage ./cmake-libs { };
     gcc-arm-toolchain = self.callPackage ./gcc-arm-toolchain { };
 

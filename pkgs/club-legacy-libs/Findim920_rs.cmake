@@ -2,8 +2,8 @@ include(FetchContent)
 
 FetchContent_Populate(im920_rs
   GIT_REPOSITORY git@github.com:nnctroboticsclub/im920_rs.git
-  GIT_TAG b9addc59d63d9afbc7bd3fbe6cfbd7da596303c6
-  SOURCE_DIR /usr/arm-none-eabi/src/im920_rs/src
+  GIT_TAG 2901c4ead3e00257d13c7344183c331147c9f36c
+  SOURCE_DIR ${CMAKE_BINARY_DIR}/3rd-party/im920_rs/src
   BINARY_DIR ${CMAKE_BINARY_DIR}/3rd-party/im920_rs/build
   SUBBUILD_DIR ${CMAKE_BINARY_DIR}/3rd-party/im920_rs/subbuild
 )
