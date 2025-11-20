@@ -38,3 +38,5 @@ set(CMAKE_EXE_LINKER_FLAGS "@CMAKE_EXE_LINKER_FLAGS_INIT@")
 
 #* StaticMbedOS
 include(StaticMbedOS-@MBED_TARGET@Config)
+
+set(StaticMbedOS_DIR "${CMAKE_CURRENT_LIST_DIR}/StaticMbedOS-@MBED_TARGET@")

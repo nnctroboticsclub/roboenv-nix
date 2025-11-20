@@ -182,6 +182,11 @@ configure_file(
   ${CMAKE_CURRENT_BINARY_DIR}/StaticMbedOSToolchain-${MBED_TARGET}.cmake
   @ONLY
 )
+configure_file(
+  StaticMbedOS.cmake.in
+  ${CMAKE_CURRENT_BINARY_DIR}/StaticMbedOS-${MBED_TARGET}/StaticMbedOSConfig.cmake
+  @ONLY
+)
 
 configure_package_config_file(
   StaticMbedOSConfig.cmake.in
@@ -194,6 +199,12 @@ install(
     ${CMAKE_CURRENT_BINARY_DIR}/StaticMbedOSToolchain-${MBED_TARGET}.cmake
     ${CMAKE_CURRENT_BINARY_DIR}/StaticMbedOS-${MBED_TARGET}Config.cmake
   DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
+)
+
+install(
+  FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/StaticMbedOS-${MBED_TARGET}/StaticMbedOSConfig.cmake
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/StaticMbedOS-${MBED_TARGET}
 )
 
 include(./cpack.cmake)
