@@ -24,8 +24,9 @@
       };
       tpkgs = pkgs.callPackage ./tests {
         inherit (rpkgs) static-mbed-os-f446re;
-        inherit (rpkgs) cmsis-device-f3;
+        inherit (rpkgs) cmsis5-device-f3;
         inherit (rpkgs) cmsis5;
+        inherit (rpkgs) stm32-hal-f3xx;
         inherit (lib) buildCMakeProject;
       };
 

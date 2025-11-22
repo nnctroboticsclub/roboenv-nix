@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 cmake_policy(VERSION 3.19)
 
-project(CMSISDeviceF3 VERSION 1.0.0 LANGUAGES C CXX)
+project(CMSIS5DeviceF3 VERSION 1.0.0 LANGUAGES C CXX)
 find_package(CMSIS5 REQUIRED)
 
 function (define_component)
@@ -37,10 +37,8 @@ function (define_component)
     )
 endfunction()
 
-# Nix configures following variables
-# - SourceTree: CMSIS5 Installation
 
-set(CMSIS_EXPORT_NAME "CMSISDeviceF3Targets")
+set(CMSIS_EXPORT_NAME "CMSIS5DeviceF3Targets")
 
 #* Define Components
 define_component(
@@ -54,17 +52,17 @@ install(
     EXPORT ${CMSIS_EXPORT_NAME}
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
     NAMESPACE CMSIS5::Device::
-    FILE CMSISDeviceF3Targets.cmake
+    FILE CMSIS5DeviceF3Targets.cmake
 )
 
 # Config
 include(CMakePackageConfigHelpers)
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/CMSISDeviceF3.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/CMSISDeviceF3Config.cmake"
+    "${CMAKE_CURRENT_SOURCE_DIR}/CMSIS5DeviceF3.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/CMSIS5DeviceF3Config.cmake"
     INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
 )
 install(
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/CMSISDeviceF3Config.cmake"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/CMSIS5DeviceF3Config.cmake"
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
 )

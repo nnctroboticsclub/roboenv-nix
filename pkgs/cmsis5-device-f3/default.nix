@@ -14,7 +14,7 @@ let
   };
 in
 rlib.buildCMakeProject {
-  pname = "cmsis-device-f3";
+  pname = "cmsis5-device-f3";
   version = "0.1.0";
 
   src = ./.;
