@@ -25,6 +25,8 @@ basePkgs.lib.makeScope basePkgs.newScope (
     cmsis5-device-f3 = self.callPackage ./cmsis5-device-f3 { };
     stm32-hal-f3xx = self.callPackage ./stm32-hal-f3xx { };
 
+    cmsis5-device-f4 = self.callPackage ./cmsis5-device-f4 { };
+
     static-mbed-os-core = self.callPackage ./static-mbed-os-core { };
     inherit (static-mbed-os-packages) static-mbed-os-f446re static-mbed-os-f303k8;
 
