@@ -28,6 +28,7 @@
         inherit (rpkgs) cmsis5-device-f4;
         inherit (rpkgs) cmsis5;
         inherit (rpkgs) stm32-hal-f3xx;
+        inherit (rpkgs) stm32-hal-f4xx;
         inherit (lib) buildCMakeProject;
       };
 
