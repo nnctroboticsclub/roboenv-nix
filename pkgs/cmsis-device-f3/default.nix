@@ -1,9 +1,10 @@
 {
-  stdenv,
+  rlib,
   cmake,
 
   cmake-libs,
   gcc-arm-toolchain,
+  cmsis5,
 }:
 let
   cmsis-device-f3-src = builtins.fetchGit {
@@ -12,7 +13,7 @@ let
     rev = "5558e64e3675a1e1fcb1c71f468c7c407c1b1134";
   };
 in
-stdenv.mkDerivation {
+rlib.buildCMakeProject {
   pname = "cmsis-device-f3";
   version = "0.1.0";
 
@@ -24,6 +25,7 @@ stdenv.mkDerivation {
 
   cmakeBuildInputs = [
     gcc-arm-toolchain
+    cmsis5
   ];
 
   nativeBuildInputs = [ cmake ];

@@ -16,7 +16,10 @@ let
   paths = map (p: "${p}/lib/cmake") allCMakePackages;
 
   argModPath = lib.concatStringsSep ";" paths;
-  extraCMakeFlags = [ "-DCMAKE_MODULE_PATH=${argModPath}" ];
+  extraCMakeFlags = [
+    "-DCMAKE_MODULE_PATH=${argModPath}"
+    "-DCMAKE_PREFIX_PATH=${argModPath}"
+  ];
 in
 stdenv.mkDerivation (
   args

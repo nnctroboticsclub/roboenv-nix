@@ -9,7 +9,7 @@
 }:
 
 stdenv.mkDerivation {
-  pname = "cmsis5";
+  pname = "CMSIS5";
   version = "0.1.0";
 
   src = ./.;

@@ -20,9 +20,12 @@
       pkgs = import nixpkgs { inherit system overlays; };
       rpkgs = import ./pkgs/default.nix {
         pkgs = pkgs;
+        rlib = lib;
       };
       tpkgs = pkgs.callPackage ./tests {
         inherit (rpkgs) static-mbed-os-f446re;
+        inherit (rpkgs) cmsis-device-f3;
+        inherit (rpkgs) cmsis5;
         inherit (lib) buildCMakeProject;
       };
 

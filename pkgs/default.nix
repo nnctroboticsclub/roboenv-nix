@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, rlib }:
 let
   basePkgs = pkgs;
   roboPythonPackages = import ./roboPythonPackages { pkgs = basePkgs; };
@@ -9,6 +9,8 @@ basePkgs.lib.makeScope basePkgs.newScope (
     static-mbed-os-packages = self.callPackage ./static-mbed-os { };
   in
   {
+    rlib = rlib;
+
     inherit roboPythonPackages;
 
     club-legacy-libs = self.callPackage ./club-legacy-libs { };

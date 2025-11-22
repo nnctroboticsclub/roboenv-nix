@@ -26,7 +26,7 @@ function (define_cmsis_component)
         add_library(${CMSIS_CMP_TARGET} STATIC ${CMP_SOURCES})
         set(CMP_SCOPE "PUBLIC")
     endif()
-    add_library(cmsis5::${CMSIS_CMP_TARGET} ALIAS ${CMSIS_CMP_TARGET})
+    add_library(CMSIS5::${CMSIS_CMP_TARGET} ALIAS ${CMSIS_CMP_TARGET})
 
     target_include_directories(${CMSIS_CMP_TARGET} ${CMP_SCOPE}
         $<BUILD_INTERFACE:${CMP_DIR}/Include>
@@ -66,19 +66,19 @@ define_cmsis_component(
 # Targets
 install(
     EXPORT ${CMSIS_EXPORT_NAME}
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${CMSIS_EXPORT_NAME}
-    NAMESPACE cmsis5::
-    FILE CMSISTargets.cmake
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
+    NAMESPACE CMSIS5::
+    FILE CMSIS5Targets.cmake
 )
 
 # Config
 include(CMakePackageConfigHelpers)
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/CMSISConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/CMSISConfig.cmake"
+    "${CMAKE_CURRENT_SOURCE_DIR}/CMSIS5Config.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/CMSIS5Config.cmake"
     INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
 )
 install(
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/CMSISConfig.cmake"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/CMSIS5Config.cmake"
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
 )
