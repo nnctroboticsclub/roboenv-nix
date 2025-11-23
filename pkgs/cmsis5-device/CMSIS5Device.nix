@@ -6,21 +6,20 @@
   gcc-arm-toolchain,
   cmsis5,
 }:
-let
-  cmsis-device-f3-src = builtins.fetchGit {
-    url = "https://github.com/STMicroelectronics/cmsis-device-f3.git";
-    ref = "v2.3.8";
-    rev = "5558e64e3675a1e1fcb1c71f468c7c407c1b1134";
-  };
-in
+{
+  src,
+  pname,
+  build-target,
+}:
 rlib.buildCMakeProject {
-  pname = "cmsis5-device-f3";
+  pname = pname;
   version = "0.1.0";
 
   src = ./.;
 
   cmakeFlags = [
-    "-DSourceTree=${cmsis-device-f3-src}"
+    "-DSourceTree=${src}"
+    "-DBuildTarget=${build-target}"
   ];
 
   cmakeBuildInputs = [
