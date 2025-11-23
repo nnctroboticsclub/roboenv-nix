@@ -7,6 +7,8 @@ basePkgs.lib.makeScope basePkgs.newScope (
   self:
   let
     static-mbed-os-packages = self.callPackage ./static-mbed-os { };
+    CMSIS5DevicePackages = self.callPackage ./cmsis5-device { };
+    STM32HALPackages = self.callPackage ./stm32-hal { };
   in
   {
     rlib = rlib;
@@ -22,11 +24,9 @@ basePkgs.lib.makeScope basePkgs.newScope (
     mbed-os-python = self.callPackage ./mbed-os-python { };
     cmsis5-src = self.callPackage ./cmsis5-src { };
     cmsis5 = self.callPackage ./cmsis5 { };
-    cmsis5-device-f3 = self.callPackage ./cmsis5-device-f3 { };
-    stm32-hal-f3xx = self.callPackage ./stm32-hal-f3xx { };
-    stm32-hal-f4xx = self.callPackage ./stm32-hal-f4xx { };
 
-    cmsis5-device-f4 = self.callPackage ./cmsis5-device-f4 { };
+    inherit (CMSIS5DevicePackages) cmsis5-device-f3 cmsis5-device-f4;
+    inherit (STM32HALPackages) stm32-hal-f3xx stm32-hal-f4xx;
 
     static-mbed-os-core = self.callPackage ./static-mbed-os-core { };
     inherit (static-mbed-os-packages) static-mbed-os-f446re static-mbed-os-f303k8;

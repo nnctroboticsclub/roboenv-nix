@@ -1,6 +1,7 @@
+# -------- STM32HALToolchain.cmake --------
 include(GccArmToolchain)
 
-set(LINKER_SCRIPT "${CMAKE_CURRENT_LIST_DIR}/STM32F446RETX_FLASH.ld")
+set(LINKER_SCRIPT @HAL_LD@)
 
 set(MY_ARCH_FLAGS "-mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb")
 set(MY_COMPILE_FLAGS "-ffunction-sections -fdata-sections -fno-exceptions -fshort-enums -Oz -g3 -gdwarf-3")

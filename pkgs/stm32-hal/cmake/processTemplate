@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+sed \
+  -e "s|@HAL_LD@|$HAL_LD|g" \
+  -e "s|@HAL_ROOT@|$HAL_ROOT|g" \
+  -e "s|@HAL_DEPENDENCIES@|$HAL_DEPENDENCIES|g" \

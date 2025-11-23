@@ -14,13 +14,13 @@
     let
       system = "x86_64-linux";
 
-      lib = pkgs.callPackage ./lib { };
+      rlib = pkgs.callPackage ./lib { };
       overlays = [ (import rust-overlay) ];
 
       pkgs = import nixpkgs { inherit system overlays; };
       rpkgs = import ./pkgs/default.nix {
         pkgs = pkgs;
-        rlib = lib;
+        rlib = rlib;
       };
       tpkgs = pkgs.callPackage ./tests {
         inherit (rpkgs) static-mbed-os-f446re;
@@ -29,17 +29,17 @@
         inherit (rpkgs) cmsis5;
         inherit (rpkgs) stm32-hal-f3xx;
         inherit (rpkgs) stm32-hal-f4xx;
-        inherit (lib) buildCMakeProject;
+        inherit (rlib) buildCMakeProject;
       };
 
       all_pkgs = rpkgs // tpkgs;
-      packages = lib.scopeToAttrRecursive all_pkgs;
+      packages = rlib.scopeToAttrRecursive all_pkgs;
     in
     {
-      packages.x86_64-linux = lib.flatAttr packages;
+      packages.x86_64-linux = rlib.flatAttr packages;
 
       devShells.x86_64-linux.default = import ./shell.nix {
-        inherit pkgs rpkgs;
+        inherit pkgs rpkgs rlib;
       };
     };
 }
