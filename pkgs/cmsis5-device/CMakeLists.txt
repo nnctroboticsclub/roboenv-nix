@@ -45,7 +45,7 @@ install(
 # Config
 include(CMakePackageConfigHelpers)
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}.cmake.in"
+    "${CMAKE_CURRENT_SOURCE_DIR}/CMSIS5Device.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
     INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
 )
