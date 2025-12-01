@@ -29,7 +29,13 @@ if (NOT TARGET STM32HAL)
         $<$<COMPILE_LANGUAGE:ASM>:-x assembler-with-cpp>
     )
     target_link_options(STM32HAL PUBLIC
+        # Target CPU
+        -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb
+        # Newlib
+        -specs=nano.specs -specs=nosys.specs
+        # Linker script
         -Wl,-T,@HAL_LD@
+        # HAL
         -Wl,--gc-sections
         -lc -lm
     )
