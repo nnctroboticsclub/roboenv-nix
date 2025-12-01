@@ -22,7 +22,6 @@ basePkgs.lib.makeScope basePkgs.newScope (
 
     mbed-os = self.callPackage ./mbed-os { };
     mbed-os-python = self.callPackage ./mbed-os-python { };
-    cmsis5-src = self.callPackage ./cmsis5-src { };
     cmsis5 = self.callPackage ./cmsis5 { };
 
     inherit (CMSIS5DevicePackages) cmsis5-device-f3 cmsis5-device-f4;

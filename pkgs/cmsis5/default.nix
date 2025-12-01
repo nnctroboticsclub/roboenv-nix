@@ -4,9 +4,14 @@
 
   cmake-libs,
   gcc-arm-toolchain,
-
-  cmsis5-src,
 }:
+let
+  cmsis5-src = builtins.fetchGit {
+    url = "https://github.com/ARM-software/CMSIS_5";
+    ref = "5.9.0";
+    rev = "2b7495b8535bdcb306dac29b9ded4cfb679d7e5c";
+  };
+in
 
 stdenv.mkDerivation {
   pname = "CMSIS5";
