@@ -14,6 +14,8 @@ stdenv.mkDerivation {
       set(CMAKE_SYSTEM_NAME Generic)
       set(CMAKE_SYSTEM_PROCESSOR arm)
 
+      set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+
       set(CMAKE_C_COMPILER "${prefix}-gcc")
       set(CMAKE_CXX_COMPILER "${prefix}-g++")
       set(CMAKE_ASM_COMPILER "${prefix}-gcc")
@@ -22,9 +24,10 @@ stdenv.mkDerivation {
       set(CMAKE_SIZE "${prefix}-size")
       set_property(GLOBAL PROPERTY ELF2BIN "${prefix}-objcopy")
 
-      set(CMAKE_C_COMPILER_WORKS 1)
-      set(CMAKE_CXX_COMPILER_WORKS 1)
-      set(CMAKE_ASM_COMPILER_WORKS 1)
+      set(CMAKE_C_COMPILER_TARGET arm-none-eabi)
+      set(CMAKE_CXX_COMPILER_TARGET arm-none-eabi)
+      set(CMAKE_ASM_COMPILER_TARGET arm-none-eabi)
+
       EOF
     '';
 
