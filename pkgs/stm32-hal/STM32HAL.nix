@@ -26,7 +26,6 @@ stdenv.mkDerivation {
     export HAL_ROOT=${src}
     export HAL_DEPENDENCIES='${dependencies}'
 
-    bash $src/cmake/STM32HALToolchain.sh > STM32HALToolchain.cmake
     bash $src/cmake/STM32HALConfig.sh ${dependencies}> STM32HALConfig.cmake
   '';
   installPhase = ''
@@ -34,6 +33,5 @@ stdenv.mkDerivation {
 
     cp ${linker_script} $out/lib/cmake/STM32HAL${target}.ld
     cp STM32HALConfig.cmake $out/lib/cmake/STM32HAL${target}Config.cmake
-    cp STM32HALToolchain.cmake $out/lib/cmake/STM32HAL${target}Toolchain.cmake
   '';
 }
