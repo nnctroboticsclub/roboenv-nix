@@ -2,7 +2,7 @@ include(FetchContent)
 
 FetchContent_Populate(srobo_base
   GIT_REPOSITORY git@github.com:nnctroboticsclub/srobo_base.git
-  GIT_TAG f9abcd19e7c3e04b3e7cb02d467b6e7e6ac48a2c
+  GIT_TAG 02a4a075264872246d83f3592f32fe59d1c858f6
   SOURCE_DIR ${CMAKE_BINARY_DIR}/3rd-party/srobo_base/src
   BINARY_DIR ${CMAKE_BINARY_DIR}/3rd-party/srobo_base/build
   SUBBUILD_DIR ${CMAKE_BINARY_DIR}/3rd-party/srobo_base/subbuild
