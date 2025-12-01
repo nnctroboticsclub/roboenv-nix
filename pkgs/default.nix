@@ -9,6 +9,7 @@ basePkgs.lib.makeScope basePkgs.newScope (
     static-mbed-os-packages = self.callPackage ./static-mbed-os { };
     CMSIS5DevicePackages = self.callPackage ./cmsis5-device { };
     STM32HALPackages = self.callPackage ./stm32-hal { };
+    RoboPackages = self.callPackage ./RoboPackages { };
   in
   {
     rlib = rlib;
@@ -27,6 +28,18 @@ basePkgs.lib.makeScope basePkgs.newScope (
 
     inherit (CMSIS5DevicePackages) cmsis5-device-f3 cmsis5-device-f4;
     inherit (STM32HALPackages) stm32-hal-f3xx stm32-hal-f4xx;
+    inherit (RoboPackages)
+      ikarashiCAN_mk2
+      ikakoMDC
+      ikako_rohm_md
+      MotorController
+      ;
+    inherit (RoboPackages)
+      IkakoRobomas
+      can_servo
+      Futaba_Puropo
+      PS4_RX
+      ;
 
     static-mbed-os-core = self.callPackage ./static-mbed-os-core { };
     inherit (static-mbed-os-packages) static-mbed-os-f446re static-mbed-os-f303k8;
