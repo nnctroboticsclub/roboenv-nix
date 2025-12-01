@@ -8,7 +8,6 @@
 
   mbed-os,
   mbed-os-python,
-  static-mbed-os-core,
 }:
 let
   static-mbed-os =
@@ -50,10 +49,6 @@ let
         cmake-libs
         mbed-os
         mbed-os-python
-      ];
-
-      buildInputs = [
-        static-mbed-os-core
       ];
 
       propagatedBuildInputs = [

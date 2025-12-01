@@ -38,8 +38,6 @@ basePkgs.lib.makeScope basePkgs.newScope (
       Futaba_Puropo
       PS4_RX
       ;
-
-    static-mbed-os-core = self.callPackage ./static-mbed-os-core { };
     inherit (static-mbed-os-packages) static-mbed-os-f446re static-mbed-os-f303k8;
 
     qemu-arm-xpack = self.callPackage ./qemu-arm-xpack { };

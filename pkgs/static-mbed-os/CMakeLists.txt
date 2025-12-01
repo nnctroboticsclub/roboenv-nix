@@ -206,5 +206,3 @@ install(
     ${CMAKE_CURRENT_BINARY_DIR}/StaticMbedOS-${MBED_TARGET}/StaticMbedOSConfig.cmake
   DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/StaticMbedOS-${MBED_TARGET}
 )
-
-include(./cpack.cmake)
