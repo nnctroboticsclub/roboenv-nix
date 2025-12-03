@@ -29,6 +29,7 @@ let
 in
 pkgs.mkShell {
   buildInputs = with pkgs; [
+    clang
     clang-tools
 
     (rust-bin.stable.latest.default.override {
@@ -44,7 +45,7 @@ pkgs.mkShell {
     ccache
     dpkg
     ninja
-    stlink-tool
+    stlink
 
     git-conventional-commits
 

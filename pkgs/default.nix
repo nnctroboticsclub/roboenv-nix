@@ -21,7 +21,6 @@ basePkgs.lib.makeScope basePkgs.newScope (
     gcc-arm-toolchain = self.callPackage ./gcc-arm-toolchain { };
 
     mbed-os = self.callPackage ./mbed-os { };
-    mbed-os-python = self.callPackage ./mbed-os-python { };
     cmsis5 = self.callPackage ./cmsis5 { };
 
     inherit (CMSIS5DevicePackages) cmsis5-device-f3 cmsis5-device-f4;

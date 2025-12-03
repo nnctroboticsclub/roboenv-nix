@@ -7,7 +7,6 @@
   gcc-arm-toolchain,
 
   mbed-os,
-  mbed-os-python,
 }:
 let
   static-mbed-os =
@@ -48,7 +47,7 @@ let
         cmake
         cmake-libs
         mbed-os
-        mbed-os-python
+        mbed-os.pythonEnv
       ];
 
       propagatedBuildInputs = [

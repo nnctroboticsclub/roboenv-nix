@@ -1,4 +1,8 @@
-{ stdenv }:
+{
+  stdenv,
+  python311,
+  roboPythonPackages,
+}:
 stdenv.mkDerivation rec {
   pname = "mbed-os";
   version = "0.2.0";
@@ -8,6 +12,12 @@ stdenv.mkDerivation rec {
     ref = "master";
     rev = "4ba00162ba2d73c64583018983391e1dfeaee83d";
   };
+
+  pythonEnv = python311.withPackages (ps: [
+    (roboPythonPackages.mbed_tools src)
+    roboPythonPackages.cysecuretools_6_0_0
+    roboPythonPackages.cryptography_36_0_1
+  ]);
 
   installPhase = ''
     mkdir -p $out/lib/cmake
