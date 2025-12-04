@@ -19,6 +19,7 @@ basePkgs.lib.makeScope basePkgs.newScope (
     club-legacy-libs = self.callPackage ./club-legacy-libs { };
     cmake-libs = self.callPackage ./cmake-libs { };
     gcc-arm-toolchain = self.callPackage ./gcc-arm-toolchain { };
+    clang-arm-toolchain = self.callPackage ./clang-arm-toolchain { };
 
     mbed-os = self.callPackage ./mbed-os { };
     cmsis5 = self.callPackage ./cmsis5 { };

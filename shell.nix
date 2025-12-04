@@ -62,10 +62,13 @@ pkgs.mkShell {
     rust-cbindgen
     rpkgs.qemu-arm-xpack
 
-    pkgs.llvmPackages.libclang.lib
+    pkgs.llvmPackages_19.bintools
+    pkgs.llvmPackages_19.clang
+    pkgs.llvmPackages_19.llvm
+    pkgs.llvmPackages_19.libclang.lib
   ];
 
-  LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
+  LIBCLANG_PATH = "${pkgs.llvmPackages_19.libclang.lib}/lib";
 
   RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
 
