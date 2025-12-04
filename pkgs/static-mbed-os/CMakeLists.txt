@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 cmake_policy(VERSION 3.19)
 
-set(CMAKE_INSTALL_MESSAGE LAZY)
+set(CMAKE_INSTALL_MESSAGE NEVER)
 set(MBED_APP_JSON_PATH mbed_app.json)
 set(MBED_TOOLCHAIN GCC_ARM)
 
@@ -10,17 +10,33 @@ set(static_mbed_os_target_name "static-mbed-os-${MBED_TARGET}")
 include(TargetDumper)
 include(DependencyFinder)
 
-include(GccArmToolchain)
+#* Load Toolchain
+include(ClangArmToolchain)
+
 include(MbedCE-Toolchain)
-include(GccArmToolchain)
+set(MBED_C_FLAGS ${CMAKE_C_FLAGS_INIT})
+set(MBED_CXX_FLAGS ${CMAKE_CXX_FLAGS_INIT})
+set(MBED_ASM_FLAGS ${CMAKE_ASM_FLAGS_INIT})
+set(MBED_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS_INIT})
+string(REPLACE "-Wno-packed-bitfield-compat" "-Wno-padded-bitfield" MBED_C_FLAGS "${MBED_C_FLAGS}")
+string(REPLACE "-Wno-packed-bitfield-compat" "-Wno-padded-bitfield" MBED_CXX_FLAGS "${MBED_CXX_FLAGS}")
+
+include(ClangArmToolchain)
+set(CMAKE_C_FLAGS_INIT "--target=arm-none-eabi ${MBED_C_FLAGS}")
+set(CMAKE_CXX_FLAGS_INIT "--target=arm-none-eabi ${MBED_CXX_FLAGS}")
+set(CMAKE_ASM_FLAGS_INIT "--target=arm-none-eabi ${MBED_ASM_FLAGS}")
+set(CMAKE_EXE_LINKER_FLAGS_INIT "--target=arm-none-eabi ${MBED_EXE_LINKER_FLAGS}")
+
+
 string(REPLACE " -Wl,--cref" "" CMAKE_EXE_LINKER_FLAGS_INIT "${CMAKE_EXE_LINKER_FLAGS_INIT}")
+add_compile_options(-Wno-register)
 
 message(STATUS "Using Toolchain")
 message(STATUS "  - CMAKE_C_COMPILER: ${CMAKE_C_COMPILER}")
 message(STATUS "  - CMAKE_CXX_COMPILER: ${CMAKE_CXX_COMPILER}")
 message(STATUS "  - CMAKE_ASM_COMPILER: ${CMAKE_ASM_COMPILER}")
 
-project(static-mbed-os VERSION 1.0.2 LANGUAGES CXX)
+project(static-mbed-os VERSION 1.0.3 LANGUAGES CXX)
 include(MbedCE)
 
 #* Target

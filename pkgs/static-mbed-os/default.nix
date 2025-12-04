@@ -4,7 +4,8 @@
   cmake,
 
   cmake-libs,
-  gcc-arm-toolchain,
+  gcc-arm-embedded,
+  clang-arm-toolchain,
 
   mbed-os,
 }:
@@ -16,7 +17,7 @@ let
     }:
     stdenv.mkDerivation {
       inherit pname;
-      version = "0.1.0";
+      version = "1.0.3";
 
       src = ./.;
 
@@ -25,7 +26,7 @@ let
           paths = [
             "${cmake-libs}/lib/cmake"
             "${mbed-os}/lib/cmake"
-            "${gcc-arm-toolchain}/lib/cmake"
+            "${clang-arm-toolchain}/lib/cmake"
           ];
           arg_MOD_PATH = lib.concatStringsSep ";" paths;
         in
@@ -38,7 +39,7 @@ let
         ];
 
       cmakeBuildInputs = [
-        gcc-arm-toolchain
+        clang-arm-toolchain
         cmake-libs
         mbed-os
       ];
@@ -51,7 +52,8 @@ let
       ];
 
       propagatedBuildInputs = [
-        gcc-arm-toolchain
+        clang-arm-toolchain
+        gcc-arm-embedded
         cmake-libs
         mbed-os
       ];
