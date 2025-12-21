@@ -14,32 +14,17 @@
     let
       system = "x86_64-linux";
 
-      rlib = pkgs.callPackage ./lib { };
-      overlays = [ (import rust-overlay) ];
-
-      pkgs = import nixpkgs { inherit system overlays; };
-      rpkgs = import ./pkgs/default.nix {
-        pkgs = pkgs;
-        rlib = rlib;
-      };
-      tpkgs = pkgs.callPackage ./tests {
-        inherit (rpkgs) static-mbed-os-f446re;
-        inherit (rpkgs) cmsis5-device-f3;
-        inherit (rpkgs) cmsis5-device-f4;
-        inherit (rpkgs) cmsis5;
-        inherit (rpkgs) stm32-hal-f3xx;
-        inherit (rpkgs) stm32-hal-f4xx;
-        inherit (rlib) buildCMakeProject;
+      pkgs = import nixpkgs {
+        inherit system;
       };
 
-      all_pkgs = rpkgs // tpkgs;
-      packages = rlib.scopeToAttrRecursive all_pkgs;
+      roboenv_overlay = pkgs.lib.composeManyExtensions [
+        (import rust-overlay)
+        (import ./pkgs/default.nix)
+      ];
+
     in
     {
-      packages.x86_64-linux = rlib.flatAttr packages;
-
-      devShells.x86_64-linux.default = import ./shell.nix {
-        inherit pkgs rpkgs rlib;
-      };
+      overlays.default = roboenv_overlay;
     };
 }

@@ -144,4 +144,5 @@ rec {
     extraDependencies = [ "StaticMbedOS" ];
     libIncludes = [ "${libSrc}" ];
   };
+  club-legacy-libs = callPackage ./club-legacy-libs { };
 }

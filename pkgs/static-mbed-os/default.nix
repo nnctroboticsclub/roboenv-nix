@@ -66,6 +66,8 @@ let
     };
 in
 {
+  inherit static-mbed-os;
+
   static-mbed-os-f446re = static-mbed-os {
     pname = "static-mbed-os-f446re";
     mbedTarget = "NUCLEO_F446RE";

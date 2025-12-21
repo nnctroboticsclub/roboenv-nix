@@ -1,77 +1,72 @@
-{
-  pkgs,
-  rlib,
-  rpkgs,
-}:
-let
-  lib_pkgs = [
-    rpkgs.static-mbed-os-f303k8
-    rpkgs.static-mbed-os-f446re
-    rpkgs.stm32-hal-f3xx
-    rpkgs.stm32-hal-f4xx
+{ roboenv, roboPackages }:
+roboenv {
+  # DevShell の名前
+  name = "NHK2025A";
 
-    rpkgs.ikarashiCAN_mk2
-    rpkgs.ikakoMDC
-    rpkgs.ikako_rohm_md
-    rpkgs.MotorController
+  # 使用する C++ コンパイラ (デフォルト: "gcc")
+  # - c_cpp.enable
+  #   - cmake, ccache, ninja
+  #   - CMAKE_PREFIX_PATH, CMAKE_MODULE_PATH を設定
+  # - c_cpp.toolchain = 'clang'
+  #   - bintools, clang, clang-tools, llvm, libclang
+  #   - LIBCLANG_PATH を設定
+  # - c_cpp.toolchain = 'gcc'
+  #   - gcc-arm-embedded
+  c_cpp.enable = true;
+  c_cpp.toolchain = "clang";
 
-    rpkgs.IkakoRobomas
-    rpkgs.can_servo
-    rpkgs.Futaba_Puropo
-    rpkgs.PS4_RX
+  # Rust を使用する場合は true に設定 (デフォルト: false)
+  # - rust (thumbv7em-none-eabi)
+  # - rust-analyzer, rustfmt, rustc, clippy, cbindgen
+  # - pkg-config udev
+  # - RUST_SRC_PATH を設定
+  rust.enable = true;
 
-    rpkgs.club-legacy-libs
-  ];
-  roboPkg = pkgs.symlinkJoin {
-    name = "roboenv";
-    paths = builtins.concatLists (map rlib.collectCMakePackages lib_pkgs);
-  };
-in
-pkgs.mkShell {
-  buildInputs = with pkgs; [
-    clang
-    clang-tools
+  # STM32 開発環境
+  # stlink を追加
+  STM32.enable = true;
+  # STM32 エミュレータ (デフォルト: null)
+  STM32.emulator = "qemu-arm-xpack";
 
-    (rust-bin.stable.latest.default.override {
-      extensions = [ "rust-src" ];
-      targets = [ "thumbv7em-none-eabi" ];
-    })
-    rust-analyzer
-    pkg-config
-    udev
-    rustfmt
-    rustc
-    clippy
-    ccache
-    dpkg
-    ninja
-    stlink
-
-    git-conventional-commits
-
-    nix-output-monitor
-
-    graphviz
-    nix-tree
-
-    #* Migrated from robotics container
-    # Tools
-    gcc-arm-embedded-14
-    cmake
-    go-task
-    rust-cbindgen
-    rpkgs.qemu-arm-xpack
-
-    pkgs.llvmPackages_19.bintools
-    pkgs.llvmPackages_19.clang
-    pkgs.llvmPackages_19.llvm
-    pkgs.llvmPackages_19.libclang.lib
+  # 利用するフレームワークの設定
+  # - {type: "StaticMbedCE", mbedTarget: "..."}
+  # - {type: "STM32HAL", family: "f3" | "f4"} [未定義]
+  frameworks = [
+    {
+      type = "StaticMbedOS";
+      mbedTarget = "NUCLEO_F446RE";
+    }
+    {
+      type = "StaticMbedOS";
+      mbedTarget = "NUCLEO_F303K8";
+    }
+    {
+      type = "STM32HAL";
+      family = "f4";
+    }
+    {
+      type = "STM32HAL";
+      family = "f3";
+    }
   ];
 
-  LIBCLANG_PATH = "${pkgs.llvmPackages_19.libclang.lib}/lib";
+  libraries = [
+    roboPackages.club-legacy-libs
+    roboPackages.ikarashiCAN_mk2
+    roboPackages.ikakoMDC
+    roboPackages.ikako_rohm_md
+    roboPackages.MotorController
+    roboPackages.IkakoRobomas
+    roboPackages.can_servo
+    roboPackages.Futaba_Puropo
+    roboPackages.PS4_RX
+  ];
 
-  RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
-
-  CMAKE_PREFIX_PATH = "${roboPkg}/lib/cmake";
-  CMAKE_MODULE_PATH = "${roboPkg}/lib/cmake";
+  # 追加のビルド入力 (これに限り default.nix で処理される)
+  extraBuildInputs =
+    pkgs: with pkgs; [
+      git-conventional-commits
+      graphviz
+      go-task
+    ];
 }

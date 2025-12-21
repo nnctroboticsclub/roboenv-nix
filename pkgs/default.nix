@@ -1,45 +1,25 @@
-{ pkgs, rlib }:
+final: prev:
 let
-  basePkgs = pkgs;
-  roboPythonPackages = import ./roboPythonPackages { pkgs = basePkgs; };
+  CMSIS5DevicePackages = final.callPackage ./cmsis5-device { };
+  STM32HALPackages = final.callPackage ./stm32-hal { };
+  StaticMbedOSPackages = final.callPackage ./static-mbed-os { };
 in
-basePkgs.lib.makeScope basePkgs.newScope (
-  self:
-  let
-    static-mbed-os-packages = self.callPackage ./static-mbed-os { };
-    CMSIS5DevicePackages = self.callPackage ./cmsis5-device { };
-    STM32HALPackages = self.callPackage ./stm32-hal { };
-    RoboPackages = self.callPackage ./RoboPackages { };
-  in
-  {
-    rlib = rlib;
+{
+  roboPythonPackages = final.callPackage ./roboPythonPackages { };
+  roboPackages = final.callPackage ./RoboPackages { };
 
-    inherit roboPythonPackages;
+  rlib = final.callPackage ./lib { };
 
-    club-legacy-libs = self.callPackage ./club-legacy-libs { };
-    cmake-libs = self.callPackage ./cmake-libs { };
-    gcc-arm-toolchain = self.callPackage ./gcc-arm-toolchain { };
-    clang-arm-toolchain = self.callPackage ./clang-arm-toolchain { };
+  cmake-libs = final.callPackage ./cmake-libs { };
+  gcc-arm-toolchain = final.callPackage ./gcc-arm-toolchain { };
+  clang-arm-toolchain = final.callPackage ./clang-arm-toolchain { };
 
-    mbed-os = self.callPackage ./mbed-os { };
-    cmsis5 = self.callPackage ./cmsis5 { };
+  mbed-os = final.callPackage ./mbed-os { };
+  cmsis5 = final.callPackage ./cmsis5 { };
 
-    inherit (CMSIS5DevicePackages) cmsis5-device-f3 cmsis5-device-f4;
-    inherit (STM32HALPackages) stm32-hal-f3xx stm32-hal-f4xx;
-    inherit (RoboPackages)
-      ikarashiCAN_mk2
-      ikakoMDC
-      ikako_rohm_md
-      MotorController
-      ;
-    inherit (RoboPackages)
-      IkakoRobomas
-      can_servo
-      Futaba_Puropo
-      PS4_RX
-      ;
-    inherit (static-mbed-os-packages) static-mbed-os-f446re static-mbed-os-f303k8;
+  inherit (CMSIS5DevicePackages) cmsis5-device-f3 cmsis5-device-f4;
+  inherit (STM32HALPackages) stm32-hal-f3xx stm32-hal-f4xx;
+  inherit (StaticMbedOSPackages) static-mbed-os static-mbed-os-f446re static-mbed-os-f303k8;
 
-    qemu-arm-xpack = self.callPackage ./qemu-arm-xpack { };
-  }
-)
+  qemu-arm-xpack = final.callPackage ./qemu-arm-xpack { };
+}
