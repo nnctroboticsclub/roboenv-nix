@@ -1,16 +1,17 @@
 ENTRY(Reset_Handler)
 
-_estack = ORIGIN(RAM_DATA) + LENGTH(RAM_DATA);
-
-_Min_Heap_Size = 0x1000;  /* 4 KiB */
-_Stack_Size = 0x800;     /* 2 KiB */
-
 MEMORY {
   FLASH       (rx): ORIGIN = 0x08000000, LENGTH = 0x0000F7FF
   RAM_VECT   (xrw): ORIGIN = 0x20000000, LENGTH = 0x00000200
   RAM_DATA   (xrw): ORIGIN = 0x20000200, LENGTH = 0x00002E00
   CCMRAM      (rw): ORIGIN = 0x10000000, LENGTH = 0x00001000
 }
+
+_estack = ORIGIN(RAM_DATA) + LENGTH(RAM_DATA);
+
+_Min_Heap_Size = 0x1000;  /* 4 KiB */
+_Stack_Size = 0x800;     /* 2 KiB */
+
 
 SECTIONS {
   /* ========================= */
@@ -123,6 +124,13 @@ SECTIONS {
     . = ALIGN(4);
     _ebss = .;         /* define a global symbol at bss end */
     __bss_end__ = _ebss;
+  } >RAM_DATA
+
+  .noinit : {
+    . = ALIGN(4);
+    *(.noinit)
+    *(.noinit*)
+    . = ALIGN(4);
   } >RAM_DATA
 
   ._user_heap : {

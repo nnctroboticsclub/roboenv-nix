@@ -6,3 +6,4 @@ sed \
   -e "s|@HAL_LD@|$HAL_LD|g" \
   -e "s|@HAL_ROOT@|$HAL_ROOT|g" \
   -e "s|@HAL_DEPENDENCIES@|$HAL_DEPENDENCIES|g" \
+  -e "s|@LIB_NAME@|$LIB_NAME|g"

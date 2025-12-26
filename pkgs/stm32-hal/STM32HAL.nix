@@ -25,6 +25,7 @@ stdenv.mkDerivation {
     export HAL_LD=$out/lib/cmake/STM32HAL${target}.ld
     export HAL_ROOT=${src}
     export HAL_DEPENDENCIES='${dependencies}'
+    export LIB_NAME=STM32HAL${target}
 
     bash $src/cmake/STM32HALConfig.sh ${dependencies}> STM32HALConfig.cmake
   '';
