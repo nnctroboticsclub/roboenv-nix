@@ -1,0 +1,29 @@
+# StaticMbedOS v2.x.x Config file
+
+message(STATUS "Configuring StaticMbedOS-@MBED_TARGET@")
+
+if (NOT TARGET StaticMbedOS-@MBED_TARGET@_)
+  add_library(StaticMbedOS-@MBED_TARGET@_ STATIC IMPORTED)
+  set_target_properties(StaticMbedOS-@MBED_TARGET@_ PROPERTIES
+    IMPORTED_LINK_INTERFACE_LANGUAGES "CXX"
+    IMPORTED_LOCATION "@CMAKE_INSTALL_PREFIX@/lib/libstatic-mbed-os-@MBED_TARGET@.a"
+    INTERFACE_COMPILE_OPTIONS "@compile_options@"
+    INTERFACE_COMPILE_DEFINITIONS "@compile_definitions@"
+    INTERFACE_LINK_OPTIONS "@link_options@"
+  )
+endif()
+
+#* StaticMbedOS
+if(NOT TARGET StaticMbedOS-@MBED_TARGET@)
+  add_library(StaticMbedOS-@MBED_TARGET@ INTERFACE IMPORTED)
+  target_link_libraries(StaticMbedOS-@MBED_TARGET@ INTERFACE StaticMbedOS-@MBED_TARGET@_)
+  target_link_options(StaticMbedOS-@MBED_TARGET@ INTERFACE "SHELL:-Wl,--whole-archive $<TARGET_FILE:StaticMbedOS-@MBED_TARGET@_> -Wl,--no-whole-archive")
+  target_include_directories(StaticMbedOS-@MBED_TARGET@ INTERFACE "@include_directories@")
+endif()
+
+#* Utilities
+function(static_mbed_os_@MBED_TARGET_LOWER@_app_target target)
+  target_link_options(${target} PRIVATE "-T" "@linker_script_installation@")
+  set_property(TARGET ${target} APPEND PROPERTY LINK_DEPENDS "@linker_script_installation@")
+  target_include_directories(${target} PRIVATE "@include_directories@")
+endfunction()

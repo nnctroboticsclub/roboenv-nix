@@ -1,1 +1,0 @@
-include(StaticMbedOS-@MBED_TARGET@Config)
