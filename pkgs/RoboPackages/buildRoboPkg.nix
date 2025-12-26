@@ -3,24 +3,13 @@
   lib,
 }:
 {
-  pname ? "ikarashiCAN_mk2",
-  version ? "v1.0.0",
-  libSrc ? builtins.fetchGit {
-    url = "git@github.com:nnctroboticsclub/${pname}.git";
-    ref = version;
-    rev = "3f941b99b6cffd82d69da636d187eab3fec5ec2d";
-  },
-  libSources ? [
-    "${libSrc}/ikarashiCAN_mk2.cpp"
-  ],
-  libDependencies ? [ ],
-  extraDependencies ? [
-    "StaticMbedOS"
-  ],
-  libIncludes ? [
-    "${libSrc}"
-    "${libSrc}/NoMutexCAN-master"
-  ],
+  pname,
+  version,
+  libSrc,
+  libSources,
+  libDependencies ? [],
+  extraDependencies ? [],
+  libIncludes ? [ ],
 }:
 let
   libDeps = lib.concatLists [
