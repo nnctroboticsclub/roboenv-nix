@@ -1,9 +1,16 @@
-{ stdenv, gcc-arm-embedded }:
+{
+  gcc-arm-embedded,
+  stdenv,
+}:
 stdenv.mkDerivation {
   pname = "gcc-arm-toolchain";
   version = "0.1.0";
 
   src = ./.;
+
+  cmakeBuildInputs = [
+    gcc-arm-embedded
+  ]; # Mark as CMake package
 
   buildPhase =
     let
@@ -24,10 +31,7 @@ stdenv.mkDerivation {
       set(CMAKE_SIZE "${prefix}-size")
       set_property(GLOBAL PROPERTY ELF2BIN "${prefix}-objcopy")
 
-      set(CMAKE_C_COMPILER_TARGET arm-none-eabi)
-      set(CMAKE_CXX_COMPILER_TARGET arm-none-eabi)
-      set(CMAKE_ASM_COMPILER_TARGET arm-none-eabi)
-
+      set(USING_TOOLCHAIN "GNU")
       EOF
     '';
 
@@ -36,7 +40,4 @@ stdenv.mkDerivation {
 
     cp GccArmToolchain.cmake $out/lib/cmake
   '';
-}
-// {
-  cmakeBuildInputs = [ ];
 }
