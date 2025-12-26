@@ -1,13 +1,12 @@
-{ lib }:
+{ }:
 let
   collectCMakePackages =
     pkg:
-    if builtins.hasAttr "cmakeBuildInputs" pkg && lib.isDerivation pkg then
-      let
-        inputs = pkg.cmakeBuildInputs;
-        cmakeInputs = builtins.concatLists (map collectCMakePackages inputs);
-      in
-      cmakeInputs ++ [ pkg ]
+    if builtins.hasAttr "cmakeBuildInputs" pkg then
+      [ pkg ]
+      ++ builtins.concatLists (
+        map (subpkg: [ subpkg ] ++ collectCMakePackages subpkg) pkg.cmakeBuildInputs
+      )
     else
       [ ];
 in
