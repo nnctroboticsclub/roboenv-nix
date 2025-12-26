@@ -1,7 +1,9 @@
 {
   lib,
   stdenv,
+  cmake,
   collectCMakePackages,
+  ccache
 }:
 {
   cmakeBuildInputs ? [ ],
@@ -13,18 +15,25 @@
 let
   allCMakePackages = builtins.concatLists (map collectCMakePackages cmakeBuildInputs);
 
-  paths = map (p: "${p}/lib/cmake") allCMakePackages;
+  extraNativeBuildInputs = if lib.any (p: p == cmake) nativeBuildInputs then [ ] else [ cmake ];
+  nativeBuildInputsFinal = extraNativeBuildInputs ++ allCMakePackages ++ [ ccache ];
 
-  argModPath = lib.concatStringsSep ";" paths;
+  argModPath = lib.concatStringsSep ";" (map (p: "${p}/lib/cmake") allCMakePackages);
   extraCMakeFlags = [
     "-DCMAKE_MODULE_PATH=${argModPath}"
     "-DCMAKE_PREFIX_PATH=${argModPath}"
   ];
+
 in
 stdenv.mkDerivation (
   args
   // {
-    nativeBuildInputs = nativeBuildInputs ++ cmakeBuildInputs;
+    nativeBuildInputs = nativeBuildInputs ++ nativeBuildInputsFinal;
     cmakeFlags = cmakeFlags ++ extraCMakeFlags;
+
+    CCACHE_COMPRESS = 1;
+    CCACHE_SLOPPINESS = "random_seed";
+    CCACHE_DIR = "/nix/var/cache/ccache";
+    CCACHE_UMASK = "007";
   }
 )
