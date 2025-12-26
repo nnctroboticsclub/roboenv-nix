@@ -25,6 +25,11 @@
 
     in
     {
+      packages.${system} =
+      let
+        pkgsWithOverlay = pkgs.extend roboenv_overlay;
+      in
+        pkgs.lib.filterAttrs (name: _: ! builtins.hasAttr name pkgs) pkgsWithOverlay;
       overlays.default = roboenv_overlay;
     };
 }
