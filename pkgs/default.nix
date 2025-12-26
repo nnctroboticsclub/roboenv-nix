@@ -21,5 +21,7 @@ in
   inherit (STM32HALPackages) stm32-hal-f3xx stm32-hal-f4xx;
   inherit (StaticMbedOSPackages) static-mbed-os static-mbed-os-f446re static-mbed-os-f303k8;
 
+  roboenv = final.callPackage ./roboenv { };
+
   qemu-arm-xpack = final.callPackage ./qemu-arm-xpack { };
 }
