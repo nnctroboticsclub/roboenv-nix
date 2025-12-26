@@ -7,14 +7,17 @@ stdenv.mkDerivation rec {
   pname = "mbed-os";
   version = "0.2.0";
 
-  src = builtins.fetchGit {
+  src = ./.;
+  mbed-ce = builtins.fetchGit {
     url = "https://github.com/mbed-ce/mbed-os.git";
     ref = "master";
     rev = "4ba00162ba2d73c64583018983391e1dfeaee83d";
   };
 
+  cmakeBuildInputs = [ ]; # Mark as CMake package
+
   pythonEnv = python311.withPackages (ps: [
-    (roboPythonPackages.mbed_tools src)
+    (roboPythonPackages.mbed_tools mbed-ce)
     roboPythonPackages.cysecuretools_6_0_0
     roboPythonPackages.cryptography_36_0_1
   ]);
@@ -37,7 +40,7 @@ stdenv.mkDerivation rec {
     EOF
 
     cat <<EOF > $out/lib/cmake/Findmbed-ce.cmake
-    set(mbed-ce_SOURCE_DIR ${src})
+    set(mbed-ce_SOURCE_DIR ${mbed-ce})
 
     include(FindPackageHandleStandardArgs)
     find_package_handle_standard_args(mbed-ce
