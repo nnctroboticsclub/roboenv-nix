@@ -5,8 +5,6 @@ install(
   FILES
     Findcereal.cmake
     Findfmt.cmake
-    Findim920_rs.cmake
-    Findsrobo_base.cmake
     Findtcb_span.cmake
   DESTINATION lib/cmake
 )

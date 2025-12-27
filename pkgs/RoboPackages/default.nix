@@ -3,8 +3,8 @@ let
   buildRoboPkg = callPackage ./buildRoboPkg.nix { };
 in
 rec {
-  ikarashiCAN_mk2-NUCLEO_F303K8 = buildRoboPkg rec {
-    pname = "ikarashiCAN_mk2-NUCLEO_F303K8";
+  ikarashiCAN_mk2 = buildRoboPkg rec {
+    pname = "ikarashiCAN_mk2";
     version = "v1.0.0";
     libSrc = builtins.fetchGit {
       url = "git@github.com:nnctroboticsclub/ikarashiCAN_mk2.git";
@@ -15,20 +15,16 @@ rec {
       "${libSrc}/ikarashiCAN_mk2.cpp"
     ];
     libDependencies = [ ];
-    extraDependencies = ["StaticMbedOS-NUCLEO_F303K8"];
+    extraDependencies = [
+      "Nano::HW::CompatMbed"
+    ];
     libIncludes = [
       "${libSrc}"
       "${libSrc}/NoMutexCAN-master"
     ];
   };
-  ikarashiCAN_mk2-NUCLEO_F446RE = ikarashiCAN_mk2-NUCLEO_F303K8.overrideAttrs {
-    pname = "ikarashiCAN_mk2-NUCLEO_F446RE";
-    extraDependencies = ["StaticMbedOS-NUCLEO_F446RE"];
-  };
-
-
-  ikakoMDC-NUCLEO_F303K8 = buildRoboPkg rec {
-    pname = "ikakoMDC-NUCLEO_F303K8";
+  ikakoMDC = buildRoboPkg rec {
+    pname = "ikakoMDC";
     version = "v1.0.0";
     libSrc = builtins.fetchGit {
       url = "git@github.com:nnctroboticsclub/ikakoMDC.git";
@@ -39,22 +35,16 @@ rec {
       "${libSrc}/lpf/lpf.cpp"
       "${libSrc}/PID/PID.cpp"
     ];
-    libDependencies = [ ikarashiCAN_mk2-NUCLEO_F303K8 ];
-    extraDependencies = ["StaticMbedOS-NUCLEO_F303K8"];
+    libDependencies = [ ikarashiCAN_mk2 ];
+    extraDependencies = [ "Nano::HW::CompatMbed" ];
     libIncludes = [
       "${libSrc}"
       "${libSrc}/lpf"
       "${libSrc}/PID"
     ];
   };
-  ikakoMDC-NUCLEO_F446RE = ikakoMDC-NUCLEO_F303K8.overrideAttrs {
-    pname = "ikakoMDC-NUCLEO_F446RE";
-    libDependencies = [ ikarashiCAN_mk2-NUCLEO_F446RE ];
-    extraDependencies = ["StaticMbedOS-NUCLEO_F446RE"];
-  };
-
-  ikako_rohm_md-NUCLEO_F303K8 = buildRoboPkg rec {
-    pname = "ikako_rohm_md-NUCLEO_F303K8";
+  ikako_rohm_md = buildRoboPkg rec {
+    pname = "ikako_rohm_md";
     version = "v1.0.0";
     libSrc = builtins.fetchGit {
       url = "git@github.com:nnctroboticsclub/ikako_rohm_md.git";
@@ -63,19 +53,12 @@ rec {
     libSources = [
       "${libSrc}/rohm_md.cpp"
     ];
-    libDependencies = [ ikarashiCAN_mk2-NUCLEO_F303K8 ];
-    extraDependencies = ["StaticMbedOS-NUCLEO_F303K8"];
+    libDependencies = [ ikarashiCAN_mk2 ];
+    extraDependencies = [ "Nano::HW::CompatMbed" ];
     libIncludes = [ "${libSrc}" ];
   };
-
-  ikako_rohm_md-NUCLEO_F446RE = ikako_rohm_md-NUCLEO_F303K8.overrideAttrs {
-    pname = "ikako_rohm_md-NUCLEO_F446RE";
-    libDependencies = [ ikarashiCAN_mk2-NUCLEO_F446RE ];
-    extraDependencies = ["StaticMbedOS-NUCLEO_F446RE"];
-  };
-
-  MotorController-NUCLEO_F303K8 = buildRoboPkg rec {
-    pname = "MotorController-NUCLEO_F303K8";
+  MotorController = buildRoboPkg rec {
+    pname = "MotorController";
     version = "v1.0.0";
     libSrc = builtins.fetchGit {
       url = "git@github.com:nnctroboticsclub/MotorController.git";
@@ -87,8 +70,8 @@ rec {
       "${libSrc}/DisturbanceObserver/DOB.cpp"
       "${libSrc}/DisturbanceObserver/LowPassFilter/LowPassFilter.cpp"
     ];
-    libDependencies = [ ikarashiCAN_mk2-NUCLEO_F303K8 ];
-    extraDependencies = ["StaticMbedOS-NUCLEO_F303K8"];
+    libDependencies = [ ikarashiCAN_mk2 ];
+    extraDependencies = [ "Nano::HW::CompatMbed" ];
     libIncludes = [
       "${libSrc}"
       "${libSrc}/Ikako_PID"
@@ -96,15 +79,8 @@ rec {
       "${libSrc}/DisturbanceObserver/LowPassFilter"
     ];
   };
-
-  MotorController-NUCLEO_F446RE = MotorController-NUCLEO_F303K8.overrideAttrs {
-    pname = "MotorController-NUCLEO_F446RE";
-    libDependencies = [ ikarashiCAN_mk2-NUCLEO_F446RE ];
-    extraDependencies = ["StaticMbedOS-NUCLEO_F446RE"];
-  };
-
-  IkakoRobomas-NUCLEO_F303K8 = buildRoboPkg rec {
-    pname = "IkakoRobomas-NUCLEO_F303K8";
+  IkakoRobomas = buildRoboPkg rec {
+    pname = "IkakoRobomas";
     version = "v1.0.0";
     libSrc = builtins.fetchGit {
       url = "git@github.com:nnctroboticsclub/IkakoRobomas.git";
@@ -116,25 +92,16 @@ rec {
       "${libSrc}/ikako_robomas.cpp"
     ];
     libDependencies = [
-      ikarashiCAN_mk2-NUCLEO_F303K8
-      MotorController-NUCLEO_F303K8
+      ikarashiCAN_mk2
+      MotorController
     ];
     extraDependencies = [ ];
     libIncludes = [
       "${libSrc}"
     ];
   };
-
-  IkakoRobomas-NUCLEO_F446RE = IkakoRobomas-NUCLEO_F303K8.overrideAttrs {
-    pname = "IkakoRobomas-NUCLEO_F446RE";
-    libDependencies = [
-      ikarashiCAN_mk2-NUCLEO_F446RE
-      MotorController-NUCLEO_F446RE
-    ];
-  };
-
-  can_servo-NUCLEO_F303K8 = buildRoboPkg rec {
-    pname = "can_servo-NUCLEO_F303K8";
+  can_servo = buildRoboPkg rec {
+    pname = "can_servo";
     version = "v1.0.0";
     libSrc = builtins.fetchGit {
       url = "git@github.com:nnctroboticsclub/can_servo.git";
@@ -143,21 +110,14 @@ rec {
     libSources = [
       "${libSrc}/can_servo.cpp"
     ];
-    libDependencies = [ ikarashiCAN_mk2-NUCLEO_F303K8 ];
-    extraDependencies = ["StaticMbedOS-NUCLEO_F303K8"];
+    libDependencies = [ ikarashiCAN_mk2 ];
+    extraDependencies = [ "Nano::HW::CompatMbed" ];
     libIncludes = [
       "${libSrc}"
     ];
   };
-
-  can_servo-NUCLEO_F446RE = can_servo-NUCLEO_F303K8.overrideAttrs {
-    pname = "can_servo-NUCLEO_F446RE";
-    libDependencies = [ ikarashiCAN_mk2-NUCLEO_F446RE ];
-    extraDependencies = ["StaticMbedOS-NUCLEO_F446RE"];
-  };
-
-  Futaba_Puropo-NUCLEO_F303K8 = buildRoboPkg rec {
-    pname = "Futaba_Puropo-NUCLEO_F303K8";
+  Futaba_Puropo = buildRoboPkg rec {
+    pname = "Futaba_Puropo";
     version = "v1.0.0";
     libSrc = builtins.fetchGit {
       url = "git@github.com:nnctroboticsclub/Futaba_Puropo.git";
@@ -167,17 +127,11 @@ rec {
       "${libSrc}/puropo.cpp"
     ];
     libDependencies = [ ];
-    extraDependencies = ["StaticMbedOS-NUCLEO_F303K8"];
+    extraDependencies = [ "Nano::HW::CompatMbed" ];
     libIncludes = [ "${libSrc}" ];
   };
-
-  Futaba_Puropo-NUCLEO_F446RE = Futaba_Puropo-NUCLEO_F303K8.overrideAttrs {
-    pname = "Futaba_Puropo-NUCLEO_F446RE";
-    extraDependencies = ["StaticMbedOS-NUCLEO_F446RE"];
-  };
-
-  PS4_RX-NUCLEO_F303K8 = buildRoboPkg rec {
-    pname = "PS4_RX-NUCLEO_F303K8";
+  PS4_RX = buildRoboPkg rec {
+    pname = "PS4_RX";
     version = "v1.0.0";
     libSrc = builtins.fetchGit {
       url = "git@github.com:nnctroboticsclub/PS4_RX.git";
@@ -187,14 +141,29 @@ rec {
       "${libSrc}/PS4.cpp"
     ];
     libDependencies = [ ];
-    extraDependencies = ["StaticMbedOS-NUCLEO_F303K8"];
+    extraDependencies = [ "Nano::HW::CompatMbed" ];
     libIncludes = [ "${libSrc}" ];
   };
 
-  PS4_RX-NUCLEO_F446RE = PS4_RX-NUCLEO_F303K8.overrideAttrs {
-    pname = "PS4_RX-NUCLEO_F446RE";
-    extraDependencies = ["StaticMbedOS-NUCLEO_F446RE"];
+  club-legacy-libs = callPackage ./club-legacy-libs { };
+
+  srobo_base = buildRoboPkg rec {
+    pname = "srobo_base";
+    version = "v1.0.0";
+    libSrc = builtins.fetchGit {
+      url = "git@github.com:nnctroboticsclub/srobo_base.git";
+      rev = "02a4a075264872246d83f3592f32fe59d1c858f6";
+    };
+    cmakeCompatible = true;
   };
 
-  club-legacy-libs = callPackage ./club-legacy-libs { };
+  im920_rs = buildRoboPkg rec {
+    pname = "im920_rs";
+    version = "v1.0.0";
+    libSrc = builtins.fetchGit {
+      url = "git@github.com:nnctroboticsclub/im920_rs.git";
+      rev = "2901c4ead3e00257d13c7344183c331147c9f36c";
+    };
+    cmakeCompatible = true;
+  };
 }

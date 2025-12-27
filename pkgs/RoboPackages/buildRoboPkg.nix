@@ -6,30 +6,36 @@
   pname,
   version,
   libSrc,
-  libSources,
+
+  # CMake Wrapper
+  libSources ? [ ],
+  libIncludes ? [ ],
   libDependencies ? [],
   extraDependencies ? [],
-  libIncludes ? [ ],
+
+  # CMake Compat
+  cmakeCompatible ? false,
 }:
-let
-  libDeps = lib.concatLists [
-    (lib.map (d: d.pname) libDependencies)
-    extraDependencies
-  ];
-in
 stdenv.mkDerivation {
   inherit pname version;
   src = ./.;
 
   LIB_NAME = pname;
+
+  LIB_ROOT = libSrc;
   LIB_SRC = lib.concatStringsSep ";" libSources;
   LIB_INCLUDE = lib.concatStringsSep ";" libIncludes;
-  LIB_DEPS = lib.concatStringsSep ";" libDeps;
+  LIB_DEPS = lib.concatStringsSep ";" (lib.concatLists [
+    (lib.map (d: d.pname) libDependencies)
+    extraDependencies
+  ]);
 
   cmakeBuildInputs = libDependencies;
 
-  buildPhase = ''
-    bash build.sh > ${pname}Config.cmake
+  buildPhase = if cmakeCompatible then ''
+    bash build-cmake-compat.sh > ${pname}Config.cmake
+  '' else ''
+    bash build-cmake-wrapper.sh > ${pname}Config.cmake
   '';
   installPhase = ''
     mkdir -p $out/lib/cmake/${pname}

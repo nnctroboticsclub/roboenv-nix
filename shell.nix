@@ -53,23 +53,16 @@ roboenv {
   libraries = [
     roboPackages.club-legacy-libs
 
-    roboPackages.ikarashiCAN_mk2-NUCLEO_F303K8
-    roboPackages.ikakoMDC-NUCLEO_F303K8
-    roboPackages.ikako_rohm_md-NUCLEO_F303K8
-    roboPackages.MotorController-NUCLEO_F303K8
-    roboPackages.IkakoRobomas-NUCLEO_F303K8
-    roboPackages.can_servo-NUCLEO_F303K8
-    roboPackages.Futaba_Puropo-NUCLEO_F303K8
-    roboPackages.PS4_RX-NUCLEO_F303K8
-
-    roboPackages.ikarashiCAN_mk2-NUCLEO_F446RE
-    roboPackages.ikakoMDC-NUCLEO_F446RE
-    roboPackages.ikako_rohm_md-NUCLEO_F446RE
-    roboPackages.MotorController-NUCLEO_F446RE
-    roboPackages.IkakoRobomas-NUCLEO_F446RE
-    roboPackages.can_servo-NUCLEO_F446RE
-    roboPackages.Futaba_Puropo-NUCLEO_F446RE
-    roboPackages.PS4_RX-NUCLEO_F446RE
+    roboPackages.srobo_base
+    roboPackages.im920_rs
+    roboPackages.ikarashiCAN_mk2
+    roboPackages.ikakoMDC
+    roboPackages.ikako_rohm_md
+    roboPackages.MotorController
+    roboPackages.IkakoRobomas
+    roboPackages.can_servo
+    roboPackages.Futaba_Puropo
+    roboPackages.PS4_RX
   ];
 
   # 追加のビルド入力 (これに限り default.nix で処理される)
