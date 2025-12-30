@@ -1,5 +1,5 @@
 {
-  stdenv,
+  rlib,
   cmake,
 
   cmake-libs,
@@ -13,7 +13,7 @@ let
   };
 in
 
-stdenv.mkDerivation {
+rlib.buildCMakeProject {
   pname = "CMSIS5";
   version = "0.1.0";
 
@@ -33,13 +33,4 @@ stdenv.mkDerivation {
     gcc-arm-toolchain
     cmake-libs
   ];
-
-  # Ensure that dependent packages can find the CMake modules
-  postInstall = ''
-    mkdir -p $out/nix-support
-    echo "export CMAKE_MODULE_PATH=\''${CMAKE_MODULE_PATH:+\$CMAKE_MODULE_PATH:}$out/lib/cmake" >> $out/nix-support/setup-hook
-  '';
-
-  # Debug
-  buildFlags = [ "VERBOSE=1" ];
 }

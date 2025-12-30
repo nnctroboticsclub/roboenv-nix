@@ -66,7 +66,7 @@ define_cmsis_component(
 # Targets
 install(
     EXPORT ${CMSIS_EXPORT_NAME}
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/CMSIS5
     NAMESPACE CMSIS5::
     FILE CMSIS5Targets.cmake
 )
@@ -76,9 +76,9 @@ include(CMakePackageConfigHelpers)
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/CMSIS5Config.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/CMSIS5Config.cmake"
-    INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
+    INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/CMSIS5
 )
 install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/CMSIS5Config.cmake"
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/CMSIS5
 )

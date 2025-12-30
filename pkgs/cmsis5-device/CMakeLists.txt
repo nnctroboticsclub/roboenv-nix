@@ -4,7 +4,8 @@ cmake_policy(VERSION 3.19)
 set(PROJECT_NAME CMSIS5Device${BuildTarget})
 
 project(${PROJECT_NAME} VERSION 1.0.0 LANGUAGES C CXX)
-find_package(CMSIS5 REQUIRED)
+
+find_package(CMSIS5 REQUIRED CONFIG)
 
 set(CMSIS_EXPORT_NAME "${PROJECT_NAME}Targets")
 
@@ -37,7 +38,7 @@ install(TARGETS ${BuildTarget}
 # Targets
 install(
     EXPORT ${CMSIS_EXPORT_NAME}
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
     NAMESPACE CMSIS5::Device::
     FILE ${PROJECT_NAME}Targets.cmake
 )
@@ -47,9 +48,9 @@ include(CMakePackageConfigHelpers)
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/CMSIS5Device.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
-    INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
+    INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
 )
 install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
 )

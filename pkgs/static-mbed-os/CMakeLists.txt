@@ -306,7 +306,7 @@ configure_file(
 install(
   FILES
     ${CMAKE_CURRENT_BINARY_DIR}/cmake/StaticMbedOS-${MBED_TARGET}Config.cmake
-  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/StaticMbedOS-${MBED_TARGET}
 )
 
 if (${SMO_V1_COMPAT})
@@ -330,6 +330,6 @@ if (${SMO_V1_COMPAT})
   install(
     FILES
       ${CMAKE_CURRENT_BINARY_DIR}/cmake/StaticMbedOSConfig.cmake
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/StaticMbedOS-${MBED_TARGET}
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/StaticMbedOS
   )
 endif()
