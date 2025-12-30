@@ -1,36 +1,17 @@
 {
-  pkgs,
+  config,
+  lib,
   rlib,
   ...
 }:
-
-libraries:
-
-let
-  # CMake パッケージを収集
-  cmakePackages = builtins.concatLists (map rlib.collectCMakePackages libraries);
-
-  # roboenv パッケージを作成
-  roboPkg =
-    if libraries != [ ] then
-      pkgs.symlinkJoin {
-        name = "roboenv-libraries";
-        paths = cmakePackages;
-      }
-    else
-      null;
-
-in
 {
-  buildInputs = libraries;
+  options.libraries = lib.mkOption {
+    type = lib.types.listOf lib.types.package;
+    default = [ ];
+    description = "List of libraries to include";
+  };
 
-  shellHook =
-    if roboPkg != null then
-      ''
-        # Libraries environment setup
-        export CMAKE_PREFIX_PATH="''${CMAKE_PREFIX_PATH:+$CMAKE_PREFIX_PATH;}${roboPkg}/lib/cmake"
-        export CMAKE_MODULE_PATH="''${CMAKE_MODULE_PATH:+$CMAKE_MODULE_PATH;}${roboPkg}/lib/cmake"
-      ''
-    else
-      "";
+  config = {
+    cmakeInputs = builtins.concatLists (map rlib.collectCMakePackages config.libraries);
+  };
 }

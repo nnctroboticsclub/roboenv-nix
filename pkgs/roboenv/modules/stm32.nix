@@ -1,29 +1,29 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  options.STM32 = {
+    enable = lib.mkEnableOption "STM32 support";
 
-config:
+    emulator = lib.mkOption {
+      type = lib.types.nullOr (lib.types.enum [ "qemu-arm-xpack" ]);
+      default = null;
+      description = "The STM32 emulator to use";
+    };
+  };
 
-let
-  stm32Packages =
-    with pkgs;
-    [
-      stlink
+  config = lib.mkIf config.STM32.enable {
+    buildInputs = [
+      pkgs.stlink
     ]
-    ++ lib.optional (config.emulator != null) (
-      if config.emulator == "qemu-arm-xpack" then
+    ++ lib.optional (config.STM32.emulator != null) (
+      if config.STM32.emulator == "qemu-arm-xpack" then
         pkgs.qemu-arm-xpack
       else
-        throw "Unknown STM32 emulator: ${config.emulator}"
+        throw "Unknown STM32 emulator: ${config.STM32.emulator}"
     );
-
-in
-{
-  buildInputs = if config.enable then stm32Packages else [ ];
-
-  shellHook =
-    if config.enable then
-      ''
-        # STM32 environment setup
-      ''
-    else
-      "";
+  };
 }
