@@ -19,9 +19,11 @@ let
   nativeBuildInputsFinal = extraNativeBuildInputs ++ allCMakePackages ++ [ ccache ];
 
   argModPath = lib.concatStringsSep ";" (map (p: "${p}/lib/cmake") allCMakePackages);
-  extraCMakeFlags = [
+  argPrefixPath = lib.concatStringsSep ";" (map (p: "${p}") allCMakePackages);
+
+  extraCMakeFlags = lib.optionals (allCMakePackages != [ ]) [
     "-DCMAKE_MODULE_PATH=${argModPath}"
-    "-DCMAKE_PREFIX_PATH=${argModPath}"
+    "-DCMAKE_PREFIX_PATH=${argPrefixPath}"
   ];
 
 in
