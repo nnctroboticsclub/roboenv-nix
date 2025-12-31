@@ -21,3 +21,8 @@ if(CCACHE_PROGRAM)
   set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}" CACHE STRING "CXX Compiler Launcher" FORCE)
   set(CMAKE_ASM_COMPILER_LAUNCHER "${CCACHE_PROGRAM}" CACHE STRING "ASM Compiler Launcher" FORCE)
 endif()
+
+#* Chain loading toolchain file
+if(DEFINED ROBO_TOOLCHAIN_FILE)
+  include(${ROBO_TOOLCHAIN_FILE})
+endif()
