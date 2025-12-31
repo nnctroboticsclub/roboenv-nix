@@ -1,7 +1,7 @@
 {
   config,
   lib,
-  pkgs,
+  roboenvScope,
   ...
 }:
 {
@@ -47,15 +47,15 @@
       frameworkPackages = map (
         fw:
         if fw.type == "StaticMbedOS" then
-          pkgs.static-mbed-os {
+          roboenvScope.static-mbed-os {
             pname = "static-mbed-os-${lib.toLower fw.mbedTarget}";
             mbedTarget = fw.mbedTarget;
           }
         else if fw.type == "STM32HAL" then
           if fw.family == "f3" then
-            pkgs.stm32-hal-f3xx
+            roboenvScope.stm32-hal-f3xx
           else if fw.family == "f4" then
-            pkgs.stm32-hal-f4xx
+            roboenvScope.stm32-hal-f4xx
           else
             throw "Unknown STM32 family: ${fw.family}"
         else

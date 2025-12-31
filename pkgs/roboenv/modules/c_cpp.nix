@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  roboenvScope,
   ...
 }:
 let
@@ -59,10 +60,10 @@ in
       cmake-loader
     ]
     ++ (lib.optionals (config.c_cpp.toolchain == "clang") [
-      pkgs.clang-arm-toolchain
+      roboenvScope.clang-arm-toolchain
     ])
     ++ (lib.optionals (config.c_cpp.toolchain == "gcc") [
-      pkgs.gcc-arm-toolchain
+      roboenvScope.gcc-arm-toolchain
     ]);
 
     env.LIBCLANG_PATH = lib.optionalString (

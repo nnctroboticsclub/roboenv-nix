@@ -2,6 +2,7 @@
   lib,
   pkgs,
   rlib,
+  roboenvScope,
   ...
 }:
 
@@ -18,7 +19,7 @@ let
       ./modules/frameworks.nix
       ./modules/libraries.nix
       # ユーザー設定
-      { _module.args = { inherit pkgs rlib; }; }
+      { _module.args = { inherit pkgs rlib roboenvScope; }; }
       config
     ];
   };

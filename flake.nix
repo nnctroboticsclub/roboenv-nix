@@ -14,22 +14,38 @@
     let
       system = "x86_64-linux";
 
-      pkgs = import nixpkgs {
-        inherit system;
-      };
-
-      roboenv_overlay = pkgs.lib.composeManyExtensions [
-        (import rust-overlay)
-        (import ./pkgs/default.nix)
-      ];
+      importable = args: import ./pkgs args;
 
     in
     {
-      packages.${system} =
-      let
-        pkgsWithOverlay = pkgs.extend roboenv_overlay;
-      in
-        pkgs.lib.filterAttrs (name: _: ! builtins.hasAttr name pkgs) pkgsWithOverlay;
-      overlays.default = roboenv_overlay;
+      legacyPackages.${system} = importable {
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [ rust-overlay.overlays.default ];
+        };
+        lib = nixpkgs.lib;
+      };
+
+      devShells.${system}.default =
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+            overlays = [ rust-overlay.overlays.default ];
+          };
+          roboenvPackages = importable {
+            inherit pkgs;
+            lib = nixpkgs.lib;
+          };
+        in
+        pkgs.callPackage ./shell.nix {
+          inherit (roboenvPackages) roboenv roboPackages cmake-libs;
+        };
+
+      overlays.default =
+        final: prev:
+        importable {
+          pkgs = final;
+          lib = final.lib;
+        };
     };
 }

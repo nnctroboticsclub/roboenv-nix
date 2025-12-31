@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  roboenvScope,
   ...
 }:
 {
@@ -21,7 +22,7 @@
     ]
     ++ lib.optional (config.STM32.emulator != null) (
       if config.STM32.emulator == "qemu-arm-xpack" then
-        pkgs.qemu-arm-xpack
+        roboenvScope.qemu-arm-xpack
       else
         throw "Unknown STM32 emulator: ${config.STM32.emulator}"
     );
