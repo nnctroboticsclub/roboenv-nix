@@ -30,6 +30,7 @@ lib.makeScope pkgs.newScope (
     cmake-libs = self.callPackage ./cmake-libs { };
     gcc-arm-toolchain = self.callPackage ./gcc-arm-toolchain { };
     clang-arm-toolchain = self.callPackage ./clang-arm-toolchain { };
+    clang-toolchain = self.callPackage ./clang-toolchain { };
 
     # Mbed と CMSIS
     mbed-os = self.callPackage ./mbed-os { };
