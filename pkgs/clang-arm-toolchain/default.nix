@@ -1,6 +1,6 @@
 {
   stdenv,
-  llvmPackages_19,
+  llvmPackages_21,
   gcc-arm-embedded,
 }:
 let
@@ -17,7 +17,7 @@ let
       cat $src/ClangArmToolchain.cmake \
         | sed \
             -e 's|@ArmToolchainDir@|${gcc-arm-embedded}|g' \
-            -e 's|@ClangRootDir@|${llvmPackages_19.clang-unwrapped}|g' \
+            -e 's|@ClangRootDir@|${llvmPackages_21.clang-unwrapped}|g' \
         > ClangArmToolchain.cmake \
         || echo "Error processing ClangArmToolchain.cmake"
     '';

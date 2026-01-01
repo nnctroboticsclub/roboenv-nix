@@ -1,6 +1,6 @@
 {
   stdenv,
-  llvmPackages_19,
+  llvmPackages_21,
 }:
 let
   drv = stdenv.mkDerivation {
@@ -15,7 +15,7 @@ let
       echo "Building Clang Toolchain"
       cat $src/ClangToolchain.cmake \
         | sed \
-            -e 's|@ClangRootDir@|${llvmPackages_19.clang-unwrapped}|g' \
+            -e 's|@ClangRootDir@|${llvmPackages_21.clang}|g' \
         > ClangToolchain.cmake \
         || echo "Error processing ClangToolchain.cmake"
     '';

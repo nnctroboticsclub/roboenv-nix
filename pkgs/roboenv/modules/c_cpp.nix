@@ -43,11 +43,11 @@ in
       pkgs.gcc-arm-embedded
     ]
     ++ (lib.optionals (config.c_cpp.toolchain == "clang") [
-      pkgs.llvmPackages_19.bintools
-      pkgs.llvmPackages_19.clang
-      pkgs.llvmPackages_19.clang-tools
-      pkgs.llvmPackages_19.llvm
-      pkgs.llvmPackages_19.libclang.lib
+      pkgs.llvmPackages_21.bintools
+      pkgs.llvmPackages_21.clang
+      pkgs.llvmPackages_21.clang-tools
+      pkgs.llvmPackages_21.llvm
+      pkgs.llvmPackages_21.libclang.lib
     ])
     ++ (lib.optionals (config.c_cpp.toolchain == "gcc") [
       pkgs.gcc-arm-embedded
@@ -68,7 +68,7 @@ in
 
     env.LIBCLANG_PATH = lib.optionalString (
       config.c_cpp.toolchain == "clang"
-    ) "${pkgs.llvmPackages_19.libclang.lib}/lib";
+    ) "${pkgs.llvmPackages_21.libclang.lib}/lib";
 
     env.CCACHE_COMPRESS = lib.optionalString (config.c_cpp.cache == "ccache") "1";
     env.CCACHE_SLOPPINESS = lib.optionalString (config.c_cpp.cache == "ccache") "random_seed";
