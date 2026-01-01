@@ -5,11 +5,11 @@ set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
 set(CMAKE_C_COMPILER_TARGET arm-none-eabi)
 set(CMAKE_C_COMPILER "@ClangRootDir@/bin/clang")
-set(CMAKE_C_FLAGS_INIT "-fshort-enums")
+set(CMAKE_C_FLAGS_INIT "-fshort-enums --sysroot=@ArmToolchainDir@/arm-none-eabi")
 
 set(CMAKE_CXX_COMPILER_TARGET arm-none-eabi)
 set(CMAKE_CXX_COMPILER "@ClangRootDir@/bin/clang++")
-set(CMAKE_CXX_FLAGS_INIT "-fshort-enums")
+set(CMAKE_CXX_FLAGS_INIT "-fshort-enums --sysroot=@ArmToolchainDir@/arm-none-eabi -isystem @ArmToolchainDir@/arm-none-eabi/include/c++/@CXXVersion@ -isystem @ArmToolchainDir@/arm-none-eabi/include/c++/@CXXVersion@/arm-none-eabi")
 
 set(CMAKE_ASM_COMPILER "@ArmToolchainDir@/bin/arm-none-eabi-gcc")
 
@@ -27,12 +27,12 @@ set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 # ------------------------------------------------------------------------------
 include_directories(SYSTEM
     "@ArmToolchainDir@/include"
-    "@ArmToolchainDir@/arm-none-eabi/include/c++/14.2.1/backward"
-    "@ArmToolchainDir@/arm-none-eabi/include/c++/14.2.1/arm-none-eabi"
-    "@ArmToolchainDir@/arm-none-eabi/include/c++/14.2.1"
+    "@ArmToolchainDir@/arm-none-eabi/include/c++/@CXXVersion@/backward"
+    "@ArmToolchainDir@/arm-none-eabi/include/c++/@CXXVersion@/arm-none-eabi"
+    "@ArmToolchainDir@/arm-none-eabi/include/c++/@CXXVersion@"
     "@ArmToolchainDir@/arm-none-eabi/include"
-    "@ArmToolchainDir@/lib/gcc/arm-none-eabi/14.2.1/include-fixed"
-    "@ArmToolchainDir@/lib/gcc/arm-none-eabi/14.2.1/include"
+    "@ArmToolchainDir@/lib/gcc/arm-none-eabi/@CXXVersion@/include-fixed"
+    "@ArmToolchainDir@/lib/gcc/arm-none-eabi/@CXXVersion@/include"
 )
 
 set(CMAKE_CXX_LINK_EXECUTABLE "@ArmToolchainDir@/bin/arm-none-eabi-g++ <CMAKE_CXX_LINK_FLAGS> <LINK_FLAGS> <OBJECTS> -o <TARGET> <LINK_LIBRARIES>")

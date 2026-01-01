@@ -14,10 +14,14 @@ let
 
     buildPhase = ''
       echo "Building Clang Arm Toolchain"
+
+      CXX_VERSION=$(ls ${gcc-arm-embedded}/arm-none-eabi/include/c++/ | head -1)
+
       cat $src/ClangArmToolchain.cmake \
         | sed \
             -e 's|@ArmToolchainDir@|${gcc-arm-embedded}|g' \
             -e 's|@ClangRootDir@|${llvmPackages_21.clang-unwrapped}|g' \
+            -e "s|@CXXVersion@|$CXX_VERSION|g" \
         > ClangArmToolchain.cmake \
         || echo "Error processing ClangArmToolchain.cmake"
     '';

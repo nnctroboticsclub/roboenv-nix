@@ -1,5 +1,5 @@
 {
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/25.05";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/release-25.11";
   inputs.rust-overlay = {
     url = "github:oxalica/rust-overlay";
     inputs.nixpkgs.follows = "nixpkgs";

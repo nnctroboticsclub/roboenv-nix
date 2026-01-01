@@ -41,7 +41,9 @@ buildPythonPackage {
 
   dependencies = [
     intelhex
-    python-jose
+    (python-jose.overridePythonAttrs {
+      dependencies = [ cryptography_36_0_1 ];
+    })
     jsonschema
     cbor
     packaging_21_3
