@@ -44,8 +44,8 @@ in
     ]
     ++ (lib.optionals (config.c_cpp.toolchain == "clang") [
       pkgs.llvmPackages_21.bintools
-      pkgs.llvmPackages_21.clang
       pkgs.llvmPackages_21.clang-tools
+      pkgs.llvmPackages_21.clang
       pkgs.llvmPackages_21.llvm
       pkgs.llvmPackages_21.libclang.lib
     ])
