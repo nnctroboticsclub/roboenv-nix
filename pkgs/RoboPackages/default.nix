@@ -1,5 +1,6 @@
 {
   callPackage,
+  cPkgs,
 }:
 let
   buildRoboPkg = callPackage ./buildRoboPkg.nix { };
@@ -8,10 +9,7 @@ rec {
   ikarashiCAN_mk2 = buildRoboPkg rec {
     pname = "ikarashiCAN_mk2";
     version = "v1.0.0";
-    libSrc = fetchGit {
-      url = "git@github.com:nnctroboticsclub/ikarashiCAN_mk2.git";
-      rev = "3f941b99b6cffd82d69da636d187eab3fec5ec2d";
-    };
+    libSrc = cPkgs.ikarashiCAN_mk2;
     libSources = [
       "${libSrc}/ikarashiCAN_mk2.cpp"
     ];
@@ -25,10 +23,7 @@ rec {
   ikakoMDC = buildRoboPkg rec {
     pname = "ikakoMDC";
     version = "v1.0.0";
-    libSrc = fetchGit {
-      url = "git@github.com:nnctroboticsclub/ikakoMDC.git";
-      rev = "156c6f30ca7d5d96542bae1edf4bad3487494c7a";
-    };
+    libSrc = cPkgs.ikakoMDC;
     libSources = [
       "${libSrc}/ikakoMDC.cpp"
       "${libSrc}/lpf/lpf.cpp"
@@ -45,10 +40,7 @@ rec {
   ikako_rohm_md = buildRoboPkg rec {
     pname = "ikako_rohm_md";
     version = "v1.0.0";
-    libSrc = fetchGit {
-      url = "git@github.com:nnctroboticsclub/ikako_rohm_md.git";
-      rev = "a39a09aa3014ed3c19aa81cfdbb309d3503aa98b";
-    };
+    libSrc = cPkgs.ikako_rohm_md;
     libSources = [
       "${libSrc}/rohm_md.cpp"
     ];
@@ -59,10 +51,7 @@ rec {
   MotorController = buildRoboPkg rec {
     pname = "MotorController";
     version = "v1.0.0";
-    libSrc = fetchGit {
-      url = "git@github.com:nnctroboticsclub/MotorController.git";
-      rev = "aba526174f61a2b4e126b0bfa83311e292849e0e";
-    };
+    libSrc = cPkgs.MotorController;
     libSources = [
       "${libSrc}/MotorController.cpp"
       "${libSrc}/Ikako_PID/ikako_PID.cpp"
@@ -81,10 +70,7 @@ rec {
   IkakoRobomas = buildRoboPkg rec {
     pname = "IkakoRobomas";
     version = "v1.0.0";
-    libSrc = fetchGit {
-      url = "git@github.com:nnctroboticsclub/IkakoRobomas.git";
-      rev = "98336d610bb255c57565b571e47c404c0070d49d";
-    };
+    libSrc = cPkgs.IkakoRobomas;
     libSources = [
       "${libSrc}/ikako_m2006.cpp"
       "${libSrc}/ikako_m3508.cpp"
@@ -102,10 +88,7 @@ rec {
   can_servo = buildRoboPkg rec {
     pname = "can_servo";
     version = "v1.0.0";
-    libSrc = fetchGit {
-      url = "git@github.com:nnctroboticsclub/can_servo.git";
-      rev = "e68a8af81d92ede8c92f08270f93f54c58aa22ac";
-    };
+    libSrc = cPkgs.can_servo;
     libSources = [
       "${libSrc}/can_servo.cpp"
     ];
@@ -118,10 +101,7 @@ rec {
   Futaba_Puropo = buildRoboPkg rec {
     pname = "Futaba_Puropo";
     version = "v1.0.0";
-    libSrc = fetchGit {
-      url = "git@github.com:nnctroboticsclub/Futaba_Puropo.git";
-      rev = "2e5d6d59754e0f4622dc85e7a4ccaf80a666e47b";
-    };
+    libSrc = cPkgs.Futaba_Puropo;
     libSources = [
       "${libSrc}/puropo.cpp"
     ];
@@ -132,10 +112,7 @@ rec {
   PS4_RX = buildRoboPkg rec {
     pname = "PS4_RX";
     version = "v1.0.0";
-    libSrc = fetchGit {
-      url = "git@github.com:nnctroboticsclub/PS4_RX.git";
-      rev = "0aca1751a597c3687bb994fff6c9b282ead224a0";
-    };
+    libSrc = cPkgs.PS4_RX;
     libSources = [
       "${libSrc}/PS4.cpp"
     ];
@@ -149,20 +126,14 @@ rec {
   srobo_base = buildRoboPkg {
     pname = "srobo_base";
     version = "v1.0.0";
-    libSrc = fetchGit {
-      url = "git@github.com:nnctroboticsclub/srobo_base.git";
-      rev = "ecb75beae7ff503a26ce737951817ec6df0cd176";
-    };
+    libSrc = cPkgs.srobo_base;
     cmakeCompatible = true;
   };
 
   im920_rs = buildRoboPkg {
     pname = "im920_rs";
     version = "v1.0.0";
-    libSrc = fetchGit {
-      url = "git@github.com:nnctroboticsclub/im920_rs.git";
-      rev = "fdde2c3a0a6591a6e8f294c49e550779eca69761";
-    };
+    libSrc = cPkgs.im920_rs;
     cmakeCompatible = true;
   };
 }

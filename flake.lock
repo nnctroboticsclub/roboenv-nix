@@ -1,5 +1,131 @@
 {
   "nodes": {
+    "Futaba_Puropo": {
+      "flake": false,
+      "locked": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/Futaba_Puropo.git",
+        "rev": "2e5d6d59754e0f4622dc85e7a4ccaf80a666e47b",
+        "type": "path"
+      },
+      "original": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/Futaba_Puropo.git",
+        "rev": "2e5d6d59754e0f4622dc85e7a4ccaf80a666e47b",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "IkakoRobomas": {
+      "flake": false,
+      "locked": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/IkakoRobomas.git",
+        "rev": "98336d610bb255c57565b571e47c404c0070d49d",
+        "type": "path"
+      },
+      "original": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/IkakoRobomas.git",
+        "rev": "98336d610bb255c57565b571e47c404c0070d49d",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "MotorController": {
+      "flake": false,
+      "locked": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/MotorController.git",
+        "rev": "aba526174f61a2b4e126b0bfa83311e292849e0e",
+        "type": "path"
+      },
+      "original": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/MotorController.git",
+        "rev": "aba526174f61a2b4e126b0bfa83311e292849e0e",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "PS4_RX": {
+      "flake": false,
+      "locked": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/PS4_RX.git",
+        "rev": "0aca1751a597c3687bb994fff6c9b282ead224a0",
+        "type": "path"
+      },
+      "original": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/PS4_RX.git",
+        "rev": "0aca1751a597c3687bb994fff6c9b282ead224a0",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "can_servo": {
+      "flake": false,
+      "locked": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/can_servo.git",
+        "rev": "e68a8af81d92ede8c92f08270f93f54c58aa22ac",
+        "type": "path"
+      },
+      "original": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/can_servo.git",
+        "rev": "e68a8af81d92ede8c92f08270f93f54c58aa22ac",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "ikakoMDC": {
+      "flake": false,
+      "locked": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/ikakoMDC.git",
+        "rev": "156c6f30ca7d5d96542bae1edf4bad3487494c7a",
+        "type": "path"
+      },
+      "original": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/ikakoMDC.git",
+        "rev": "156c6f30ca7d5d96542bae1edf4bad3487494c7a",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "ikako_rohm_md": {
+      "flake": false,
+      "locked": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/ikako_rohm_md.git",
+        "rev": "a39a09aa3014ed3c19aa81cfdbb309d3503aa98b",
+        "type": "path"
+      },
+      "original": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/ikako_rohm_md.git",
+        "rev": "a39a09aa3014ed3c19aa81cfdbb309d3503aa98b",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "ikarashiCAN_mk2": {
+      "flake": false,
+      "locked": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/ikarashiCAN_mk2.git",
+        "rev": "3f941b99b6cffd82d69da636d187eab3fec5ec2d",
+        "type": "path"
+      },
+      "original": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/ikarashiCAN_mk2.git",
+        "rev": "3f941b99b6cffd82d69da636d187eab3fec5ec2d",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "im920_rs": {
+      "flake": false,
+      "locked": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/im920_rs.git",
+        "rev": "fdde2c3a0a6591a6e8f294c49e550779eca69761",
+        "type": "path"
+      },
+      "original": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/im920_rs.git",
+        "rev": "fdde2c3a0a6591a6e8f294c49e550779eca69761",
+        "type": "path"
+      },
+      "parent": []
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1767259999,
@@ -18,8 +144,18 @@
     },
     "root": {
       "inputs": {
+        "Futaba_Puropo": "Futaba_Puropo",
+        "IkakoRobomas": "IkakoRobomas",
+        "MotorController": "MotorController",
+        "PS4_RX": "PS4_RX",
+        "can_servo": "can_servo",
+        "ikakoMDC": "ikakoMDC",
+        "ikako_rohm_md": "ikako_rohm_md",
+        "ikarashiCAN_mk2": "ikarashiCAN_mk2",
+        "im920_rs": "im920_rs",
         "nixpkgs": "nixpkgs",
-        "rust-overlay": "rust-overlay"
+        "rust-overlay": "rust-overlay",
+        "srobo_base": "srobo_base"
       }
     },
     "rust-overlay": {
@@ -41,6 +177,20 @@
         "repo": "rust-overlay",
         "type": "github"
       }
+    },
+    "srobo_base": {
+      "flake": false,
+      "locked": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/srobo_base.git",
+        "rev": "ecb75beae7ff503a26ce737951817ec6df0cd176",
+        "type": "path"
+      },
+      "original": {
+        "path": "git+ssh://git@github.com:nnctroboticsclub/srobo_base.git",
+        "rev": "ecb75beae7ff503a26ce737951817ec6df0cd176",
+        "type": "path"
+      },
+      "parent": []
     }
   },
   "root": "root",

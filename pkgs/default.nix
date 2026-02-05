@@ -1,9 +1,13 @@
-{ pkgs, lib }:
+{
+  pkgs,
+  lib,
+  cPkgs,
+}:
 
 lib.makeScope pkgs.newScope (
   self:
   let
-    roboPackagesSet = pkgs.callPackage ./RoboPackages { };
+    roboPackagesSet = pkgs.callPackage ./RoboPackages { inherit cPkgs; };
   in
   {
     # rlib: 内部ライブラリ関数
