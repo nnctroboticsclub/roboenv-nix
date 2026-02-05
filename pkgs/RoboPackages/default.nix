@@ -1,4 +1,6 @@
-{ callPackage }:
+{
+  callPackage,
+}:
 let
   buildRoboPkg = callPackage ./buildRoboPkg.nix { };
 in
@@ -6,18 +8,15 @@ rec {
   ikarashiCAN_mk2 = buildRoboPkg rec {
     pname = "ikarashiCAN_mk2";
     version = "v1.0.0";
-    libSrc = builtins.fetchGit {
+    libSrc = fetchGit {
       url = "git@github.com:nnctroboticsclub/ikarashiCAN_mk2.git";
-      ref = version;
       rev = "3f941b99b6cffd82d69da636d187eab3fec5ec2d";
     };
     libSources = [
       "${libSrc}/ikarashiCAN_mk2.cpp"
     ];
     libDependencies = [ ];
-    extraDependencies = [
-      "Nano::HW::CompatMbed"
-    ];
+    libNameonlyDependencies = [ "Nano::NanoHW_MbedIF" ];
     libIncludes = [
       "${libSrc}"
       "${libSrc}/NoMutexCAN-master"
@@ -26,7 +25,7 @@ rec {
   ikakoMDC = buildRoboPkg rec {
     pname = "ikakoMDC";
     version = "v1.0.0";
-    libSrc = builtins.fetchGit {
+    libSrc = fetchGit {
       url = "git@github.com:nnctroboticsclub/ikakoMDC.git";
       rev = "156c6f30ca7d5d96542bae1edf4bad3487494c7a";
     };
@@ -36,7 +35,7 @@ rec {
       "${libSrc}/PID/PID.cpp"
     ];
     libDependencies = [ ikarashiCAN_mk2 ];
-    extraDependencies = [ "Nano::HW::CompatMbed" ];
+    libNameonlyDependencies = [ "Nano::NanoHW_MbedIF" ];
     libIncludes = [
       "${libSrc}"
       "${libSrc}/lpf"
@@ -46,7 +45,7 @@ rec {
   ikako_rohm_md = buildRoboPkg rec {
     pname = "ikako_rohm_md";
     version = "v1.0.0";
-    libSrc = builtins.fetchGit {
+    libSrc = fetchGit {
       url = "git@github.com:nnctroboticsclub/ikako_rohm_md.git";
       rev = "a39a09aa3014ed3c19aa81cfdbb309d3503aa98b";
     };
@@ -54,13 +53,13 @@ rec {
       "${libSrc}/rohm_md.cpp"
     ];
     libDependencies = [ ikarashiCAN_mk2 ];
-    extraDependencies = [ "Nano::HW::CompatMbed" ];
+    libNameonlyDependencies = [ "Nano::NanoHW_MbedIF" ];
     libIncludes = [ "${libSrc}" ];
   };
   MotorController = buildRoboPkg rec {
     pname = "MotorController";
     version = "v1.0.0";
-    libSrc = builtins.fetchGit {
+    libSrc = fetchGit {
       url = "git@github.com:nnctroboticsclub/MotorController.git";
       rev = "aba526174f61a2b4e126b0bfa83311e292849e0e";
     };
@@ -71,7 +70,7 @@ rec {
       "${libSrc}/DisturbanceObserver/LowPassFilter/LowPassFilter.cpp"
     ];
     libDependencies = [ ikarashiCAN_mk2 ];
-    extraDependencies = [ "Nano::HW::CompatMbed" ];
+    libNameonlyDependencies = [ "Nano::NanoHW_MbedIF" ];
     libIncludes = [
       "${libSrc}"
       "${libSrc}/Ikako_PID"
@@ -82,7 +81,7 @@ rec {
   IkakoRobomas = buildRoboPkg rec {
     pname = "IkakoRobomas";
     version = "v1.0.0";
-    libSrc = builtins.fetchGit {
+    libSrc = fetchGit {
       url = "git@github.com:nnctroboticsclub/IkakoRobomas.git";
       rev = "98336d610bb255c57565b571e47c404c0070d49d";
     };
@@ -103,7 +102,7 @@ rec {
   can_servo = buildRoboPkg rec {
     pname = "can_servo";
     version = "v1.0.0";
-    libSrc = builtins.fetchGit {
+    libSrc = fetchGit {
       url = "git@github.com:nnctroboticsclub/can_servo.git";
       rev = "e68a8af81d92ede8c92f08270f93f54c58aa22ac";
     };
@@ -111,7 +110,7 @@ rec {
       "${libSrc}/can_servo.cpp"
     ];
     libDependencies = [ ikarashiCAN_mk2 ];
-    extraDependencies = [ "Nano::HW::CompatMbed" ];
+    libNameonlyDependencies = [ "Nano::NanoHW_MbedIF" ];
     libIncludes = [
       "${libSrc}"
     ];
@@ -119,7 +118,7 @@ rec {
   Futaba_Puropo = buildRoboPkg rec {
     pname = "Futaba_Puropo";
     version = "v1.0.0";
-    libSrc = builtins.fetchGit {
+    libSrc = fetchGit {
       url = "git@github.com:nnctroboticsclub/Futaba_Puropo.git";
       rev = "2e5d6d59754e0f4622dc85e7a4ccaf80a666e47b";
     };
@@ -127,13 +126,13 @@ rec {
       "${libSrc}/puropo.cpp"
     ];
     libDependencies = [ ];
-    extraDependencies = [ "Nano::HW::CompatMbed" ];
+    libNameonlyDependencies = [ "Nano::NanoHW_MbedIF" ];
     libIncludes = [ "${libSrc}" ];
   };
   PS4_RX = buildRoboPkg rec {
     pname = "PS4_RX";
     version = "v1.0.0";
-    libSrc = builtins.fetchGit {
+    libSrc = fetchGit {
       url = "git@github.com:nnctroboticsclub/PS4_RX.git";
       rev = "0aca1751a597c3687bb994fff6c9b282ead224a0";
     };
@@ -141,28 +140,28 @@ rec {
       "${libSrc}/PS4.cpp"
     ];
     libDependencies = [ ];
-    extraDependencies = [ "Nano::HW::CompatMbed" ];
+    libNameonlyDependencies = [ "Nano::NanoHW_MbedIF" ];
     libIncludes = [ "${libSrc}" ];
   };
 
   club-legacy-libs = callPackage ./club-legacy-libs { };
 
-  srobo_base = buildRoboPkg rec {
+  srobo_base = buildRoboPkg {
     pname = "srobo_base";
     version = "v1.0.0";
-    libSrc = builtins.fetchGit {
+    libSrc = fetchGit {
       url = "git@github.com:nnctroboticsclub/srobo_base.git";
-      rev = "02a4a075264872246d83f3592f32fe59d1c858f6";
+      rev = "ecb75beae7ff503a26ce737951817ec6df0cd176";
     };
     cmakeCompatible = true;
   };
 
-  im920_rs = buildRoboPkg rec {
+  im920_rs = buildRoboPkg {
     pname = "im920_rs";
     version = "v1.0.0";
-    libSrc = builtins.fetchGit {
+    libSrc = fetchGit {
       url = "git@github.com:nnctroboticsclub/im920_rs.git";
-      rev = "2901c4ead3e00257d13c7344183c331147c9f36c";
+      rev = "fdde2c3a0a6591a6e8f294c49e550779eca69761";
     };
     cmakeCompatible = true;
   };

@@ -9,17 +9,13 @@ if (NOT TARGET @LIB_NAME@)
     target_link_libraries(@LIB_NAME@ PUBLIC
         @HAL_DEPENDENCIES@
         CMSIS5::CoreM
-        STM32HALConfig
+        @LIB_NAME@Config
     )
 
     target_include_directories(@LIB_NAME@ PUBLIC @HAL_ROOT@/Inc)
 
     target_compile_options(@LIB_NAME@ PUBLIC
-        # Target CPU
-        -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb
-        # Code optimization
-        -ffunction-sections -fdata-sections -fno-exceptions -fshort-enums
-        -Oz -g3 -gdwarf-3
+        -ffunction-sections -fdata-sections -fno-exceptions
         # Language specific options
         $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti -fno-threadsafe-statics -fuse-cxa-atexit>
         $<$<COMPILE_LANGUAGE:ASM>:-x assembler-with-cpp>
@@ -29,13 +25,10 @@ if (NOT TARGET @LIB_NAME@)
     endif()
 
     target_link_options(@LIB_NAME@ PUBLIC
-        # Target CPU
-        -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb
-        # Linker script
         -Wl,-T,@HAL_LD@
-        # HAL
-        -Wl,--gc-sections
         -lc -lm
     )
-    target_link_options(@LIB_NAME@ PUBLIC -specs=nano.specs -specs=nosys.specs)
+    if ("${USING_TOOLCHAIN}" STREQUAL "GNU")
+        target_link_options(@LIB_NAME@ PUBLIC -specs=nano.specs -specs=nosys.specs)
+    endif()
 endif()

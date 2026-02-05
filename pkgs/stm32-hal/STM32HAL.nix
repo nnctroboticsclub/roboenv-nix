@@ -1,17 +1,10 @@
+{ lib, stdenv }:
 {
-  lib,
-  stdenv,
-  cmsis5-device-f3,
-}:
-{
-  linker_script ? ./STM32F303K8TX_FLASH.ld,
-  target ? "F3xx",
-  dependencies ? "CMSIS5::Device::F3",
-  cmakeBuildInputs ? [ cmsis5-device-f3 ],
-  src ? builtins.fetchGit {
-    url = "https://github.com/STMicroelectronics/stm32f3xx-hal-driver.git";
-    rev = "ef8c84f93e990805571c056f206538793d011542";
-  },
+  linker_script,
+  target,
+  dependencies,
+  cmakeBuildInputs,
+  src,
 }:
 stdenv.mkDerivation {
   pname = "stm32${lib.toLower target}-hal";

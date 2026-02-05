@@ -17,5 +17,7 @@ check_env_var_set "LIB_ROOT"
 #* Generate CMake target
 echo "# Auto-generated CMake configuration for $LIB_NAME"
 echo "if(NOT TARGET $LIB_NAME)"
-echo "  add_subdirectory($LIB_ROOT \$\{CMAKE_CURRENT_BINARY_DIR\}/$LIB_NAME)"
+echo "  file(COPY \"$LIB_ROOT/\" DESTINATION \"\${CMAKE_CURRENT_BINARY_DIR}/$LIB_NAME-src\")"
+echo "  file(CHMOD \"\${CMAKE_CURRENT_BINARY_DIR}/$LIB_NAME-src/Cargo.lock\" PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ)"
+echo "  add_subdirectory(\${CMAKE_CURRENT_BINARY_DIR}/$LIB_NAME-src \${CMAKE_CURRENT_BINARY_DIR}/$LIB_NAME)"
 echo "endif()"

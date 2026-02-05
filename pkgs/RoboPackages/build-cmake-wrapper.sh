@@ -15,11 +15,11 @@ function check_env_var_set() {
 check_env_var_set "LIB_NAME"
 check_env_var_set "LIB_SRC"
 check_env_var_set "LIB_INCLUDE"
-check_env_var_set "LIB_DEPS"
 
 IFS=';' read -r -a LIB_SRC_ARR <<< "$LIB_SRC"
 IFS=';' read -r -a LIB_INCLUDE_ARR <<< "$LIB_INCLUDE"
 IFS=';' read -r -a LIB_DEPS_ARR <<< "$LIB_DEPS"
+IFS=';' read -r -a LIB_DEPS_NAMEONLY_ARR <<< "$LIB_DEPS_NAMEONLY"
 
 #* Generate CMake target
 echo "# Auto-generated CMake configuration for $LIB_NAME"
@@ -37,6 +37,9 @@ echo ""
 echo "target_link_libraries($LIB_NAME PUBLIC"
 for dep in "${LIB_DEPS_ARR[@]}"; do
     echo "    ${dep}"
+done
+for dep_nameonly in "${LIB_DEPS_NAMEONLY_ARR[@]}"; do
+    echo "    ${dep_nameonly}"
 done
 echo ")"
 echo ""
