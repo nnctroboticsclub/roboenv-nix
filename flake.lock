@@ -3,72 +3,87 @@
     "Futaba_Puropo": {
       "flake": false,
       "locked": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/Futaba_Puropo.git",
+        "lastModified": 1724316034,
+        "narHash": "sha256-GYbRD0bXcmNx45Bqp8yf7VD+07vhxAlduVAalHz7VfE=",
+        "ref": "refs/heads/main",
         "rev": "2e5d6d59754e0f4622dc85e7a4ccaf80a666e47b",
-        "type": "path"
+        "revCount": 6,
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/Futaba_Puropo.git"
       },
       "original": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/Futaba_Puropo.git",
         "rev": "2e5d6d59754e0f4622dc85e7a4ccaf80a666e47b",
-        "type": "path"
-      },
-      "parent": []
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/Futaba_Puropo.git"
+      }
     },
     "IkakoRobomas": {
       "flake": false,
       "locked": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/IkakoRobomas.git",
+        "lastModified": 1725643775,
+        "narHash": "sha256-ButjWZquEL3TaMb6+v/34oKKZEn58CN7vmLd33tYsL8=",
+        "ref": "refs/heads/main",
         "rev": "98336d610bb255c57565b571e47c404c0070d49d",
-        "type": "path"
+        "revCount": 8,
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/IkakoRobomas.git"
       },
       "original": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/IkakoRobomas.git",
         "rev": "98336d610bb255c57565b571e47c404c0070d49d",
-        "type": "path"
-      },
-      "parent": []
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/IkakoRobomas.git"
+      }
     },
     "MotorController": {
       "flake": false,
       "locked": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/MotorController.git",
+        "lastModified": 1723616341,
+        "narHash": "sha256-4N+9PPW/dYZb50uAD+wKVl55Z3f3ab5PRDXmsC2sLQI=",
+        "ref": "refs/heads/main",
         "rev": "aba526174f61a2b4e126b0bfa83311e292849e0e",
-        "type": "path"
+        "revCount": 3,
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/MotorController.git"
       },
       "original": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/MotorController.git",
         "rev": "aba526174f61a2b4e126b0bfa83311e292849e0e",
-        "type": "path"
-      },
-      "parent": []
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/MotorController.git"
+      }
     },
     "PS4_RX": {
       "flake": false,
       "locked": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/PS4_RX.git",
+        "lastModified": 1695547208,
+        "narHash": "sha256-cUZhxSNe514pQFQKsvqv7UP606RQeOqMPwbjzu256wo=",
+        "ref": "refs/heads/main",
         "rev": "0aca1751a597c3687bb994fff6c9b282ead224a0",
-        "type": "path"
+        "revCount": 3,
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/PS4_RX.git"
       },
       "original": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/PS4_RX.git",
         "rev": "0aca1751a597c3687bb994fff6c9b282ead224a0",
-        "type": "path"
-      },
-      "parent": []
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/PS4_RX.git"
+      }
     },
     "can_servo": {
       "flake": false,
       "locked": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/can_servo.git",
+        "lastModified": 1723874760,
+        "narHash": "sha256-O6ZpdAZ1SFn9usqFUNFbOUK8UvRtQ0AXhH0oBic7BtU=",
+        "ref": "refs/heads/master",
         "rev": "e68a8af81d92ede8c92f08270f93f54c58aa22ac",
-        "type": "path"
+        "revCount": 3,
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/can_servo.git"
       },
       "original": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/can_servo.git",
         "rev": "e68a8af81d92ede8c92f08270f93f54c58aa22ac",
-        "type": "path"
-      },
-      "parent": []
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/can_servo.git"
+      }
     },
     "cmsis-device-f3": {
       "flake": false,
@@ -124,58 +139,70 @@
     "ikakoMDC": {
       "flake": false,
       "locked": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/ikakoMDC.git",
+        "lastModified": 1719827660,
+        "narHash": "sha256-XEMh0c67zCBuTxdoGMwHYqPY8wl/1nmeXAbfUfe8VGI=",
+        "ref": "refs/heads/main",
         "rev": "156c6f30ca7d5d96542bae1edf4bad3487494c7a",
-        "type": "path"
+        "revCount": 8,
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/ikakoMDC.git"
       },
       "original": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/ikakoMDC.git",
         "rev": "156c6f30ca7d5d96542bae1edf4bad3487494c7a",
-        "type": "path"
-      },
-      "parent": []
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/ikakoMDC.git"
+      }
     },
     "ikako_rohm_md": {
       "flake": false,
       "locked": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/ikako_rohm_md.git",
+        "lastModified": 1724479514,
+        "narHash": "sha256-LXihbxeRDB+9Rhy6lVvwLACTyBa59hVysEgAeGLCWC8=",
+        "ref": "refs/heads/main",
         "rev": "a39a09aa3014ed3c19aa81cfdbb309d3503aa98b",
-        "type": "path"
+        "revCount": 2,
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/ikako_rohm_md.git"
       },
       "original": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/ikako_rohm_md.git",
         "rev": "a39a09aa3014ed3c19aa81cfdbb309d3503aa98b",
-        "type": "path"
-      },
-      "parent": []
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/ikako_rohm_md.git"
+      }
     },
     "ikarashiCAN_mk2": {
       "flake": false,
       "locked": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/ikarashiCAN_mk2.git",
+        "lastModified": 1752295440,
+        "narHash": "sha256-cfKuJ31gqvXj7WJPlesI4kwJ3ARyCCkIes0i7c+wUms=",
+        "ref": "refs/heads/main",
         "rev": "3f941b99b6cffd82d69da636d187eab3fec5ec2d",
-        "type": "path"
+        "revCount": 13,
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/ikarashiCAN_mk2.git"
       },
       "original": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/ikarashiCAN_mk2.git",
         "rev": "3f941b99b6cffd82d69da636d187eab3fec5ec2d",
-        "type": "path"
-      },
-      "parent": []
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/ikarashiCAN_mk2.git"
+      }
     },
     "im920_rs": {
       "flake": false,
       "locked": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/im920_rs.git",
+        "lastModified": 1768201302,
+        "narHash": "sha256-/VoERqcuZ4Jvqx+3oPeGsQbjBgW2h8pua8HGxNjV5Iw=",
+        "ref": "refs/heads/main",
         "rev": "fdde2c3a0a6591a6e8f294c49e550779eca69761",
-        "type": "path"
+        "revCount": 34,
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/im920_rs.git"
       },
       "original": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/im920_rs.git",
         "rev": "fdde2c3a0a6591a6e8f294c49e550779eca69761",
-        "type": "path"
-      },
-      "parent": []
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/im920_rs.git"
+      }
     },
     "mbed-ce": {
       "flake": false,
@@ -255,16 +282,19 @@
     "srobo_base": {
       "flake": false,
       "locked": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/srobo_base.git",
-        "rev": "ecb75beae7ff503a26ce737951817ec6df0cd176",
-        "type": "path"
+        "lastModified": 1770680077,
+        "narHash": "sha256-YrcAmOocXvb9+BYYc7tIruGSpYiXSODP9wWTiGhvb2w=",
+        "ref": "refs/heads/main",
+        "rev": "0a10ff3964519b618f4f3fda6082a694a4e21caa",
+        "revCount": 35,
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/srobo_base.git"
       },
       "original": {
-        "path": "git+ssh://git@github.com:nnctroboticsclub/srobo_base.git",
-        "rev": "ecb75beae7ff503a26ce737951817ec6df0cd176",
-        "type": "path"
-      },
-      "parent": []
+        "rev": "0a10ff3964519b618f4f3fda6082a694a4e21caa",
+        "type": "git",
+        "url": "ssh://git@github.com/nnctroboticsclub/srobo_base.git"
+      }
     },
     "stm32f3xx-hal-driver": {
       "flake": false,

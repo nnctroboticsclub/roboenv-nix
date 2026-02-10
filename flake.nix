@@ -37,7 +37,7 @@
     flake = false;
   };
   inputs.srobo_base = {
-    url = "git+ssh://git@github.com/nnctroboticsclub/srobo_base.git?rev=ecb75beae7ff503a26ce737951817ec6df0cd176";
+    url = "git+ssh://git@github.com/nnctroboticsclub/srobo_base.git?rev=0a10ff3964519b618f4f3fda6082a694a4e21caa";
     flake = false;
   };
   inputs.im920_rs = {
@@ -134,12 +134,14 @@
       };
 
     in
-    {
+    rec {
       legacyPackages.${system} = roboenvPackages;
 
       devShells.${system}.default = pkgs.callPackage ./shell.nix {
         inherit (roboenvPackages) roboenv roboPackages;
       };
+
+      packages.x86_64-linux.test = devShells.${system}.default.debug.cmakePackages;
 
       overlays.default =
         final: prev:
