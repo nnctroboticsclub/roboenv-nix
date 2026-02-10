@@ -38,3 +38,6 @@ pkgs.mkShell (
   }
   // cfg.env
 )
+// {
+  debug = cfg.debug;
+}

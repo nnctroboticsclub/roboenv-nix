@@ -43,20 +43,24 @@
       default = { };
       description = "Environment variables to set in the environment";
     };
+
+    debug.cmakePackages = lib.mkOption {
+      type = lib.types.package;
+      default = [ ];
+      description = "List of CMake packages to include in the environment for debugging";
+    };
   };
 
   config =
     let
-      cmakePackages = pkgs.symlinkJoin {
-        name = "cmake-packages";
-        paths = builtins.concatLists
-          (map rlib.collectCMakePackages
-          config.cmakeInputs)
-        ;
+      cmakePackages = rlib.cmakeLinkJoin {
+        pname = "cmake-packages";
+        packages = builtins.concatLists (map rlib.collectCMakePackages config.cmakeInputs);
       };
     in
     {
       env.CMAKE_PREFIX_PATH = "${cmakePackages}";
       env.CMAKE_MODULE_PATH = "${cmakePackages}/lib/cmake";
+      debug.cmakePackages = cmakePackages;
     };
 }

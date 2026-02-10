@@ -3,10 +3,7 @@ let
   collectCMakePackages =
     pkg:
     if builtins.hasAttr "cmakeBuildInputs" pkg then
-      [ pkg ]
-      ++ builtins.concatLists (
-        map (subpkg: [ subpkg ] ++ collectCMakePackages subpkg) pkg.cmakeBuildInputs
-      )
+      [ pkg ] ++ builtins.concatLists (map (subpkg: collectCMakePackages subpkg) pkg.cmakeBuildInputs)
     else
       [ ];
 in
