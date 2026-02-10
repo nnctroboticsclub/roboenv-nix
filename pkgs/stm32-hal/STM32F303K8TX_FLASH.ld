@@ -3,7 +3,7 @@ ENTRY(Reset_Handler)
 MEMORY {
   FLASH       (rx): ORIGIN = 0x08000000, LENGTH = 0x0000F7FF
   RAM_VECT   (xrw): ORIGIN = 0x20000000, LENGTH = 0x00000200
-  RAM_DATA   (xrw): ORIGIN = 0x20000200, LENGTH = 0x00002E00
+  RAM_DATA   (xrw): ORIGIN = 0x20000200, LENGTH = 0x00002D00
   CCMRAM      (rw): ORIGIN = 0x10000000, LENGTH = 0x00001000
 }
 
@@ -126,7 +126,7 @@ SECTIONS {
     __bss_end__ = _ebss;
   } >RAM_DATA
 
-  .noinit : {
+  .noinit (NOLOAD) : {
     . = ALIGN(4);
     *(.noinit)
     *(.noinit*)

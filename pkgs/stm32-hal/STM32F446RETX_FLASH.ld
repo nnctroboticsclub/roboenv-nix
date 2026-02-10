@@ -105,7 +105,7 @@ SECTIONS {
     __bss_end__ = _ebss;
   } >RAM
 
-  .noinit : {
+  .noinit (NOLOAD): {
     . = ALIGN(4);
     *(.noinit)
     *(.noinit*)
