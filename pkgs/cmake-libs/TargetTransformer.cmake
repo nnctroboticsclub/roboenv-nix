@@ -24,7 +24,7 @@ function(embedded_transform_target target)
   )
 
   add_custom_target(upload_${target}
-    COMMAND sudo -E bash -c 'st-flash --connect-under-reset $$FLASH_ARGS --format ihex write $<TARGET_FILE_BASE_NAME:${target}>.hex'
+    COMMAND bash -c 'st-flash --connect-under-reset $$FLASH_ARGS --format ihex write $<TARGET_FILE_BASE_NAME:${target}>.hex'
     DEPENDS ${target}
     COMMENT "Uploading ${target}.bin to device"
     USES_TERMINAL
