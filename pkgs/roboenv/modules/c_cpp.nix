@@ -44,10 +44,10 @@ in
     ]
     ++ (lib.optionals (config.c_cpp.toolchain == "clang") [
       pkgs.llvmPackages_21.bintools
-      pkgs.llvmPackages_21.clang-tools
       pkgs.llvmPackages_21.clang
       pkgs.llvmPackages_21.llvm
       pkgs.llvmPackages_21.libclang.lib
+      pkgs.llvmPackages_21.clang-tools # clang-tools は clang よりも後でなければならない
     ])
     ++ (lib.optionals (config.c_cpp.toolchain == "gcc") [
       pkgs.gcc-arm-embedded

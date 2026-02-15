@@ -1,4 +1,4 @@
-{ roboenv, roboPackages }:
+{ roboenv }:
 roboenv {
   # DevShell の名前
   name = "NHK2025A";
@@ -51,18 +51,6 @@ roboenv {
   ];
 
   libraries = [
-    roboPackages.club-legacy-libs
-
-    roboPackages.srobo_base
-    roboPackages.im920_rs
-    roboPackages.ikarashiCAN_mk2
-    roboPackages.ikakoMDC
-    roboPackages.ikako_rohm_md
-    roboPackages.MotorController
-    roboPackages.IkakoRobomas
-    roboPackages.can_servo
-    roboPackages.Futaba_Puropo
-    roboPackages.PS4_RX
   ];
 
   # 追加のビルド入力 (これに限り default.nix で処理される)
