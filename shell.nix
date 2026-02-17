@@ -1,3 +1,4 @@
+# Cachix にフルキャッシュを置くための全機能を有効化したシェル環境
 { roboenv }:
 roboenv {
   # DevShell の名前
@@ -27,6 +28,8 @@ roboenv {
   STM32.enable = true;
   # STM32 エミュレータ (デフォルト: null)
   STM32.emulator = "qemu-arm-xpack";
+
+  tool.usb.enable = true;
 
   # 利用するフレームワークの設定
   # - {type: "StaticMbedCE", mbedTarget: "..."}

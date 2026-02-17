@@ -1,0 +1,23 @@
+name: "Cachix"
+
+on:
+  pull_request:
+  push:
+
+inputs:
+  cachix-auth-token:
+    required: true
+
+runs:
+    using: composite
+    steps:
+    - uses: actions/checkout@v5
+    - uses: cachix/install-nix-action@v31
+    - uses: cachix/cachix-action@v16
+      with:
+        name: '${{ secrets.CACHIX_NAME }}'
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+    - name: Build full-featured shell
+      run: nix build .#devShells.x86_64-linux.default
+    - name: Build arm-toolchain
+      run: nix build .#gcc-arm-toolchain
