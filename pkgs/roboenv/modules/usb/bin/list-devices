@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+for D in /sys/bus/usb/devices/*; do
+	[ -e "$D/idVendor" ] || continue
+	[ -e "$D/serial" ] || continue
+
+	ID="`cat $D/idVendor`:`cat $D/idProduct`"
+	SERIAL="`cat $D/serial`"
+  printf "%s (%32s) :: %s\n" \
+		"$ID" \
+		"$SERIAL" \
+		"`cat $D/product`"
+done
