@@ -6,7 +6,7 @@ roboenv {
 
   # 使用する C++ コンパイラ (デフォルト: "gcc")
   # - c_cpp.enable
-  #   - cmake, ccache, ninja
+  #   - cmake, ninja
   #   - CMAKE_PREFIX_PATH, CMAKE_MODULE_PATH を設定
   # - c_cpp.toolchain = 'clang'
   #   - bintools, clang, clang-tools, llvm, libclang

@@ -120,7 +120,6 @@ roboenv.roboenv {
   # C/C++ ツールチェーン
   c_cpp.enable = true;
   c_cpp.toolchain = "gcc";  # or "clang"
-  c_cpp.cache = "ccache";
 
   # Rust サポート
   rust.enable = true;

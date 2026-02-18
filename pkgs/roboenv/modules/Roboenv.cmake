@@ -13,15 +13,6 @@ else()
   set(CMAKE_PREFIX_PATH /usr/arm-none-eabi)
 endif()
 
-#* Find ccache
-find_program(CCACHE_PROGRAM ccache)
-if(CCACHE_PROGRAM)
-  message(STATUS "ccache found: ${CCACHE_PROGRAM}")
-  set(CMAKE_C_COMPILER_LAUNCHER "${CCACHE_PROGRAM}" CACHE STRING "C Compiler Launcher" FORCE)
-  set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}" CACHE STRING "CXX Compiler Launcher" FORCE)
-  set(CMAKE_ASM_COMPILER_LAUNCHER "${CCACHE_PROGRAM}" CACHE STRING "ASM Compiler Launcher" FORCE)
-endif()
-
 #* Chain loading toolchain file
 if(DEFINED ROBO_TOOLCHAIN_FILE)
   include(${ROBO_TOOLCHAIN_FILE})

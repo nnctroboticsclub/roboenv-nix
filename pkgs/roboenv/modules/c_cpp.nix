@@ -19,13 +19,6 @@ in
   options.c_cpp = {
     enable = lib.mkEnableOption "C/C++ toolchain support";
 
-    cache = lib.mkOption {
-      type = lib.types.nullOr (lib.types.enum [ "ccache" ]);
-      default = "ccache";
-      description = "The caching tool to use for C/C++ compilation";
-
-    };
-
     toolchain = lib.mkOption {
       type = lib.types.enum [
         "clang"
@@ -51,9 +44,6 @@ in
     ])
     ++ (lib.optionals (config.c_cpp.toolchain == "gcc") [
       pkgs.gcc-arm-embedded
-    ])
-    ++ (lib.optionals (config.c_cpp.cache == "ccache") [
-      pkgs.ccache
     ]);
 
     cmakeInputs = [
@@ -69,11 +59,6 @@ in
     env.LIBCLANG_PATH = lib.optionalString (
       config.c_cpp.toolchain == "clang"
     ) "${pkgs.llvmPackages_21.libclang.lib}/lib";
-
-    env.CCACHE_COMPRESS = lib.optionalString (config.c_cpp.cache == "ccache") "1";
-    env.CCACHE_SLOPPINESS = lib.optionalString (config.c_cpp.cache == "ccache") "random_seed";
-    env.CCACHE_DIR = lib.optionalString (config.c_cpp.cache == "ccache") "/nix/var/cache/ccache";
-    env.CCACHE_UMASK = lib.optionalString (config.c_cpp.cache == "ccache") "007";
 
     env.CMAKE_TOOLCHAIN_FILE = "${cmake-loader}/lib/cmake/Roboenv.cmake";
   };

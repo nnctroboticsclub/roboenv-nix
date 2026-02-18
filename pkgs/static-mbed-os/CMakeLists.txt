@@ -75,15 +75,6 @@ else()
   message(FATAL_ERROR "Unsupported TOOLCHAIN_MODE: ${TOOLCHAIN_MODE}")
 endif()
 
-# ccache support
-find_program(CCACHE_PROGRAM ccache)
-if(CCACHE_PROGRAM)
-  message(STATUS "ccache found: ${CCACHE_PROGRAM}")
-  set(CMAKE_C_COMPILER_LAUNCHER "${CCACHE_PROGRAM}" CACHE STRING "C Compiler Launcher" FORCE)
-  set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}" CACHE STRING "CXX Compiler Launcher" FORCE)
-  set(CMAKE_ASM_COMPILER_LAUNCHER "${CCACHE_PROGRAM}" CACHE STRING "ASM Compiler Launcher" FORCE)
-endif()
-
 project(static-mbed-os VERSION 1.0.4 LANGUAGES CXX)
 include(MbedCE)
 

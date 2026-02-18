@@ -5,7 +5,6 @@
   clang-arm-toolchain,
 
   mbed-os,
-  ccacheWrapper,
 }:
 let
   static-mbed-os =
