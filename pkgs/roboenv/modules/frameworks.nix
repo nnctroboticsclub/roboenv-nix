@@ -12,7 +12,6 @@
           type = lib.mkOption {
             type = lib.types.enum [
               "StaticMbedOS"
-              "StaticMbedCE"
               "STM32HAL"
             ];
             description = "The framework type";

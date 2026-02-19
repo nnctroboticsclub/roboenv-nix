@@ -1,7 +1,6 @@
 {
   lib,
   rlib,
-  pkgs,
   config,
 
   ...

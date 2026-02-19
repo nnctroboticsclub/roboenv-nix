@@ -53,9 +53,6 @@ roboenv {
     }
   ];
 
-  libraries = [
-  ];
-
   # 追加のビルド入力 (これに限り default.nix で処理される)
   extraBuildInputs =
     pkgs: with pkgs; [

@@ -17,7 +17,6 @@ let
       ./modules/rust.nix
       ./modules/stm32.nix
       ./modules/frameworks.nix
-      ./modules/libraries.nix
       ./modules/usb
       # ユーザー設定
       { _module.args = { inherit pkgs rlib roboenvScope; }; }
