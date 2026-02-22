@@ -5,16 +5,6 @@
   roboenvScope,
   ...
 }:
-let
-  cmake-loader = pkgs.stdenv.mkDerivation {
-    name = "roboenv-cmake-loader";
-    src = ./.;
-    installPhase = ''
-      mkdir -p $out/lib/cmake
-      cp $src/Roboenv.cmake $out/lib/cmake/
-    '';
-  };
-in
 {
   options.c_cpp = {
     enable = lib.mkEnableOption "C/C++ toolchain support";
@@ -47,7 +37,7 @@ in
     ]);
 
     cmakeInputs = [
-      cmake-loader
+      roboenvScope.roboenv-loader
     ]
     ++ (lib.optionals (config.c_cpp.toolchain == "clang") [
       roboenvScope.clang-arm-toolchain
@@ -60,6 +50,6 @@ in
       config.c_cpp.toolchain == "clang"
     ) "${pkgs.llvmPackages_21.libclang.lib}/lib";
 
-    env.CMAKE_TOOLCHAIN_FILE = "${cmake-loader}/lib/cmake/Roboenv.cmake";
+    env.CMAKE_TOOLCHAIN_FILE = "${roboenvScope.roboenv-loader}/lib/cmake/Roboenv.cmake";
   };
 }

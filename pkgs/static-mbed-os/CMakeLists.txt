@@ -31,6 +31,7 @@ function(fix_toolchain_bin)
   message(STATUS "  - CMAKE_SIZE: ${CMAKE_SIZE}")
 endfunction()
 
+set(CMAKE_TOOLCHAIN_FILE "")
 if(TOOLCHAIN_MODE STREQUAL "GNU")
   include(GccArmToolchain)
   fix_toolchain_bin()

@@ -3,6 +3,7 @@
   stdenv,
   cmake,
   collectCMakePackages,
+  roboenv-loader,
 }:
 {
   cmakeBuildInputs ? [ ],
@@ -31,5 +32,7 @@ stdenv.mkDerivation (
   // {
     nativeBuildInputs = nativeBuildInputs ++ nativeBuildInputsFinal;
     cmakeFlags = cmakeFlags ++ extraCMakeFlags;
+
+    CMAKE_TOOLCHAIN_FILE = "${roboenv-loader}/lib/cmake/Roboenv.cmake";
   }
 )

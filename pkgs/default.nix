@@ -50,7 +50,8 @@ lib.makeScope pkgs.newScope (self: {
   # エミュレータとツール
   qemu-arm-xpack = self.callPackage ./qemu-arm-xpack { };
 
-  # roboenv 本体 (スコープ全体とライブラリ関数を渡す)
+  # roboenv 本体
+  roboenv-loader = self.callPackage ./roboenv-loader { };
   roboenv = self.callPackage ./roboenv {
     rlib = self.rlib;
     roboenvScope = self;
