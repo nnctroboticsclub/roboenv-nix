@@ -117,6 +117,7 @@
               "flakes"
             ];
             programs.git.enable = true;
+            programs.zsh.enable = true;
 
             nix.settings.substituters = [
               "https://nnctrobo.cachix.org"
