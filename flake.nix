@@ -76,7 +76,7 @@
         inherit (roboenvPackages) roboenv;
       };
 
-      template.application = {
+      templates.application = {
         path = "${./templates/app}";
         description = "The Roboenv-nix template of project which makes a MCU application";
       };
