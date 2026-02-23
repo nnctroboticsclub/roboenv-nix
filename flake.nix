@@ -106,6 +106,7 @@
           {
             wsl.enable = true;
             wsl.defaultUser = "nixos";
+            users.users.nixos.shell = pkgs.zsh;
 
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
