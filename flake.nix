@@ -68,13 +68,18 @@
 
     in
     rec {
+      packages.x86_64-linux.test = devShells.${system}.default.debug.cmakePackages;
+
       legacyPackages.${system} = roboenvPackages;
 
       devShells.${system}.default = pkgs.callPackage ./shell.nix {
         inherit (roboenvPackages) roboenv;
       };
 
-      packages.x86_64-linux.test = devShells.${system}.default.debug.cmakePackages;
+      template.application = {
+        path = "${./templates/app}";
+        description = "The Roboenv-nix template of project which makes a MCU application";
+      };
 
       overlays.default =
         final: prev:

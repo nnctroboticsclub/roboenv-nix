@@ -1,0 +1,28 @@
+# すべてのファイルに対して
+If:
+  PathMatch: .*
+
+# ClangArmToolchain を利用する場合これで十分
+#
+# 正常に補完するためには build/compile_commands.json が存在することが条件
+# CMake では Configure 時に CMAKE_EXPORT_COMPILE_COMMANDS を ON にすればよい
+#
+# 例:
+# $ cmake -S . -B build -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+CompileFlags:
+  CompilationDatabase: "build"
+
+# STL を含めインデックスを生成する
+Index:
+  StandardLibrary: Yes
+
+# 未使用 include を警告にする
+Diagnostics:
+  UnusedIncludes: Strict
+
+# InlayHints を有効にする
+InlayHints:
+  Enabled: Yes
+  Designators: No
+  DeducedTypes: Yes
+  ParameterNames: Yes
