@@ -29,6 +29,11 @@
     flake = false;
   };
 
+  inputs.nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
+  inputs.home-manager.url = "github:nix-community/home-manager";
+  inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs =
     {
       nixpkgs,
@@ -40,6 +45,10 @@
       mbed-ce,
       stm32f3xx-hal-driver,
       stm32f4xx-hal-driver,
+
+      nixos-wsl,
+      home-manager,
+
       ...
     }:
     let
@@ -88,5 +97,42 @@
           lib = final.lib;
         };
 
+      nixosConfigurations.robo-wsl = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          nixos-wsl.nixosModules.default
+          home-manager.nixosModules.home-manager
+
+          {
+            wsl.enable = true;
+            wsl.defaultUser = "nixos";
+
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.nixos = ./home.nix;
+
+            nix.settings.experimental-features = [
+              "nix-command"
+              "flakes"
+            ];
+            programs.git.enable = true;
+
+            nix.settings.substituters = [
+              "https://nnctrobo.cachix.org"
+            ];
+            nix.settings.trusted-public-keys = [
+              "nnctrobo.cachix.org-1:1dKKIMpU2HT8hYTQVOxaE8YGT1rVvHpZNjgkMCrIRzM="
+            ];
+
+            # This value determines the NixOS release from which the default
+            # settings for stateful data, like file locations and database versions
+            # on your system were taken. It's perfectly fine and recommended to leave
+            # this value at the release version of the first install of this system.
+            # Before changing this value read the documentation for this option
+            # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+            system.stateVersion = "25.05"; # Did you read the comment?
+          }
+        ];
+      };
     };
 }
