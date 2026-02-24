@@ -90,6 +90,11 @@
         description = "The Roboenv-nix template of project which makes a MCU application";
       };
 
+      templates.library = {
+        path = "${./templates/lib}";
+        description = "The Roboenv-nix template of project which makes a MCU library";
+      };
+
       overlays.default =
         final: prev:
         import ./pkgs {
