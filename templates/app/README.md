@@ -34,7 +34,7 @@ flake.nix の提供する devShell 上で CMake を利用することでビル�
 # Nix DevShell に入る
 $ nix develop
 # このコマンド以降は DevShell 内での操作になる
-# DevShell を抜けるときは
+# DevShell を抜けるときは exit を実行するだけで良い
 
 $ cmake -S . -B build
 ```
