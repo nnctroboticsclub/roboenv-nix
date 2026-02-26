@@ -2,14 +2,18 @@
   stdenv,
   python311,
   roboPythonPackages,
-  cLibs,
+  fetchgit,
 }:
 stdenv.mkDerivation rec {
   pname = "mbed-os";
   version = "0.2.0";
 
   src = ./.;
-  mbed-ce = cLibs.mbed-ce;
+  mbed-ce = fetchgit {
+    url = "https://github.com/mbed-ce/mbed-os.git";
+    rev = "4ba00162ba2d73c64583018983391e1dfeaee83d";
+    sha256 = "sha256-ZL7X1LY7OGdZpoSzcmgJt6idreX7BDcApmJUz8zfDpk=";
+  };
 
   cmakeBuildInputs = [ ]; # Mark as CMake package
 

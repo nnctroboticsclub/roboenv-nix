@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  cLibs,
 }:
 
 lib.makeScope pkgs.newScope (self: {
@@ -9,8 +8,8 @@ lib.makeScope pkgs.newScope (self: {
   rlib = self.callPackage ./lib { };
 
   # パッケージグループ
-  CMSIS5DevicePackages = self.callPackage ./cmsis5-device { inherit cLibs; };
-  STM32HALPackages = self.callPackage ./stm32-hal { inherit cLibs; };
+  CMSIS5DevicePackages = self.callPackage ./cmsis5-device { };
+  STM32HALPackages = self.callPackage ./stm32-hal { };
   StaticMbedOSPackages = self.callPackage ./static-mbed-os { };
 
   # スコープとして定義されるパッケージセット
@@ -31,8 +30,8 @@ lib.makeScope pkgs.newScope (self: {
   clang-toolchain = self.callPackage ./clang-toolchain { };
 
   # Mbed と CMSIS
-  mbed-os = self.callPackage ./mbed-os { inherit cLibs; };
-  cmsis5 = self.callPackage ./cmsis5 { inherit cLibs; };
+  mbed-os = self.callPackage ./mbed-os { };
+  cmsis5 = self.callPackage ./cmsis5 { };
 
   # CMSIS5 デバイスパッケージ (CMSIS5DevicePackages から展開)
   cmsis5-device-f3 = self.CMSIS5DevicePackages.cmsis5-device-f3;
