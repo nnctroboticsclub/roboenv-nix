@@ -2,21 +2,13 @@
   # 開発環境
   inputs.roboenv.url = "git+ssh://git@github.com/nnctroboticsclub/roboenv-nix";
 
-  # roboenv 移行前のライブラリ群
+  # ライブラリ群
   inputs.robopkgs.url = "git+ssh://git@github.com/nnctroboticsclub/robopkgs-nix";
-
-  # Nano ライブラリ
-  inputs.nano.url = "git+ssh://git@github.com/nnctroboticsclub/Nano";
-
-  # f3-baremetal ライブラリ
-  inputs.f3-baremetal.url = "git+ssh://git@github.com/nnctroboticsclub/f3-baremetal";
 
   outputs =
     {
       robopkgs,
       roboenv,
-      nano,
-      f3-baremetal,
       ...
     }:
     let
@@ -35,7 +27,6 @@
         # 以下よく使う機能の定義
         # パラメータの詳細: https://github.com/nnctroboticsclub/roboenv-nix/tree/main/pkgs/roboenv
 
-        rust.enable = true;
         STM32.enable = true;
         c_cpp.enable = true;
         c_cpp.toolchain = "clang";
@@ -46,31 +37,11 @@
             type = "StaticMbedOS";
             mbedTarget = "NUCLEO_F446RE";
           }
-          {
-            type = "STM32HAL";
-            family = "f4";
-          }
-          {
-            type = "STM32HAL";
-            family = "f3";
-          }
         ];
 
         cmakeInputs = [
           roboPkgs.cmake-libs
-          roboLibs.club-legacy-libs
-          roboLibs.srobo_base
-          roboLibs.im920_rs
-          roboLibs.ikarashiCAN_mk2
-          roboLibs.ikakoMDC
-          roboLibs.ikako_rohm_md
-          roboLibs.MotorController
-          roboLibs.IkakoRobomas
-          roboLibs.can_servo
-          roboLibs.Futaba_Puropo
-          roboLibs.PS4_RX
-          nano.packages.x86_64-linux.default
-          f3-baremetal.packages.x86_64-linux.default
+          roboLibs.nano
         ];
       };
     };

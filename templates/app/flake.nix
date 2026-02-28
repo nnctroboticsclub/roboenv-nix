@@ -2,21 +2,13 @@
   # 開発環境
   inputs.roboenv.url = "git+ssh://git@github.com/nnctroboticsclub/roboenv-nix";
 
-  # roboenv 移行前のライブラリ群
+  # ライブラリ群
   inputs.robopkgs.url = "git+ssh://git@github.com/nnctroboticsclub/robopkgs-nix";
-
-  # Nano ライブラリ
-  inputs.nano.url = "git+ssh://git@github.com/nnctroboticsclub/Nano";
-
-  # f3-baremetal ライブラリ
-  inputs.f3-baremetal.url = "git+ssh://git@github.com/nnctroboticsclub/f3-baremetal";
 
   outputs =
     {
       robopkgs,
       roboenv,
-      nano,
-      f3-baremetal,
       ...
     }:
     let
@@ -69,8 +61,8 @@
           roboLibs.can_servo
           roboLibs.Futaba_Puropo
           roboLibs.PS4_RX
-          nano.packages.x86_64-linux.default
-          f3-baremetal.packages.x86_64-linux.default
+          roboLibs.nano
+          roboLibs.f3-baremetal
         ];
       };
     };

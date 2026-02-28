@@ -85,329 +85,29 @@
         "url": "ssh://git@github.com/nnctroboticsclub/can_servo.git"
       }
     },
-    "cmsis-device-f3": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1713967105,
-        "narHash": "sha256-W4J9yrbJvQEoxn2Ic5d7uLZNXufVD0fdBRvPq/DAi5M=",
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f3",
-        "rev": "5558e64e3675a1e1fcb1c71f468c7c407c1b1134",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f3",
-        "rev": "5558e64e3675a1e1fcb1c71f468c7c407c1b1134",
-        "type": "github"
-      }
-    },
-    "cmsis-device-f3_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1713967105,
-        "narHash": "sha256-W4J9yrbJvQEoxn2Ic5d7uLZNXufVD0fdBRvPq/DAi5M=",
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f3",
-        "rev": "5558e64e3675a1e1fcb1c71f468c7c407c1b1134",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f3",
-        "rev": "5558e64e3675a1e1fcb1c71f468c7c407c1b1134",
-        "type": "github"
-      }
-    },
-    "cmsis-device-f3_3": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1713967105,
-        "narHash": "sha256-W4J9yrbJvQEoxn2Ic5d7uLZNXufVD0fdBRvPq/DAi5M=",
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f3",
-        "rev": "5558e64e3675a1e1fcb1c71f468c7c407c1b1134",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f3",
-        "rev": "5558e64e3675a1e1fcb1c71f468c7c407c1b1134",
-        "type": "github"
-      }
-    },
-    "cmsis-device-f3_4": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1713967105,
-        "narHash": "sha256-W4J9yrbJvQEoxn2Ic5d7uLZNXufVD0fdBRvPq/DAi5M=",
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f3",
-        "rev": "5558e64e3675a1e1fcb1c71f468c7c407c1b1134",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f3",
-        "rev": "5558e64e3675a1e1fcb1c71f468c7c407c1b1134",
-        "type": "github"
-      }
-    },
-    "cmsis-device-f3_5": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1713967105,
-        "narHash": "sha256-W4J9yrbJvQEoxn2Ic5d7uLZNXufVD0fdBRvPq/DAi5M=",
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f3",
-        "rev": "5558e64e3675a1e1fcb1c71f468c7c407c1b1134",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f3",
-        "rev": "5558e64e3675a1e1fcb1c71f468c7c407c1b1134",
-        "type": "github"
-      }
-    },
-    "cmsis-device-f3_6": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1713967105,
-        "narHash": "sha256-W4J9yrbJvQEoxn2Ic5d7uLZNXufVD0fdBRvPq/DAi5M=",
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f3",
-        "rev": "5558e64e3675a1e1fcb1c71f468c7c407c1b1134",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f3",
-        "rev": "5558e64e3675a1e1fcb1c71f468c7c407c1b1134",
-        "type": "github"
-      }
-    },
-    "cmsis-device-f4": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1747911044,
-        "narHash": "sha256-Q2SKaz8jm2iBZfPCZfnAnp69hDCSShe2xJUahi4Fh+8=",
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f4",
-        "rev": "3c77349ce04c8af401454cc51f85ea9a50e34fc1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f4",
-        "rev": "3c77349ce04c8af401454cc51f85ea9a50e34fc1",
-        "type": "github"
-      }
-    },
-    "cmsis-device-f4_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1747911044,
-        "narHash": "sha256-Q2SKaz8jm2iBZfPCZfnAnp69hDCSShe2xJUahi4Fh+8=",
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f4",
-        "rev": "3c77349ce04c8af401454cc51f85ea9a50e34fc1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f4",
-        "rev": "3c77349ce04c8af401454cc51f85ea9a50e34fc1",
-        "type": "github"
-      }
-    },
-    "cmsis-device-f4_3": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1747911044,
-        "narHash": "sha256-Q2SKaz8jm2iBZfPCZfnAnp69hDCSShe2xJUahi4Fh+8=",
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f4",
-        "rev": "3c77349ce04c8af401454cc51f85ea9a50e34fc1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f4",
-        "rev": "3c77349ce04c8af401454cc51f85ea9a50e34fc1",
-        "type": "github"
-      }
-    },
-    "cmsis-device-f4_4": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1747911044,
-        "narHash": "sha256-Q2SKaz8jm2iBZfPCZfnAnp69hDCSShe2xJUahi4Fh+8=",
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f4",
-        "rev": "3c77349ce04c8af401454cc51f85ea9a50e34fc1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f4",
-        "rev": "3c77349ce04c8af401454cc51f85ea9a50e34fc1",
-        "type": "github"
-      }
-    },
-    "cmsis-device-f4_5": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1747911044,
-        "narHash": "sha256-Q2SKaz8jm2iBZfPCZfnAnp69hDCSShe2xJUahi4Fh+8=",
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f4",
-        "rev": "3c77349ce04c8af401454cc51f85ea9a50e34fc1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f4",
-        "rev": "3c77349ce04c8af401454cc51f85ea9a50e34fc1",
-        "type": "github"
-      }
-    },
-    "cmsis-device-f4_6": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1747911044,
-        "narHash": "sha256-Q2SKaz8jm2iBZfPCZfnAnp69hDCSShe2xJUahi4Fh+8=",
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f4",
-        "rev": "3c77349ce04c8af401454cc51f85ea9a50e34fc1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "cmsis-device-f4",
-        "rev": "3c77349ce04c8af401454cc51f85ea9a50e34fc1",
-        "type": "github"
-      }
-    },
-    "cmsis5": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1651489004,
-        "narHash": "sha256-m3V5pu/ao1d7aVhlWh0lvesAXmYA5JpOVsumAi1Wioc=",
-        "owner": "ARM-software",
-        "repo": "CMSIS_5",
-        "rev": "2b7495b8535bdcb306dac29b9ded4cfb679d7e5c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ARM-software",
-        "repo": "CMSIS_5",
-        "rev": "2b7495b8535bdcb306dac29b9ded4cfb679d7e5c",
-        "type": "github"
-      }
-    },
-    "cmsis5_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1651489004,
-        "narHash": "sha256-m3V5pu/ao1d7aVhlWh0lvesAXmYA5JpOVsumAi1Wioc=",
-        "owner": "ARM-software",
-        "repo": "CMSIS_5",
-        "rev": "2b7495b8535bdcb306dac29b9ded4cfb679d7e5c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ARM-software",
-        "repo": "CMSIS_5",
-        "rev": "2b7495b8535bdcb306dac29b9ded4cfb679d7e5c",
-        "type": "github"
-      }
-    },
-    "cmsis5_3": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1651489004,
-        "narHash": "sha256-m3V5pu/ao1d7aVhlWh0lvesAXmYA5JpOVsumAi1Wioc=",
-        "owner": "ARM-software",
-        "repo": "CMSIS_5",
-        "rev": "2b7495b8535bdcb306dac29b9ded4cfb679d7e5c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ARM-software",
-        "repo": "CMSIS_5",
-        "rev": "2b7495b8535bdcb306dac29b9ded4cfb679d7e5c",
-        "type": "github"
-      }
-    },
-    "cmsis5_4": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1651489004,
-        "narHash": "sha256-m3V5pu/ao1d7aVhlWh0lvesAXmYA5JpOVsumAi1Wioc=",
-        "owner": "ARM-software",
-        "repo": "CMSIS_5",
-        "rev": "2b7495b8535bdcb306dac29b9ded4cfb679d7e5c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ARM-software",
-        "repo": "CMSIS_5",
-        "rev": "2b7495b8535bdcb306dac29b9ded4cfb679d7e5c",
-        "type": "github"
-      }
-    },
-    "cmsis5_5": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1651489004,
-        "narHash": "sha256-m3V5pu/ao1d7aVhlWh0lvesAXmYA5JpOVsumAi1Wioc=",
-        "owner": "ARM-software",
-        "repo": "CMSIS_5",
-        "rev": "2b7495b8535bdcb306dac29b9ded4cfb679d7e5c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ARM-software",
-        "repo": "CMSIS_5",
-        "rev": "2b7495b8535bdcb306dac29b9ded4cfb679d7e5c",
-        "type": "github"
-      }
-    },
-    "cmsis5_6": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1651489004,
-        "narHash": "sha256-m3V5pu/ao1d7aVhlWh0lvesAXmYA5JpOVsumAi1Wioc=",
-        "owner": "ARM-software",
-        "repo": "CMSIS_5",
-        "rev": "2b7495b8535bdcb306dac29b9ded4cfb679d7e5c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ARM-software",
-        "repo": "CMSIS_5",
-        "rev": "2b7495b8535bdcb306dac29b9ded4cfb679d7e5c",
-        "type": "github"
-      }
-    },
     "f3-baremetal": {
       "inputs": {
-        "nano": "nano",
-        "roboenv": "roboenv_2"
+        "nano": [
+          "robopkgs",
+          "nano"
+        ],
+        "roboenv": [
+          "robopkgs",
+          "roboenv"
+        ]
       },
       "locked": {
-        "lastModified": 1772086519,
-        "narHash": "sha256-Wt2b4vIeTpKJnGq3xKTtjnt4gOK8iO90OozhhEkRLDA=",
+        "lastModified": 1772109936,
+        "narHash": "sha256-sy4pWduXBT6p9+mVkuPaWysazbtV0c3USSb0hu9dz/g=",
         "ref": "refs/heads/main",
-        "rev": "b1a389b8987f287887a2c550fe15fb6f900a375f",
-        "revCount": 15,
+        "rev": "1557b94a04344aaa14cefc49ba41c3150f6f0ccf",
+        "revCount": 16,
         "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/f3-baremetal"
+        "url": "ssh://git@github.com/nnctroboticsclub/f3-baremetal.git"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/f3-baremetal"
+        "url": "ssh://git@github.com/nnctroboticsclub/f3-baremetal.git"
       }
     },
     "flake-compat": {
@@ -442,75 +142,9 @@
         "type": "github"
       }
     },
-    "flake-compat_3": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1767039857,
-        "narHash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
-      }
-    },
-    "flake-compat_4": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1767039857,
-        "narHash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
-      }
-    },
-    "flake-compat_5": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1767039857,
-        "narHash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
-      }
-    },
-    "flake-compat_6": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1767039857,
-        "narHash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "f3-baremetal",
-          "nano",
           "roboenv",
           "nixpkgs"
         ]
@@ -530,94 +164,6 @@
       }
     },
     "home-manager_2": {
-      "inputs": {
-        "nixpkgs": [
-          "f3-baremetal",
-          "roboenv",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1772060133,
-        "narHash": "sha256-VuyRptb8v1lVGMlLp4/1vRX3Efwec0CN0S6mKmDPzLg=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "ce9b6e52500a0ea0ec48f0bbf6d7a3e431d9dfa4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "home-manager_3": {
-      "inputs": {
-        "nixpkgs": [
-          "nano",
-          "roboenv",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1772060133,
-        "narHash": "sha256-VuyRptb8v1lVGMlLp4/1vRX3Efwec0CN0S6mKmDPzLg=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "ce9b6e52500a0ea0ec48f0bbf6d7a3e431d9dfa4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "home-manager_4": {
-      "inputs": {
-        "nixpkgs": [
-          "roboenv",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1772060133,
-        "narHash": "sha256-VuyRptb8v1lVGMlLp4/1vRX3Efwec0CN0S6mKmDPzLg=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "ce9b6e52500a0ea0ec48f0bbf6d7a3e431d9dfa4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "home-manager_5": {
-      "inputs": {
-        "nixpkgs": [
-          "robopkgs",
-          "nano",
-          "roboenv",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1772060133,
-        "narHash": "sha256-VuyRptb8v1lVGMlLp4/1vRX3Efwec0CN0S6mKmDPzLg=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "ce9b6e52500a0ea0ec48f0bbf6d7a3e431d9dfa4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "home-manager_6": {
       "inputs": {
         "nixpkgs": [
           "robopkgs",
@@ -707,169 +253,35 @@
         "url": "ssh://git@github.com/nnctroboticsclub/im920_rs.git"
       }
     },
-    "mbed-ce": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1754582327,
-        "narHash": "sha256-jYsUZ7V+vlie8v373d/pltCb4H++luwu5vcZktoco6s=",
-        "owner": "mbed-ce",
-        "repo": "mbed-os",
-        "rev": "4ba00162ba2d73c64583018983391e1dfeaee83d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mbed-ce",
-        "repo": "mbed-os",
-        "rev": "4ba00162ba2d73c64583018983391e1dfeaee83d",
-        "type": "github"
-      }
-    },
-    "mbed-ce_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1754582327,
-        "narHash": "sha256-jYsUZ7V+vlie8v373d/pltCb4H++luwu5vcZktoco6s=",
-        "owner": "mbed-ce",
-        "repo": "mbed-os",
-        "rev": "4ba00162ba2d73c64583018983391e1dfeaee83d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mbed-ce",
-        "repo": "mbed-os",
-        "rev": "4ba00162ba2d73c64583018983391e1dfeaee83d",
-        "type": "github"
-      }
-    },
-    "mbed-ce_3": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1754582327,
-        "narHash": "sha256-jYsUZ7V+vlie8v373d/pltCb4H++luwu5vcZktoco6s=",
-        "owner": "mbed-ce",
-        "repo": "mbed-os",
-        "rev": "4ba00162ba2d73c64583018983391e1dfeaee83d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mbed-ce",
-        "repo": "mbed-os",
-        "rev": "4ba00162ba2d73c64583018983391e1dfeaee83d",
-        "type": "github"
-      }
-    },
-    "mbed-ce_4": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1754582327,
-        "narHash": "sha256-jYsUZ7V+vlie8v373d/pltCb4H++luwu5vcZktoco6s=",
-        "owner": "mbed-ce",
-        "repo": "mbed-os",
-        "rev": "4ba00162ba2d73c64583018983391e1dfeaee83d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mbed-ce",
-        "repo": "mbed-os",
-        "rev": "4ba00162ba2d73c64583018983391e1dfeaee83d",
-        "type": "github"
-      }
-    },
-    "mbed-ce_5": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1754582327,
-        "narHash": "sha256-jYsUZ7V+vlie8v373d/pltCb4H++luwu5vcZktoco6s=",
-        "owner": "mbed-ce",
-        "repo": "mbed-os",
-        "rev": "4ba00162ba2d73c64583018983391e1dfeaee83d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mbed-ce",
-        "repo": "mbed-os",
-        "rev": "4ba00162ba2d73c64583018983391e1dfeaee83d",
-        "type": "github"
-      }
-    },
-    "mbed-ce_6": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1754582327,
-        "narHash": "sha256-jYsUZ7V+vlie8v373d/pltCb4H++luwu5vcZktoco6s=",
-        "owner": "mbed-ce",
-        "repo": "mbed-os",
-        "rev": "4ba00162ba2d73c64583018983391e1dfeaee83d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mbed-ce",
-        "repo": "mbed-os",
-        "rev": "4ba00162ba2d73c64583018983391e1dfeaee83d",
-        "type": "github"
-      }
-    },
     "nano": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
-        "roboenv": "roboenv"
+        "nixpkgs": [
+          "robopkgs",
+          "nixpkgs"
+        ],
+        "roboenv": [
+          "robopkgs",
+          "roboenv"
+        ]
       },
       "locked": {
-        "lastModified": 1772086477,
-        "narHash": "sha256-TbqrXQCycAcz9Zo9gcdjW6SajfBF2rhEWrbkNg4divY=",
-        "ref": "refs/heads/main",
-        "rev": "75993de7e69354e63648f8e5a85bd577326c7e12",
-        "revCount": 41,
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/nano.git"
+        "lastModified": 1772109868,
+        "narHash": "sha256-sFqFx0oNUkLWKTBMqSaylf61WqB+vFR6stFDfaZP46s=",
+        "owner": "nnctroboticsclub",
+        "repo": "Nano",
+        "rev": "1c8a1bdae257a5a3374d628522c7d2afbe6d43b3",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/nano.git"
-      }
-    },
-    "nano_2": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_6",
-        "roboenv": "roboenv_3"
-      },
-      "locked": {
-        "lastModified": 1772086477,
-        "narHash": "sha256-TbqrXQCycAcz9Zo9gcdjW6SajfBF2rhEWrbkNg4divY=",
-        "ref": "refs/heads/main",
-        "rev": "75993de7e69354e63648f8e5a85bd577326c7e12",
-        "revCount": 41,
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/Nano"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/Nano"
-      }
-    },
-    "nano_3": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_11",
-        "roboenv": "roboenv_5"
-      },
-      "locked": {
-        "lastModified": 1772086477,
-        "narHash": "sha256-TbqrXQCycAcz9Zo9gcdjW6SajfBF2rhEWrbkNg4divY=",
-        "ref": "refs/heads/main",
-        "rev": "75993de7e69354e63648f8e5a85bd577326c7e12",
-        "revCount": 41,
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/Nano.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/Nano.git"
+        "owner": "nnctroboticsclub",
+        "repo": "Nano",
+        "type": "github"
       }
     },
     "nixos-wsl": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
         "lastModified": 1771563879,
@@ -906,136 +318,8 @@
         "type": "github"
       }
     },
-    "nixos-wsl_3": {
-      "inputs": {
-        "flake-compat": "flake-compat_3",
-        "nixpkgs": "nixpkgs_7"
-      },
-      "locked": {
-        "lastModified": 1771563879,
-        "narHash": "sha256-vA5hocvdGhr+jfBN7A7ogeZqIz2qx01EixXwdVsQcnE=",
-        "owner": "nix-community",
-        "repo": "NixOS-WSL",
-        "rev": "379d20c55f552e91fb9f3f0382e4a97d3f452943",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "ref": "main",
-        "repo": "NixOS-WSL",
-        "type": "github"
-      }
-    },
-    "nixos-wsl_4": {
-      "inputs": {
-        "flake-compat": "flake-compat_4",
-        "nixpkgs": "nixpkgs_9"
-      },
-      "locked": {
-        "lastModified": 1771563879,
-        "narHash": "sha256-vA5hocvdGhr+jfBN7A7ogeZqIz2qx01EixXwdVsQcnE=",
-        "owner": "nix-community",
-        "repo": "NixOS-WSL",
-        "rev": "379d20c55f552e91fb9f3f0382e4a97d3f452943",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "ref": "main",
-        "repo": "NixOS-WSL",
-        "type": "github"
-      }
-    },
-    "nixos-wsl_5": {
-      "inputs": {
-        "flake-compat": "flake-compat_5",
-        "nixpkgs": "nixpkgs_12"
-      },
-      "locked": {
-        "lastModified": 1771563879,
-        "narHash": "sha256-vA5hocvdGhr+jfBN7A7ogeZqIz2qx01EixXwdVsQcnE=",
-        "owner": "nix-community",
-        "repo": "NixOS-WSL",
-        "rev": "379d20c55f552e91fb9f3f0382e4a97d3f452943",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "ref": "main",
-        "repo": "NixOS-WSL",
-        "type": "github"
-      }
-    },
-    "nixos-wsl_6": {
-      "inputs": {
-        "flake-compat": "flake-compat_6",
-        "nixpkgs": "nixpkgs_15"
-      },
-      "locked": {
-        "lastModified": 1771563879,
-        "narHash": "sha256-vA5hocvdGhr+jfBN7A7ogeZqIz2qx01EixXwdVsQcnE=",
-        "owner": "nix-community",
-        "repo": "NixOS-WSL",
-        "rev": "379d20c55f552e91fb9f3f0382e4a97d3f452943",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "ref": "main",
-        "repo": "NixOS-WSL",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1772077396,
-        "narHash": "sha256-ZJmBFlj5iRbMJim6RXCb9vdqpzLte5qmkBpI0h80hcs=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "62d6ba015932d293e7f828a746d260fbdf99dbb0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "release-25.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_10": {
-      "locked": {
-        "lastModified": 1772077396,
-        "narHash": "sha256-ZJmBFlj5iRbMJim6RXCb9vdqpzLte5qmkBpI0h80hcs=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "62d6ba015932d293e7f828a746d260fbdf99dbb0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "release-25.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_11": {
-      "locked": {
-        "lastModified": 1772077396,
-        "narHash": "sha256-ZJmBFlj5iRbMJim6RXCb9vdqpzLte5qmkBpI0h80hcs=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "62d6ba015932d293e7f828a746d260fbdf99dbb0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "release-25.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_12": {
-      "locked": {
         "lastModified": 1770019141,
         "narHash": "sha256-VKS4ZLNx4PNrABoB0L8KUpc1fE7CLpQXQs985tGfaCU=",
         "owner": "NixOS",
@@ -1046,86 +330,22 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_13": {
-      "locked": {
-        "lastModified": 1772077396,
-        "narHash": "sha256-ZJmBFlj5iRbMJim6RXCb9vdqpzLte5qmkBpI0h80hcs=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "62d6ba015932d293e7f828a746d260fbdf99dbb0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "release-25.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_14": {
-      "locked": {
-        "lastModified": 1772077396,
-        "narHash": "sha256-ZJmBFlj5iRbMJim6RXCb9vdqpzLte5qmkBpI0h80hcs=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "62d6ba015932d293e7f828a746d260fbdf99dbb0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "release-25.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_15": {
-      "locked": {
-        "lastModified": 1770019141,
-        "narHash": "sha256-VKS4ZLNx4PNrABoB0L8KUpc1fE7CLpQXQs985tGfaCU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "cb369ef2efd432b3cdf8622b0ffc0a97a02f3137",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_16": {
-      "locked": {
-        "lastModified": 1772077396,
-        "narHash": "sha256-ZJmBFlj5iRbMJim6RXCb9vdqpzLte5qmkBpI0h80hcs=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "62d6ba015932d293e7f828a746d260fbdf99dbb0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "release-25.11",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1770019141,
-        "narHash": "sha256-VKS4ZLNx4PNrABoB0L8KUpc1fE7CLpQXQs985tGfaCU=",
-        "owner": "NixOS",
+        "lastModified": 1772077396,
+        "narHash": "sha256-ZJmBFlj5iRbMJim6RXCb9vdqpzLte5qmkBpI0h80hcs=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "cb369ef2efd432b3cdf8622b0ffc0a97a02f3137",
+        "rev": "62d6ba015932d293e7f828a746d260fbdf99dbb0",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "owner": "nixos",
+        "ref": "release-25.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -1162,243 +382,49 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
-      "locked": {
-        "lastModified": 1772077396,
-        "narHash": "sha256-ZJmBFlj5iRbMJim6RXCb9vdqpzLte5qmkBpI0h80hcs=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "62d6ba015932d293e7f828a746d260fbdf99dbb0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "release-25.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_6": {
-      "locked": {
-        "lastModified": 1772077396,
-        "narHash": "sha256-ZJmBFlj5iRbMJim6RXCb9vdqpzLte5qmkBpI0h80hcs=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "62d6ba015932d293e7f828a746d260fbdf99dbb0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "release-25.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_7": {
-      "locked": {
-        "lastModified": 1770019141,
-        "narHash": "sha256-VKS4ZLNx4PNrABoB0L8KUpc1fE7CLpQXQs985tGfaCU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "cb369ef2efd432b3cdf8622b0ffc0a97a02f3137",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_8": {
-      "locked": {
-        "lastModified": 1772077396,
-        "narHash": "sha256-ZJmBFlj5iRbMJim6RXCb9vdqpzLte5qmkBpI0h80hcs=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "62d6ba015932d293e7f828a746d260fbdf99dbb0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "release-25.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_9": {
-      "locked": {
-        "lastModified": 1770019141,
-        "narHash": "sha256-VKS4ZLNx4PNrABoB0L8KUpc1fE7CLpQXQs985tGfaCU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "cb369ef2efd432b3cdf8622b0ffc0a97a02f3137",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "roboenv": {
       "inputs": {
-        "cmsis-device-f3": "cmsis-device-f3",
-        "cmsis-device-f4": "cmsis-device-f4",
-        "cmsis5": "cmsis5",
         "home-manager": "home-manager",
-        "mbed-ce": "mbed-ce",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs_3",
-        "rust-overlay": "rust-overlay",
-        "stm32f3xx-hal-driver": "stm32f3xx-hal-driver",
-        "stm32f4xx-hal-driver": "stm32f4xx-hal-driver"
+        "nixpkgs": "nixpkgs_2",
+        "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1772082071,
-        "narHash": "sha256-Z33ckhOwHX/74c/BfE+f5fZ4K2XEcYpCehkz9kjh5AI=",
+        "lastModified": 1772109248,
+        "narHash": "sha256-B3uVghkiBQDYKCa8tbq4wF53REHGQ1pcexxGArB1eXM=",
         "ref": "refs/heads/main",
-        "rev": "4c46fb4886028d5179de12cbfc08d069a0655f4a",
-        "revCount": 84,
+        "rev": "e05400487b202120b24a425a7290ebdd9947b570",
+        "revCount": 86,
         "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/roboenv-nix.git"
+        "url": "ssh://git@github.com/nnctroboticsclub/roboenv-nix"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/roboenv-nix.git"
+        "url": "ssh://git@github.com/nnctroboticsclub/roboenv-nix"
       }
     },
     "roboenv_2": {
       "inputs": {
-        "cmsis-device-f3": "cmsis-device-f3_2",
-        "cmsis-device-f4": "cmsis-device-f4_2",
-        "cmsis5": "cmsis5_2",
         "home-manager": "home-manager_2",
-        "mbed-ce": "mbed-ce_2",
         "nixos-wsl": "nixos-wsl_2",
-        "nixpkgs": "nixpkgs_5",
-        "rust-overlay": "rust-overlay_2",
-        "stm32f3xx-hal-driver": "stm32f3xx-hal-driver_2",
-        "stm32f4xx-hal-driver": "stm32f4xx-hal-driver_2"
+        "nixpkgs": [
+          "robopkgs",
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1772082071,
-        "narHash": "sha256-Z33ckhOwHX/74c/BfE+f5fZ4K2XEcYpCehkz9kjh5AI=",
-        "ref": "refs/heads/main",
-        "rev": "4c46fb4886028d5179de12cbfc08d069a0655f4a",
-        "revCount": 84,
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/roboenv-nix.git"
+        "lastModified": 1772109248,
+        "narHash": "sha256-B3uVghkiBQDYKCa8tbq4wF53REHGQ1pcexxGArB1eXM=",
+        "owner": "nnctroboticsclub",
+        "repo": "roboenv-nix",
+        "rev": "e05400487b202120b24a425a7290ebdd9947b570",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/roboenv-nix.git"
-      }
-    },
-    "roboenv_3": {
-      "inputs": {
-        "cmsis-device-f3": "cmsis-device-f3_3",
-        "cmsis-device-f4": "cmsis-device-f4_3",
-        "cmsis5": "cmsis5_3",
-        "home-manager": "home-manager_3",
-        "mbed-ce": "mbed-ce_3",
-        "nixos-wsl": "nixos-wsl_3",
-        "nixpkgs": "nixpkgs_8",
-        "rust-overlay": "rust-overlay_3",
-        "stm32f3xx-hal-driver": "stm32f3xx-hal-driver_3",
-        "stm32f4xx-hal-driver": "stm32f4xx-hal-driver_3"
-      },
-      "locked": {
-        "lastModified": 1772082071,
-        "narHash": "sha256-Z33ckhOwHX/74c/BfE+f5fZ4K2XEcYpCehkz9kjh5AI=",
-        "ref": "refs/heads/main",
-        "rev": "4c46fb4886028d5179de12cbfc08d069a0655f4a",
-        "revCount": 84,
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/roboenv-nix.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/roboenv-nix.git"
-      }
-    },
-    "roboenv_4": {
-      "inputs": {
-        "cmsis-device-f3": "cmsis-device-f3_4",
-        "cmsis-device-f4": "cmsis-device-f4_4",
-        "cmsis5": "cmsis5_4",
-        "home-manager": "home-manager_4",
-        "mbed-ce": "mbed-ce_4",
-        "nixos-wsl": "nixos-wsl_4",
-        "nixpkgs": "nixpkgs_10",
-        "rust-overlay": "rust-overlay_4",
-        "stm32f3xx-hal-driver": "stm32f3xx-hal-driver_4",
-        "stm32f4xx-hal-driver": "stm32f4xx-hal-driver_4"
-      },
-      "locked": {
-        "lastModified": 1772082071,
-        "narHash": "sha256-Z33ckhOwHX/74c/BfE+f5fZ4K2XEcYpCehkz9kjh5AI=",
-        "ref": "refs/heads/main",
-        "rev": "4c46fb4886028d5179de12cbfc08d069a0655f4a",
-        "revCount": 84,
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/roboenv-nix"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/roboenv-nix"
-      }
-    },
-    "roboenv_5": {
-      "inputs": {
-        "cmsis-device-f3": "cmsis-device-f3_5",
-        "cmsis-device-f4": "cmsis-device-f4_5",
-        "cmsis5": "cmsis5_5",
-        "home-manager": "home-manager_5",
-        "mbed-ce": "mbed-ce_5",
-        "nixos-wsl": "nixos-wsl_5",
-        "nixpkgs": "nixpkgs_13",
-        "rust-overlay": "rust-overlay_5",
-        "stm32f3xx-hal-driver": "stm32f3xx-hal-driver_5",
-        "stm32f4xx-hal-driver": "stm32f4xx-hal-driver_5"
-      },
-      "locked": {
-        "lastModified": 1772082071,
-        "narHash": "sha256-Z33ckhOwHX/74c/BfE+f5fZ4K2XEcYpCehkz9kjh5AI=",
-        "ref": "refs/heads/main",
-        "rev": "4c46fb4886028d5179de12cbfc08d069a0655f4a",
-        "revCount": 84,
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/roboenv-nix.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/nnctroboticsclub/roboenv-nix.git"
-      }
-    },
-    "roboenv_6": {
-      "inputs": {
-        "cmsis-device-f3": "cmsis-device-f3_6",
-        "cmsis-device-f4": "cmsis-device-f4_6",
-        "cmsis5": "cmsis5_6",
-        "home-manager": "home-manager_6",
-        "mbed-ce": "mbed-ce_6",
-        "nixos-wsl": "nixos-wsl_6",
-        "nixpkgs": "nixpkgs_16",
-        "rust-overlay": "rust-overlay_6",
-        "stm32f3xx-hal-driver": "stm32f3xx-hal-driver_6",
-        "stm32f4xx-hal-driver": "stm32f4xx-hal-driver_6"
-      },
-      "locked": {
-        "lastModified": 1772086459,
-        "narHash": "sha256-XuD6eGgVgx6aCzSISpQqCyj/dfEKNhXYvKXE6vsuPfg=",
-        "path": "/home/syoch/ghq/github.com/syoch/libs-dev/libs/roboenv-nix",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/syoch/ghq/github.com/syoch/libs-dev/libs/roboenv-nix",
-        "type": "path"
+        "owner": "nnctroboticsclub",
+        "repo": "roboenv-nix",
+        "type": "github"
       }
     },
     "robopkgs": {
@@ -1408,21 +434,22 @@
         "MotorController": "MotorController",
         "PS4_RX": "PS4_RX",
         "can_servo": "can_servo",
+        "f3-baremetal": "f3-baremetal",
         "ikakoMDC": "ikakoMDC",
         "ikako_rohm_md": "ikako_rohm_md",
         "ikarashiCAN_mk2": "ikarashiCAN_mk2",
         "im920_rs": "im920_rs",
-        "nano": "nano_3",
-        "nixpkgs": "nixpkgs_14",
-        "roboenv": "roboenv_6",
+        "nano": "nano",
+        "nixpkgs": "nixpkgs_3",
+        "roboenv": "roboenv_2",
         "srobo_base": "srobo_base"
       },
       "locked": {
-        "lastModified": 1772086589,
-        "narHash": "sha256-vx7bqbkD3bAkoYP1eZJsNOwjpLT2FLzctMC4g0lfXfs=",
+        "lastModified": 1772285305,
+        "narHash": "sha256-AjdfLlyNzxorIvXzqpTuYEJk6K7+7WNUzp+gG6h1Suw=",
         "ref": "refs/heads/main",
-        "rev": "f221ea72e06a9471d01bfb0288709f78a69b9c7c",
-        "revCount": 8,
+        "rev": "8854f2a022ad50ea017b6b62c31a9cafc9f1956d",
+        "revCount": 10,
         "type": "git",
         "url": "ssh://git@github.com/nnctroboticsclub/robopkgs-nix"
       },
@@ -1433,17 +460,13 @@
     },
     "root": {
       "inputs": {
-        "f3-baremetal": "f3-baremetal",
-        "nano": "nano_2",
-        "roboenv": "roboenv_4",
+        "roboenv": "roboenv",
         "robopkgs": "robopkgs"
       }
     },
     "rust-overlay": {
       "inputs": {
         "nixpkgs": [
-          "f3-baremetal",
-          "nano",
           "roboenv",
           "nixpkgs"
         ]
@@ -1463,94 +486,6 @@
       }
     },
     "rust-overlay_2": {
-      "inputs": {
-        "nixpkgs": [
-          "f3-baremetal",
-          "roboenv",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1772075164,
-        "narHash": "sha256-93XcvAt+6p7aAq1ERlxD2T17zLGoYGo64KJYasGcpgc=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "07601339b15fa6810541c0e7dc2f3664d92a7ad0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "rust-overlay_3": {
-      "inputs": {
-        "nixpkgs": [
-          "nano",
-          "roboenv",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1772075164,
-        "narHash": "sha256-93XcvAt+6p7aAq1ERlxD2T17zLGoYGo64KJYasGcpgc=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "07601339b15fa6810541c0e7dc2f3664d92a7ad0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "rust-overlay_4": {
-      "inputs": {
-        "nixpkgs": [
-          "roboenv",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1772075164,
-        "narHash": "sha256-93XcvAt+6p7aAq1ERlxD2T17zLGoYGo64KJYasGcpgc=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "07601339b15fa6810541c0e7dc2f3664d92a7ad0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "rust-overlay_5": {
-      "inputs": {
-        "nixpkgs": [
-          "robopkgs",
-          "nano",
-          "roboenv",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1772075164,
-        "narHash": "sha256-93XcvAt+6p7aAq1ERlxD2T17zLGoYGo64KJYasGcpgc=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "07601339b15fa6810541c0e7dc2f3664d92a7ad0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "rust-overlay_6": {
       "inputs": {
         "nixpkgs": [
           "robopkgs",
@@ -1587,210 +522,6 @@
         "rev": "0a10ff3964519b618f4f3fda6082a694a4e21caa",
         "type": "git",
         "url": "ssh://git@github.com/nnctroboticsclub/srobo_base.git"
-      }
-    },
-    "stm32f3xx-hal-driver": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1760107044,
-        "narHash": "sha256-ALozMQFB354RSXHxkHNEroNbjfIi4cSHuCjxclXeLTk=",
-        "owner": "STMicroelectronics",
-        "repo": "stm32f3xx-hal-driver",
-        "rev": "ef8c84f93e990805571c056f206538793d011542",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "stm32f3xx-hal-driver",
-        "rev": "ef8c84f93e990805571c056f206538793d011542",
-        "type": "github"
-      }
-    },
-    "stm32f3xx-hal-driver_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1760107044,
-        "narHash": "sha256-ALozMQFB354RSXHxkHNEroNbjfIi4cSHuCjxclXeLTk=",
-        "owner": "STMicroelectronics",
-        "repo": "stm32f3xx-hal-driver",
-        "rev": "ef8c84f93e990805571c056f206538793d011542",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "stm32f3xx-hal-driver",
-        "rev": "ef8c84f93e990805571c056f206538793d011542",
-        "type": "github"
-      }
-    },
-    "stm32f3xx-hal-driver_3": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1760107044,
-        "narHash": "sha256-ALozMQFB354RSXHxkHNEroNbjfIi4cSHuCjxclXeLTk=",
-        "owner": "STMicroelectronics",
-        "repo": "stm32f3xx-hal-driver",
-        "rev": "ef8c84f93e990805571c056f206538793d011542",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "stm32f3xx-hal-driver",
-        "rev": "ef8c84f93e990805571c056f206538793d011542",
-        "type": "github"
-      }
-    },
-    "stm32f3xx-hal-driver_4": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1760107044,
-        "narHash": "sha256-ALozMQFB354RSXHxkHNEroNbjfIi4cSHuCjxclXeLTk=",
-        "owner": "STMicroelectronics",
-        "repo": "stm32f3xx-hal-driver",
-        "rev": "ef8c84f93e990805571c056f206538793d011542",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "stm32f3xx-hal-driver",
-        "rev": "ef8c84f93e990805571c056f206538793d011542",
-        "type": "github"
-      }
-    },
-    "stm32f3xx-hal-driver_5": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1760107044,
-        "narHash": "sha256-ALozMQFB354RSXHxkHNEroNbjfIi4cSHuCjxclXeLTk=",
-        "owner": "STMicroelectronics",
-        "repo": "stm32f3xx-hal-driver",
-        "rev": "ef8c84f93e990805571c056f206538793d011542",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "stm32f3xx-hal-driver",
-        "rev": "ef8c84f93e990805571c056f206538793d011542",
-        "type": "github"
-      }
-    },
-    "stm32f3xx-hal-driver_6": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1760107044,
-        "narHash": "sha256-ALozMQFB354RSXHxkHNEroNbjfIi4cSHuCjxclXeLTk=",
-        "owner": "STMicroelectronics",
-        "repo": "stm32f3xx-hal-driver",
-        "rev": "ef8c84f93e990805571c056f206538793d011542",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "stm32f3xx-hal-driver",
-        "rev": "ef8c84f93e990805571c056f206538793d011542",
-        "type": "github"
-      }
-    },
-    "stm32f4xx-hal-driver": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1762530525,
-        "narHash": "sha256-CynoM96Rr4/Gb55Ci4t/aIhn6FrtxivxsWJy6eKcDdA=",
-        "owner": "STMicroelectronics",
-        "repo": "stm32f4xx-hal-driver",
-        "rev": "edad1a8a23ec4d7d287df60f0992ca395c85395c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "stm32f4xx-hal-driver",
-        "rev": "edad1a8a23ec4d7d287df60f0992ca395c85395c",
-        "type": "github"
-      }
-    },
-    "stm32f4xx-hal-driver_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1762530525,
-        "narHash": "sha256-CynoM96Rr4/Gb55Ci4t/aIhn6FrtxivxsWJy6eKcDdA=",
-        "owner": "STMicroelectronics",
-        "repo": "stm32f4xx-hal-driver",
-        "rev": "edad1a8a23ec4d7d287df60f0992ca395c85395c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "stm32f4xx-hal-driver",
-        "rev": "edad1a8a23ec4d7d287df60f0992ca395c85395c",
-        "type": "github"
-      }
-    },
-    "stm32f4xx-hal-driver_3": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1762530525,
-        "narHash": "sha256-CynoM96Rr4/Gb55Ci4t/aIhn6FrtxivxsWJy6eKcDdA=",
-        "owner": "STMicroelectronics",
-        "repo": "stm32f4xx-hal-driver",
-        "rev": "edad1a8a23ec4d7d287df60f0992ca395c85395c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "stm32f4xx-hal-driver",
-        "rev": "edad1a8a23ec4d7d287df60f0992ca395c85395c",
-        "type": "github"
-      }
-    },
-    "stm32f4xx-hal-driver_4": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1762530525,
-        "narHash": "sha256-CynoM96Rr4/Gb55Ci4t/aIhn6FrtxivxsWJy6eKcDdA=",
-        "owner": "STMicroelectronics",
-        "repo": "stm32f4xx-hal-driver",
-        "rev": "edad1a8a23ec4d7d287df60f0992ca395c85395c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "stm32f4xx-hal-driver",
-        "rev": "edad1a8a23ec4d7d287df60f0992ca395c85395c",
-        "type": "github"
-      }
-    },
-    "stm32f4xx-hal-driver_5": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1762530525,
-        "narHash": "sha256-CynoM96Rr4/Gb55Ci4t/aIhn6FrtxivxsWJy6eKcDdA=",
-        "owner": "STMicroelectronics",
-        "repo": "stm32f4xx-hal-driver",
-        "rev": "edad1a8a23ec4d7d287df60f0992ca395c85395c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "stm32f4xx-hal-driver",
-        "rev": "edad1a8a23ec4d7d287df60f0992ca395c85395c",
-        "type": "github"
-      }
-    },
-    "stm32f4xx-hal-driver_6": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1762530525,
-        "narHash": "sha256-CynoM96Rr4/Gb55Ci4t/aIhn6FrtxivxsWJy6eKcDdA=",
-        "owner": "STMicroelectronics",
-        "repo": "stm32f4xx-hal-driver",
-        "rev": "edad1a8a23ec4d7d287df60f0992ca395c85395c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "STMicroelectronics",
-        "repo": "stm32f4xx-hal-driver",
-        "rev": "edad1a8a23ec4d7d287df60f0992ca395c85395c",
-        "type": "github"
       }
     }
   },

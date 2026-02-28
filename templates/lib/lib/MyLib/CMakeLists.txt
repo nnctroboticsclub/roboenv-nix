@@ -25,6 +25,15 @@ target_include_directories(MyLib PUBLIC
   $<INSTALL_INTERFACE:include/TheLibrary/MyLib>
 )
 
+# ライブラリの指定
+# `INTERFACE`, `PRIVATE`, `PUBLIC` は target_include_directories と同等の扱い
+# ここで指定されたライブラリが対象ライブラリ・依存ターゲットのビルドに用いられる
+# CMake ターゲット以外 (e.g. `m` (libm.a)) が指定されるとリンク時のみで使用される
+# target_link_libraries(MyLib PUBLIC
+#   SomeLibrary1 (ダミー)
+#   SomeLibrary2 (ダミー)
+# )
+
 # ターゲット集合 `TheLibraryTargets` にターゲット `MyLib` を追加する
 install(TARGETS MyLib
   # ターゲット集合 TheLibraryTargets を指定
