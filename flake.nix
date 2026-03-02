@@ -5,6 +5,7 @@
   inputs.rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
   inputs.nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+  inputs.nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
 
   inputs.home-manager.url = "github:nix-community/home-manager";
   inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
