@@ -1,22 +1,31 @@
 {
+  inputs.nixpkgs = {
+    url = "github:nixos/nixpkgs/release-25.11";
+  };
+
   # 開発環境
-  inputs.roboenv.url = "git+ssh://git@github.com/nnctroboticsclub/roboenv-nix";
+  inputs.roboenv = {
+    url = "github:nnctroboticsclub/roboenv-nix";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
 
   # ライブラリ群
-  inputs.robopkgs.url = "git+ssh://git@github.com/nnctroboticsclub/robopkgs-nix";
+  inputs.nano = {
+    url = "github:nnctroboticsclub/Nano";
+    inputs.nixpkgs.follows = "nixpkgs";
+    inputs.roboenv.follows = "roboenv";
+  };
 
   outputs =
     {
-      robopkgs,
       roboenv,
+      nano,
       ...
     }:
     let
       system = "x86_64-linux";
       # roboenv の提供するパッケージ群
       roboPkgs = roboenv.legacyPackages.${system};
-      # robopkgs の提供するパッケージ群
-      roboLibs = robopkgs.legacyPackages.${system};
     in
     {
       # メインの開発環境 (`default` が識別子)
@@ -41,7 +50,7 @@
 
         cmakeInputs = [
           roboPkgs.cmake-libs
-          roboLibs.nano
+          nano.packages.${system}.default
         ];
       };
     };
