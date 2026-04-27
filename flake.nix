@@ -12,13 +12,13 @@
 
   outputs =
     {
+      self,
+
       nixpkgs,
       rust-overlay,
 
       nixos-wsl,
       home-manager,
-
-      ...
     }:
     let
       system = "x86_64-linux";
@@ -34,9 +34,7 @@
       };
 
     in
-    rec {
-      packages.x86_64-linux.test = devShells.${system}.default.debug.cmakePackages;
-
+    {
       legacyPackages.${system} = roboenvPackages;
 
       devShells.${system}.default = pkgs.callPackage ./shell.nix {
@@ -60,42 +58,78 @@
           lib = final.lib;
         };
 
-      nixosConfigurations.robo-wsl = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
+      nixosModules.default = {
+        nix.settings.substituters = [
+          "https://nnctrobo.cachix.org"
+        ];
+        nix.settings.trusted-public-keys = [
+          "nnctrobo.cachix.org-1:1dKKIMpU2HT8hYTQVOxaE8YGT1rVvHpZNjgkMCrIRzM="
+        ];
+        nix.settings.experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
+      };
+
+      homeManagerModules.default = {
+        programs.ssh.enable = true;
+
+        programs.direnv.enable = true;
+        programs.direnv.nix-direnv.enable = true;
+
+        programs.zsh.enable = true;
+        programs.direnv.enableZshIntegration = true;
+      };
+
+      nixosModules.robo-wsl = {
+        imports = [
           nixos-wsl.nixosModules.default
-          home-manager.nixosModules.home-manager
+          self.nixosModules.default
+        ];
+
+        wsl.enable = true;
+        wsl.ssh-agent.enable = true;
+        wsl.usbip.enable = true;
+        wsl.interop.includePath = false;
+
+        environment.systemPackages = [
+          pkgs.wget
+          pkgs.git
+        ];
+
+        # VSCode server fix
+        programs.nix-ld.enable = true;
+      };
+
+      homeConfigurations.default = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [
+          self.homeManagerModules.default
 
           {
-            wsl.enable = true;
-            wsl.defaultUser = "nixos";
-            users.users.nixos.shell = pkgs.zsh;
+            home.username = "nixos";
+            home.homeDirectory = "/home/nixos";
+            home.stateVersion = "25.11";
 
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.nixos = ./home.nix;
-
-            nix.settings.experimental-features = [
-              "nix-command"
-              "flakes"
+            home.packages = [
+              pkgs.nixd
+              pkgs.nixfmt
             ];
-            programs.git.enable = true;
+          }
+        ];
+      };
+
+      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          self.nixosModules.robo-wsl
+
+          {
+            system.stateVersion = "25.11";
+
             programs.zsh.enable = true;
-
-            nix.settings.substituters = [
-              "https://nnctrobo.cachix.org"
-            ];
-            nix.settings.trusted-public-keys = [
-              "nnctrobo.cachix.org-1:1dKKIMpU2HT8hYTQVOxaE8YGT1rVvHpZNjgkMCrIRzM="
-            ];
-
-            # This value determines the NixOS release from which the default
-            # settings for stateful data, like file locations and database versions
-            # on your system were taken. It's perfectly fine and recommended to leave
-            # this value at the release version of the first install of this system.
-            # Before changing this value read the documentation for this option
-            # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-            system.stateVersion = "25.05"; # Did you read the comment?
+            users.users.nixos.shell = pkgs.zsh;
+            wsl.defaultUser = "nixos";
           }
         ];
       };
