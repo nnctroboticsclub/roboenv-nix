@@ -46,6 +46,9 @@ lib.makeScope pkgs.newScope (self: {
   static-mbed-os-f446re = self.StaticMbedOSPackages.static-mbed-os-f446re;
   static-mbed-os-f303k8 = self.StaticMbedOSPackages.static-mbed-os-f303k8;
 
+  # Segger RTT
+  segger-rtt = self.callPackage ./segger-rtt { };
+
   # エミュレータとツール
   qemu-arm-xpack = self.callPackage ./qemu-arm-xpack { };
 

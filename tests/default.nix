@@ -8,6 +8,9 @@
   stm32-hal-f3xx,
   stm32-hal-f4xx,
   buildCMakeProject,
+  segger-rtt,
+  rlib,
+  gcc-arm-toolchain,
 }:
 {
   test-smbed = import ./build-test {
@@ -27,5 +30,8 @@
   };
   test-stm32-hal-f4xx = import ./build-test-stm32-hal-f4xx {
     inherit cmake stm32-hal-f4xx buildCMakeProject;
+  };
+  segger-rtt-test = import ./segger-rtt-test {
+    inherit rlib gcc-arm-toolchain segger-rtt;
   };
 }

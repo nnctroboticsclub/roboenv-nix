@@ -1,0 +1,7 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/SeggerRTTTargets.cmake")
+
+# Expose source/include paths for per-target compilation
+set(SeggerRTT_SOURCE_DIR "${PACKAGE_PREFIX_DIR}/src/SeggerRTT")
+set(SeggerRTT_INCLUDE_DIRS "${PACKAGE_PREFIX_DIR}/include/SeggerRTT")
