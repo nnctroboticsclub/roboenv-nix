@@ -27,12 +27,7 @@
     ]
     ++ (lib.optionals (config.c_cpp.toolchain == "clang") [
       pkgs.llvmPackages_21.bintools
-      pkgs.llvmPackages_21.clang-tools # clang-tools は clang よりも先でなければならない
       pkgs.llvmPackages_21.clang
-      (pkgs.runCommand "clangd-unwrapped" { } ''
-        mkdir -p $out/bin
-        ln -s ${pkgs.llvmPackages_21.clang.cc}/bin/clangd $out/bin/clangd-unwrapped
-      '')
       pkgs.llvmPackages_21.llvm
       pkgs.llvmPackages_21.libclang.lib
     ])
