@@ -11,7 +11,7 @@
 
   # ライブラリ群
   inputs.robopkgs = {
-    url = "git+ssh://git@github.com/nnctroboticsclub/robopkgs-nix";
+    url = "github:nnctroboticsclub/robopkgs-nix";
     inputs.nixpkgs.follows = "nixpkgs";
     inputs.roboenv.follows = "roboenv";
   };

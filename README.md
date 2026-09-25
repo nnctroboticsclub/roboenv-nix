@@ -11,13 +11,15 @@ Nix Flake による STM32 向け組み込みシステム開発環境です
 SSH 接続を用いて GitHub にアクセスでき、 git コマンドが利用できることが条件です。
 
 ```shell
-$ nix flake init -t git+ssh://git@github.com/nnctroboticsclub/roboenv-nix.git#application
+$ nix flake init -t github:nnctroboticsclub/roboenv-nix.git#application
+(snip)
 ```
 
 ライブラリを作成する環境は以下のコマンドで展開できます。
 
 ```shell
-$ nix flake init -t git+ssh://git@github.com/nnctroboticsclub/roboenv-nix.git#library
+$ nix flake init -t github:nnctroboticsclub/roboenv-nix.git#library
+(snip)
 ```
 
 ## 関連リンク
