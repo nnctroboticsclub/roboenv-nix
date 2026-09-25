@@ -4,12 +4,16 @@
   inputs.rust-overlay.url = "github:oxalica/rust-overlay";
   inputs.rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
+  inputs.pyproject-nix.url = "github:pyproject-nix/pyproject.nix";
+  inputs.pyproject-nix.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs =
     {
       self,
 
       nixpkgs,
       rust-overlay,
+      pyproject-nix,
     }:
     let
       system = "x86_64-linux";
@@ -22,6 +26,7 @@
       roboenvPackages = import ./pkgs {
         inherit pkgs;
         lib = nixpkgs.lib;
+        inherit pyproject-nix;
       };
 
     in

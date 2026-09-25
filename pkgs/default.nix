@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  pyproject-nix,
 }:
 
 lib.makeScope pkgs.newScope (self: {
@@ -12,17 +13,6 @@ lib.makeScope pkgs.newScope (self: {
   STM32HALPackages = self.callPackage ./stm32-hal { };
   StaticMbedOSPackages = self.callPackage ./static-mbed-os { };
 
-  # スコープとして定義されるパッケージセット
-  roboPythonPackages = self.callPackage ./roboPythonPackages { };
-
-  # Python パッケージ (roboPythonPackages から展開)
-  lief_0_14_1 = self.roboPythonPackages.lief_0_14_1;
-  packaging_21_3 = self.roboPythonPackages.packaging_21_3;
-  click_8_0_4 = self.roboPythonPackages.click_8_0_4;
-  cryptography_36_0_1 = self.roboPythonPackages.cryptography_36_0_1;
-  cysecuretools_6_0_0 = self.roboPythonPackages.cysecuretools_6_0_0;
-  mbed_tools = self.roboPythonPackages.mbed_tools;
-
   # ツールチェーンとライブラリ
   cmake-libs = self.callPackage ./cmake-libs { };
   gcc-arm-toolchain = self.callPackage ./gcc-arm-toolchain { };
@@ -30,7 +20,7 @@ lib.makeScope pkgs.newScope (self: {
   clang-toolchain = self.callPackage ./clang-toolchain { };
 
   # Mbed と CMSIS
-  mbed-os = self.callPackage ./mbed-os { };
+  mbed-os = self.callPackage ./mbed-os { inherit pyproject-nix; };
   cmsis5 = self.callPackage ./cmsis5 { };
 
   # CMSIS5 デバイスパッケージ (CMSIS5DevicePackages から展開)

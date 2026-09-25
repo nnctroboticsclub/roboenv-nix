@@ -1,27 +1,45 @@
 {
   stdenv,
-  python311,
-  roboPythonPackages,
-  fetchgit,
+  python3,
+  fetchFromGitHub,
+  pyproject-nix,
 }:
-stdenv.mkDerivation rec {
+let
+  mbed-os-src = fetchFromGitHub {
+    owner = "mbed-ce";
+    repo = "mbed-os";
+    rev = "64e236ffc7092033a8e6d7d79a5b14f7822f4350"; # mbed-os-7.0.0 tag の commit hash
+    sha256 = "sha256-e4N1fLSGS3oaX6XgrMcloQDeXKjZo7pHpRfGdYiOunw=";
+    fetchSubmodules = true;
+  };
+  project = pyproject-nix.lib.project.loadPyproject {
+    projectRoot = mbed-os-src + "/tools";
+  };
+  mbed-tools = python3.pkgs.buildPythonPackage (
+    (project.renderers.buildPythonPackage {
+      python = python3;
+    })
+    // {
+      importChecks = [ "mbed_tools.cli.cmsis_mcu_descr" ];
+    }
+  );
+in
+stdenv.mkDerivation {
   pname = "mbed-os";
   version = "0.2.0";
 
-  src = ./.;
-  mbed-ce = fetchgit {
-    url = "https://github.com/mbed-ce/mbed-os.git";
-    rev = "4ba00162ba2d73c64583018983391e1dfeaee83d";
-    sha256 = "sha256-ZL7X1LY7OGdZpoSzcmgJt6idreX7BDcApmJUz8zfDpk=";
-  };
+  src = mbed-os-src;
+  mbed-tools = mbed-tools;
 
-  cmakeBuildInputs = [ ]; # Mark as CMake package
-
-  pythonEnv = python311.withPackages (ps: [
-    (roboPythonPackages.mbed_tools mbed-ce)
-    roboPythonPackages.cysecuretools_6_0_0
-    roboPythonPackages.cryptography_36_0_1
+  pythonEnv = python3.withPackages (ps: [
+    mbed-tools
   ]);
+
+  cmakeBuildInputs = [ ];
+  propagatedCMakeFlags = [
+    # Git submodules are managed by nix, so MbedCE does not need to manage them
+    "-DMBED_MANAGE_SUBMODULES=OFF"
+  ];
 
   installPhase = ''
     mkdir -p $out/lib/cmake
@@ -41,7 +59,7 @@ stdenv.mkDerivation rec {
     EOF
 
     cat <<EOF > $out/lib/cmake/Findmbed-ce.cmake
-    set(mbed-ce_SOURCE_DIR ${mbed-ce})
+    set(mbed-ce_SOURCE_DIR ${mbed-os-src})
 
     include(FindPackageHandleStandardArgs)
     find_package_handle_standard_args(mbed-ce

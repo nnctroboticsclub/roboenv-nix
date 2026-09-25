@@ -16,7 +16,6 @@ let
   allCMakePackages = builtins.concatLists (map collectCMakePackages cmakeBuildInputs);
 
   extraNativeBuildInputs = if lib.any (p: p == cmake) nativeBuildInputs then [ ] else [ cmake ];
-  nativeBuildInputsFinal = extraNativeBuildInputs ++ allCMakePackages;
 
   argModPath = lib.concatStringsSep ";" (map (p: "${p}/lib/cmake") allCMakePackages);
   argPrefixPath = lib.concatStringsSep ";" (map (p: "${p}") allCMakePackages);
@@ -25,13 +24,16 @@ let
     "-DCMAKE_MODULE_PATH=${argModPath}"
     "-DCMAKE_PREFIX_PATH=${argPrefixPath}"
   ];
+  propagatedCMakeFlags = builtins.concatLists (
+    map (p: p.propagatedCMakeFlags or [ ]) allCMakePackages
+  );
 
 in
 stdenv.mkDerivation (
   args
   // {
-    nativeBuildInputs = nativeBuildInputs ++ nativeBuildInputsFinal;
-    cmakeFlags = cmakeFlags ++ extraCMakeFlags;
+    nativeBuildInputs = nativeBuildInputs ++ extraNativeBuildInputs ++ allCMakePackages;
+    cmakeFlags = cmakeFlags ++ extraCMakeFlags ++ propagatedCMakeFlags;
 
     CMAKE_TOOLCHAIN_FILE = "${roboenv-loader}/lib/cmake/Roboenv.cmake";
   }

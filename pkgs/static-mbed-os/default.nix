@@ -2,7 +2,7 @@
   rlib,
 
   cmake-libs,
-  clang-arm-toolchain,
+  gcc-arm-toolchain,
 
   mbed-os,
 }:
@@ -21,11 +21,11 @@ let
       cmakeFlags = [
         "-DCMAKE_BUILD_TYPE=Develop"
         "-DMBED_TARGET=${mbedTarget}"
-        "-DTOOLCHAIN_MODE=LLVM"
+        "-DTOOLCHAIN_MODE=GNU"
       ];
 
       cmakeBuildInputs = [
-        clang-arm-toolchain
+        gcc-arm-toolchain
         cmake-libs
         mbed-os
       ];
