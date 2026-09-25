@@ -42,20 +42,16 @@
         description = "The Roboenv-nix template of project which makes a MCU library";
       };
 
+      templates.dotfiles = {
+        path = "${./templates/dotfiles}";
+        description = "Configuration files for development environment";
+      };
+
       overlays.default =
         final: prev:
         import ./pkgs {
           pkgs = final;
           lib = final.lib;
         };
-
-      nixosModules.default = {
-        nix.settings.substituters = [
-          "https://nnctrobo.cachix.org"
-        ];
-        nix.settings.trusted-public-keys = [
-          "nnctrobo.cachix.org-1:1dKKIMpU2HT8hYTQVOxaE8YGT1rVvHpZNjgkMCrIRzM="
-        ];
-      };
     };
 }
